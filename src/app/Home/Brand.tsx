@@ -4,7 +4,7 @@ import BrandImg from "@/assets/brand.png"
 
 const Brand: React.FC = () => {
   return (
-    <div className="flex xl:flex-row flex-col items-center justify-between xl:pl-[80px] px-4 pt-8 xl:gap-0 gap-[48px]">
+    <div className="w-full flex xl:flex-row flex-col items-center justify-between xl:pl-[80px] px-4 pt-8 xl:gap-0 gap-[48px]">
       <div className="flex flex-col w-full xl:w-[628px]">
         <p>Our Services</p>
         <h1 className="mt-4 mb-6">Our Expertise</h1>
@@ -36,14 +36,13 @@ const Brand: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-shrink-0">
+      <div className="flex  ">
         <Image
           src={BrandImg}
           alt="brand"
           priority
           quality={100}
-          width={777}
-          height={794}
+          objectFit="contain"
         />
       </div>
     </div>

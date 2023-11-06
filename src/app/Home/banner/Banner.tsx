@@ -4,19 +4,20 @@ import Image from "next/image"
 
 const Banner: React.FC = () => {
   return (
-    <div className=" px-[16px] my-[64px] sm:px-[64px] sm:my-[112px] flex items-center justify-center relative  w-full">
-      <div className=" relative sm:h-[417px] h-[520px]  shrink-0">
+    <div className=" px-0 my-[64px] lg:px-[64px] sm:my-[112px] flex items-center justify-center relative  w-full">
+      <div className=" relative lg:flex  hidden ">
         <Image
           src={banner}
           alt="banner"
           objectFit="contain"
           // layout="responsive"
+
           priority
           quality={100}
           className="z-[-1] sm:h-auto h-[520px]  "
         />
       </div>
-      <div className=" px-4  absolute z-[999] lg:w-[768px] w-full font-Inter sm:text-center text-left text-white ">
+      <div className=" px-4  py-16  lg:absolute z-[999] lg:w-[768px] w-full font-Inter sm:text-center text-left text-white lg:bg-transparent bg-[#03236C]">
         <h2 className="font-Inter">Subscribe to Our Newsletter Today</h2>
         <h3 className="mt-[24px]">
           Stay updated with the latest tech and e-commerce insights
