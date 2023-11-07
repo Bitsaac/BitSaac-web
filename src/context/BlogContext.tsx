@@ -1,6 +1,7 @@
 "use client";
 
 import { ActionTypes } from "@/constants";
+import { useRouter } from "next/navigation";
 import React, { createContext, useEffect, useMemo, useState } from "react";
 
 type BlogCtxProps = ActionTypes;
@@ -16,12 +17,11 @@ export const BlogContext = createContext<BlogContextProps>(
 
 const BlogCtxProvider = ({ children }: { children: React.ReactNode }) => {
 	const [activeTab, setActiveTab] = useState<ActionTypes>("" as ActionTypes);
+	const router = useRouter();
 
 	useEffect(() => {
 		if ("activeTab" in localStorage) {
 			setActiveTab(localStorage.getItem("activeTab") as ActionTypes);
-		} else {
-			return;
 		}
 	}, []);
 

@@ -29,11 +29,11 @@ const BlogCard = ({ label, title, time, desc, image }: BlogCardProps) => {
 				<h3 className="text-xl lg:text-2xl  font-medium sm:font-bold">
 					{title}
 				</h3>
-				<p className="text-gray-950 sm:text-lg">
+				<p className="text-gray-700 sm:text-lg font-Roboto">
 					{desc.length > 100 ? `${desc.slice(0, 100)}...` : desc}
 				</p>
 			</div>
-			<button className="text-[#4D61F4] font-medium md:text-2xl mt-4 ">
+			<button className="text-[#4D61F4] font-medium xl:text-2xl m-4 font-Inter">
 				Read More
 			</button>
 		</div>

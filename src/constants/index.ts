@@ -1,10 +1,10 @@
-type BlogNavProps = {
-	action: string;
+export type BlogNavProps = {
+	action: ActionTypes;
 	label: string;
 	id?: number;
 };
 type BlogCardProps = {
-	tag?: string;
+	tag?: ActionTypes;
 	label: string;
 	title: string;
 	time: string;
@@ -28,7 +28,7 @@ export const ACTIONS = [
 	"design",
 	"development",
 	"social",
-	"techonology",
+	"technology",
 ] as const;
 
 export type ActionTypes = (typeof ACTIONS)[number];
