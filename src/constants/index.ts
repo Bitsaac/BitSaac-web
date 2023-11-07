@@ -10,7 +10,7 @@ type BlogCardProps = {
 	time: string;
 	desc: string;
 	image: string;
-	id?: number;
+	id: number;
 };
 
 export const BLOG_NAVS: BlogNavProps[] = [

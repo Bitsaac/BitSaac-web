@@ -35,11 +35,7 @@ const BlogNav = () => {
 								: "text-gray-800/90"
 						)}
 						ref={nav.action === activeTab ? activeTabRef : null}
-						onClick={() => {
-							setActiveTab(nav.action);
-
-							console.log(nav.action, activeTab, nav.action === activeTab);
-						}}
+						onClick={() => setActiveTab(nav.action)}
 					>
 						{nav.label}
 					</button>
