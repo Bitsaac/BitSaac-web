@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { PiCubeFill } from "react-icons/pi";
 
 type BlogCardProps = {
 	label: string;
@@ -7,9 +9,19 @@ type BlogCardProps = {
 	time: string;
 	desc: string;
 	image: string;
+	id: number;
+	icon?: boolean;
 };
 
-const BlogCard = ({ label, title, time, desc, image }: BlogCardProps) => {
+const BlogCard = ({
+	label,
+	title,
+	time,
+	desc,
+	image,
+	id,
+	icon,
+}: BlogCardProps) => {
 	return (
 		<div className="flex items-start justify-between flex-col gap-y-4 w-full max-w-[350px] sm:max-w-[500px] lg:max-w-[500px] border border-gray-200 p-1 rounded-xl hover:shadow-[0_0_40px_0_rgba(0,0,0,0.2)] xl:hover:shadow-[0_20px_60px_0_rgba(0,0,0,0.3)] transition-all hover:duration-700 duration-300">
 			<div className="w-full overflow-hidden">
@@ -29,13 +41,16 @@ const BlogCard = ({ label, title, time, desc, image }: BlogCardProps) => {
 				<h3 className="text-xl lg:text-2xl  font-medium sm:font-bold">
 					{title}
 				</h3>
-				<p className="text-gray-950 sm:text-lg">
+				<p className="text-gray-700 sm:text-lg font-Roboto">
 					{desc.length > 100 ? `${desc.slice(0, 100)}...` : desc}
 				</p>
 			</div>
-			<button className="text-[#4D61F4] font-medium md:text-2xl mt-4 ">
-				Read More
-			</button>
+			<Link
+				href={`/blog/${id}`}
+				className="text-[#4D61F4] font-medium text-lg 2xl:text-2xl my-4 font-Roboto flex items-center gap-x-2"
+			>
+				<span>Read more</span> {icon && <PiCubeFill />}
+			</Link>
 		</div>
 	);
 };

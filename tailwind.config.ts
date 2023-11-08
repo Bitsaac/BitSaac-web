@@ -18,8 +18,8 @@ const config: Config = {
 				},
 			},
 			fontFamily: {
-				Roboto: ["Roboto", "sans"],
-				Inter: ["Inter", "sans"],
+				Roboto: ["var(--font-roboto)"],
+				Inter: ["var(--font-inter)"],
 			},
 		},
 	},
