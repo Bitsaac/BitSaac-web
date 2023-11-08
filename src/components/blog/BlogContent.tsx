@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
@@ -7,11 +8,20 @@ const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
 		<div className="w-full flex flex-col md:flex-row items-start justify-between mt-10 lg:mt-20 gap-x-6 gap-y-7">
 			<div className=" md:flex flex-col gap-y-5 w-full md:w-[30%] md:sticky top-4">
 				<h3 className="font-bold text-2xl ">Contents</h3>
-				<div className="flex flex-col gap-y-5 md:[&>*:nth-child(2)]:ml-4 md:[&>*:nth-child(3)]:ml-7 md:[&>*:nth-child(4)]:ml-10 md:[&>*:nth-child(1)]:font-bold [&>*:nth-child(1)]:bg-[#F4F4F4] [&>*]:py-2 ">
-					<p>The Rise of AI and Chatbots</p>
-					<p>Augmented Reality (AR) Shopping Experiences</p>
-					<p>Personalization and Data-Driven Marketing</p>
-					<p>Sustainability and Ethical Shopping</p>
+				<div className="flex flex-col gap-y-5 md:[&>*:nth-child(2)]:ml-4 md:[&>*:nth-child(3)]:ml-7 md:[&>*:nth-child(4)]:ml-10 md:[&>*:nth-child(5)]:ml-12 md:[&>*:nth-child(1)]:font-bold [&>*:nth-child(1)]:bg-[#F4F4F4] [&>*]:py-2 ">
+					<Link href="#rise-of-ai">The Rise of AI and Chatbots</Link>
+					<Link href="#voice-commerce">
+						Voice Commerce and Smart Assistants
+					</Link>
+					<Link href="#augmented-reality">
+						Augmented Reality (AR) Shopping Experiences
+					</Link>
+					<Link href="#personalization">
+						Personalization and Data-Driven Marketing
+					</Link>
+					<Link href="#sustainability">
+						Sustainability and Ethical Shopping
+					</Link>
 				</div>
 			</div>
 			<div className="flex flex-col gap-y-4 md:gap-y-8 items-start w-full md:w-[70%]">
@@ -28,7 +38,7 @@ const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
 				</div>
 
 				<div className="flex flex-col gap-y-5">
-					<h2 className="text-lg sm:text-xl lg:text-2xl">
+					<h2 id="rise-of-ai" className="text-lg sm:text-xl lg:text-2xl">
 						The Rise of AI and Chatbots
 					</h2>
 					<p>
@@ -43,7 +53,7 @@ const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
 				</div>
 
 				<div className="flex flex-col gap-y-5">
-					<h2 className="text-lg sm:text-xl lg:text-2xl">
+					<h2 id="voice-commerce" className="text-lg sm:text-xl lg:text-2xl">
 						Voice Commerce and Smart Assistants
 					</h2>
 					<p>
@@ -62,7 +72,7 @@ const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
 					</strong>
 				</div>
 
-				<div className="flex flex-col gap-y-5">
+				<div id="augmented-reality" className="flex flex-col gap-y-5">
 					<h2 className="text-lg sm:text-xl lg:text-2xl">
 						Augmented Reality (AR) Shopping Experiences
 					</h2>
@@ -77,7 +87,7 @@ const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
 				</div>
 
 				<div className="flex flex-col gap-y-5">
-					<h2 className="text-lg sm:text-xl lg:text-2xl">
+					<h2 id="personalization" className="text-lg sm:text-xl lg:text-2xl">
 						Personalization and Data-Driven Marketing
 					</h2>
 					<p>
@@ -91,7 +101,7 @@ const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
 				</div>
 
 				<div className="flex flex-col gap-y-5">
-					<h2 className="text-lg sm:text-xl lg:text-2xl">
+					<h2 id="sustainability" className="text-lg sm:text-xl lg:text-2xl">
 						Sustainability and Ethical Shopping
 					</h2>
 					<p>

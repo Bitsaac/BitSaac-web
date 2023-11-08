@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} ${roboto.variable}`}
+      className={`${inter.variable} ${roboto.variable}`}
     >
       <body>
         <Navbar />

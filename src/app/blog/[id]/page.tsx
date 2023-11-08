@@ -9,6 +9,7 @@ import Image from "next/image"
 
 import BlogContent from "@/components/blog/BlogContent"
 import cn from "@/utils/tailwind"
+import FeaturedBlogs from "@/components/blog/FeaturedBlogs"
 
 const PostPage = ({ params }: { params: { id: string } }) => {
   const blog = BLOG_CARDS.find((blog) => String(blog.id) === params.id)
@@ -65,6 +66,7 @@ const PostPage = ({ params }: { params: { id: string } }) => {
         title={blog?.title}
         image={blog?.image}
       />
+      <FeaturedBlogs id={blog?.id} />
     </section>
   )
 }

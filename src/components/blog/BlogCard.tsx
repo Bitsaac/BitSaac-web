@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { PiCubeFill } from "react-icons/pi";
 
 type BlogCardProps = {
 	label: string;
@@ -9,9 +10,18 @@ type BlogCardProps = {
 	desc: string;
 	image: string;
 	id: number;
+	icon?: boolean;
 };
 
-const BlogCard = ({ label, title, time, desc, image, id }: BlogCardProps) => {
+const BlogCard = ({
+	label,
+	title,
+	time,
+	desc,
+	image,
+	id,
+	icon,
+}: BlogCardProps) => {
 	return (
 		<div className="flex items-start justify-between flex-col gap-y-4 w-full max-w-[350px] sm:max-w-[500px] lg:max-w-[500px] border border-gray-200 p-1 rounded-xl hover:shadow-[0_0_40px_0_rgba(0,0,0,0.2)] xl:hover:shadow-[0_20px_60px_0_rgba(0,0,0,0.3)] transition-all hover:duration-700 duration-300">
 			<div className="w-full overflow-hidden">
@@ -37,9 +47,9 @@ const BlogCard = ({ label, title, time, desc, image, id }: BlogCardProps) => {
 			</div>
 			<Link
 				href={`/blog/${id}`}
-				className="text-[#4D61F4] font-medium xl:text-2xl m-4 font-Roboto"
+				className="text-[#4D61F4] font-medium text-lg 2xl:text-2xl my-4 font-Roboto flex items-center gap-x-2"
 			>
-				Read More
+				<span>Read more</span> {icon && <PiCubeFill />}
 			</Link>
 		</div>
 	);
