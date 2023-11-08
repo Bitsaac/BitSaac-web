@@ -14,7 +14,7 @@ const FeaturedBlogs = ({ id }: { id?: number }) => {
 
 				<p>Explore our curated collection of valuable resources.</p>
 			</div>
-			<div className="grid grid-cols-1 sm:grid-cols-3  gap-4 sm:gap-8 lg:gap-12 w-full slideUp">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 sm:gap-8 lg:gap-12 w-full max-sm:place-items-center slideUp ">
 				{featuredBlogs.map((card) => (
 					<BlogCard icon key={card.id} {...card} />
 				))}
