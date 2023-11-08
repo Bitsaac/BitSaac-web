@@ -14,6 +14,7 @@ import FeaturedBlogs from "@/components/blog/FeaturedBlogs"
 const PostPage = ({ params }: { params: { id: string } }) => {
   const blog = BLOG_CARDS.find((blog) => String(blog.id) === params.id)
   const title = blog?.title ?? ""
+  const tag = blog?.tag ?? ""
   console.log(blog)
   return (
     <section className="max-container w-full min-h-screen flex flex-col px-4 lg:px-8 pt-6 sm:pt-10 relative">
@@ -66,7 +67,10 @@ const PostPage = ({ params }: { params: { id: string } }) => {
         title={blog?.title}
         image={blog?.image}
       />
-      <FeaturedBlogs id={blog?.id} />
+      <FeaturedBlogs
+        id={blog?.id}
+        tag={blog?.tag}
+      />
     </section>
   )
 }
