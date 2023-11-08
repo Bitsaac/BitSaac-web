@@ -7,7 +7,8 @@ import { AllImages, Experience, Innovation } from "./aboutItems"
 
 const About = () => {
   return (
-    <div className="xl:mx-auto max-w-[1240px]">
+    // @gafaradetunji there's max width container class in global.css
+    <div className="max-container">
       {/* ABOUT HERO SECTION */}
       <div className="font-Roboto text-white px-[1.25rem] py-[4rem] bg-[rgba(0,0,0,.5)] sm:px-[64px] ">
         <div className="md:w-[70%]">
