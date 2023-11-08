@@ -45,7 +45,9 @@ const config: Config = {
 			},
 			colors: {
 				"surface/200": "#FAFAFA",
-				primary: "#4D61F4",
+        "primary": "#4D61F4",
+        "secondary": "#03236C",
+        "btn-secondary": "#4D61F4",
 			},
 			backgroundImage: {
 				banner: "/banner.png",
