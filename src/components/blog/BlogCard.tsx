@@ -1,6 +1,10 @@
+"use client";
+
+import useInView from "@/hooks/useInView";
+import cn from "@/utils/tailwind";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import { PiCubeFill } from "react-icons/pi";
 
 type BlogCardProps = {
@@ -22,8 +26,18 @@ const BlogCard = ({
 	id,
 	icon,
 }: BlogCardProps) => {
+	const cardRef = useRef<HTMLDivElement>(null);
+	const isInView = useInView(cardRef);
 	return (
-		<div className="flex items-start justify-between flex-col gap-y-4 w-full max-w-[350px] sm:max-w-[500px] lg:max-w-[500px] border border-gray-200 p-1 rounded-xl hover:shadow-[0_0_40px_0_rgba(0,0,0,0.2)] xl:hover:shadow-[0_20px_60px_0_rgba(0,0,0,0.3)] transition-all hover:duration-700 duration-300">
+		<div
+			ref={cardRef}
+			className={cn(
+				"flex items-start justify-between flex-col gap-y-4 w-full max-w-[350px] sm:max-w-[500px] lg:max-w-[500px] border border-gray-200 p-1 rounded-xl hover:shadow-[0_0_40px_0_rgba(0,0,0,0.2)] xl:hover:shadow-[0_20px_60px_0_rgba(0,0,0,0.3)] transition-all hover:duration-700 duration-300",
+				isInView
+					? "opacity-100 translate-y-0 delay-300 duration-1000"
+					: " opacity-0 translate-y-20"
+			)}
+		>
 			<div className="w-full overflow-hidden">
 				<Image
 					src={image}
