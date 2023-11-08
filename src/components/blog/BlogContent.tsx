@@ -8,7 +8,7 @@ const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
     <div className="w-full flex flex-col md:flex-row items-start justify-between mt-10 lg:mt-20 gap-x-6 gap-y-7">
       <div className=" md:flex flex-col gap-y-5 w-full md:w-[30%] md:sticky top-4">
         <h3 className="font-bold text-2xl ">Contents</h3>
-        <div className="flex flex-col gap-y-5 md:[&>*:nth-child(2)]:ml-4 md:[&>*:nth-child(3)]:ml-7 md:[&>*:nth-child(4)]:ml-10 md:[&>*:nth-child(5)]:ml-12 md:[&>*:nth-child(1)]:font-bold [&>*:nth-child(1)]:bg-[#F4F4F4] [&>*]:py-2 ">
+        <div className="flex flex-col gap-y-5 md:[&>*:nth-child(2)]:ml-4 md:[&>*:nth-child(3)]:ml-7 md:[&>*:nth-child(4)]:ml-10 md:[&>*:nth-child(5)]:ml-12 md:[&>*:nth-child(1)]:font-bold [&>*:nth-child(1)]:bg-[#F4F4F4] [&>*]:py-2 max-md:pb-10">
           <Link href="#rise-of-ai">The Rise of AI and Chatbots</Link>
           <Link href="#voice-commerce">
             Voice Commerce and Smart Assistants
@@ -24,7 +24,7 @@ const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col gap-y-4 md:gap-y-8 items-start w-full md:w-[70%]">
+      <div className="flex flex-col gap-y-4 md:gap-y-8 items-start w-full md:w-[70%] max-md:[&>*]:pb-12">
         <div className="flex flex-col gap-y-5">
           <h1 className="text-xl sm:text-2xl lg:text-3xl">{title}</h1>
           <p>
