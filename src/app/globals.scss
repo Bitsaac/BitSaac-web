@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +9,10 @@
   scroll-behavior: smooth;
   list-style: none;
   -webkit-tap-highlight-color: transparent;
-  font-family: "Inter", sans-serif;
+}
+:root {
+  --font-roboto: "Roboto Condensed", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 $primary: #4d61f4;

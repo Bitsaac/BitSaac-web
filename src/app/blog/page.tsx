@@ -2,6 +2,7 @@
 
 import BlogCard from "@/components/blog/BlogCard"
 import BlogNav from "@/components/blog/BlogNav"
+import LoadingSpinner from "@/components/loaders/LoadingSpinner"
 import { BLOG_CARDS } from "@/constants"
 import { useBlogCtx } from "@/context/BlogContext"
 import React from "react"
@@ -24,7 +25,7 @@ const BlogPage = () => {
           <p>Stay informed with our curated resources.</p>
         </div>
         <BlogNav />
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-8 lg:gap-12 w-full slideUp">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-8 lg:gap-12 w-full animate-slideUp translate-y-36 opacity-0">
           {filteredBlogs.map((card) => (
             <BlogCard
               key={card.id}
@@ -32,12 +33,18 @@ const BlogPage = () => {
             />
           ))}
         </div>
-        <div className=" h-full w-full text-center sm:text-2xl">
-          <p>
-            <b className="uppercase text-primary">{activeTab}</b> blogs Coming
-            Soon!
-          </p>
-        </div>
+        {filteredBlogs.length === 0 && (
+          <div className=" h-full w-full text-center sm:text-2xl">
+            {activeTab === "all" ? (
+              <LoadingSpinner />
+            ) : (
+              <p>
+                <b className="uppercase text-primary">{activeTab}</b> blogs
+                Coming Soon!
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </section>
   )
