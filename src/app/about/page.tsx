@@ -38,7 +38,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="">
+      <div className="xl:relative">
         {/* ABOUT SECTION */}
         <div className="py-[4rem] px-[1.25rem] font-Inter sm:px-[64px] ">
           <h3 className="font-Inter text-[1rem] lg:text-[1.5rem] font-semibold mb-[1rem] text-center">
