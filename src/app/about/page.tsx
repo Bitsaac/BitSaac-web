@@ -3,7 +3,30 @@ import Button from "@/components/button/Button"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import { AllImages, Experience, Innovation } from "./aboutItems"
+import { AllImages, Experience, Innovation, Team } from "./aboutItems"
+import { AiFillLinkedin } from "react-icons/ai"
+import { RiTwitterXFill } from "react-icons/ri"
+import { BiBasketball } from "react-icons/bi"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}
 
 const About = () => {
   return (
@@ -38,9 +61,9 @@ const About = () => {
         </div>
       </div>
 
-      <div className="xl:relative">
+      <div className="lg:relative">
         {/* ABOUT SECTION */}
-        <div className="py-[4rem] px-[1.25rem] font-Inter sm:px-[64px] ">
+        <div className="py-[4rem] lg:py-[7rem] lg:pb-[10rem] px-[1.25rem] font-Inter sm:px-[64px] ">
           <h3 className="font-Inter text-[1rem] lg:text-[1.5rem] font-semibold mb-[1rem] text-center">
             About Us
           </h3>
@@ -78,34 +101,43 @@ const About = () => {
             </div>
           </div>
         </div>
-        <Button className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px]">
+        <Button className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px] lg:absolute lg:top-[20%] xl:top-[15%]">
           Talk to us
         </Button>
 
         {/* PROCESS SECTION */}
-        <div className="py-[4rem] xl:py-[7rem] font-Inter px-[1.25rem] bg-secondary text-white sm:px-[64px] md:flex md:justify-center md:gap-[1rem] ">
-          {Innovation().map((item) => (
-            <div
-              key={item.id}
-              className="mt-[3rem]"
-            >
-              <h3 className="mb-[1rem] text-[1.25rem] md:text-[.8rem] lg:text-[1.25rem] font-semibold">
-                {item.title}
-              </h3>
-              <p className="text-[.97rem] md:text-[.7rem] lg:text-[1rem] font-normal mb-[1.5rem]">
-                {item.desc}
-              </p>
-              <Link
-                href={`/`}
-                className="text-[1rem] md:text-[.8rem] lg:text-[1.2rem] font-medium text-[#FFC80B]"
+        <div className="py-[4rem] lg:py-[7rem] font-Inter px-[1.25rem] bg-[url('/mobileBackImage.png')] md:bg-[url('/backImage.png')] bg-cover bg-center text-white sm:px-[64px]">
+          <h2 className="text-center text-[2rem] lg:text-[3rem] md:text-start text-white font-bold tracking-wide capitalize">
+            how we work
+          </h2>
+          <div className="md:flex md:justify-center md:gap-[1rem]">
+            {Innovation().map((item) => (
+              <div
+                key={item.id}
+                className={`mt-[3rem] lg:mt-[5rem]`}
               >
-                Talk To Us{" "}
-                <span className="material-symbols-outlined">
-                  arrow_forward_ios
-                </span>
-              </Link>
-            </div>
-          ))}
+                <div className="flex items-start mb-4">
+                  <Image
+                    src={item.img}
+                    width={50}
+                    height={50}
+                    alt={item.title}
+                  />
+                  <div className="flex flex-col self-end pt-4 ml-[-10px]">
+                    <span className="mb-0 text-[1rem] md:text-[.8rem] lg:text-[1.2rem] lg:font-medium leading-4 font-semibold">
+                      {item.span}
+                    </span>
+                    <h3 className="mt-0 leading-none text-[2rem] md:text-[1.3rem] lg:text-[1.5rem] font-semibold">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-[1rem] md:text-[.7rem] lg:text-[1rem] font-normal mb-[1.5rem]">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* EXPERIENCE SECTION */}
@@ -169,14 +201,74 @@ const About = () => {
             </div>
           </div>
           <Image
-            src="/rectangle.png' alt='BitCommerce' width={200} height={200} className='w-full md:w-[50%] hidden xl:block'/>
-                <Image src='/rectangle.png"
+            src="/Rectangle.png"
             alt="BitCommerce"
             width={200}
             height={200}
             className="w-full md:w-[50%] xl:hidden"
           />
+          <Image
+            src="/rectangle.png"
+            alt="BitCommerce"
+            width={200}
+            height={200}
+            className="w-full md:w-[50%] hidden xl:block"
+          />
         </div>
+      </div>
+
+      {/* THE TEAM */}
+
+      <div className="py-[4rem] xl:py-[7rem] font-Inter px-[1.25rem] sm:px-[64px]">
+        <h4 className="text-[1rem] font-bold mb-[1rem] leading-tight">
+          Innovators
+        </h4>
+        <h2 className="text-[2rem] font-bold mb-[1.5rem] text-[#2A2738]">
+          Meet Our Team
+        </h2>
+        <p className="text-[1rem] font-normal leading-tight">
+          Get to know the talented individuals behind BitSaac
+        </p>
+        <div className="flex gap-[1rem] overflow-x-auto py-4 scrollbar-w-1">
+          {Team().map((item) => (
+            <div
+              key={item.id}
+              className="p-[1rem] min-w-[17.5rem] shadow-md"
+            >
+              <Image
+                src={item.img}
+                alt={item.name}
+                width={80}
+                height={80}
+                className="rounded-[50%] mb-[1.5rem]"
+              />
+              <div className="">
+                <h3 className="text-[1.25rem] font-semibold">{item.name}</h3>
+                <span className="text-[1rem] font-normal text-textGrey leading-tight mb-[1rem]">
+                  {item.position}
+                </span>
+                <p className="text-[1rem] font-normal leading-tight">
+                  {item.desc}
+                </p>
+                <div className="mt-[1.5rem] flex gap-[1rem] items-center">
+                  <Link href={item.linkedin}>
+                    <AiFillLinkedin />
+                  </Link>
+                  <Link href={item.twitter}>
+                    <RiTwitterXFill />
+                  </Link>
+                  <Link href={item.peace}>
+                    <BiBasketball />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <Button>View All</Button>
+        <div></div>
       </div>
     </div>
   )
