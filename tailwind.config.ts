@@ -48,13 +48,17 @@ const config: Config = {
         primary: "#4D61F4",
         secondary: "#03236C",
         "btn-secondary": "#4D61F4",
+        textGrey: "#777",
       },
       backgroundImage: {
         banner: "/banner.png",
+        mobileBackground: "/mobileBackImage.png",
+        aboutBackground: "/backImage.png",
       },
       fontFamily: {
         Roboto: ["var(--font-roboto)"],
         Inter: ["var(--font-inter)"],
+        Raleway: ["var(--font-raleway)"],
       },
     },
   },
