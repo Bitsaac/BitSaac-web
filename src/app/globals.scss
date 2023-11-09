@@ -88,6 +88,22 @@ button {
   background-size: cover;
 }
 
+.my_container {
+  width: 91%;
+  margin: 0 auto;
+}
+@media(min-width:780px){
+  .my_container {
+    width: 92%;
+    margin: 0 auto;
+  }
+}
+
+.full__bleed {
+  box-shadow: 0 0 0 100vmax #e9ebf8;
+  clip-path: inset(0-100vmax);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 6px;
