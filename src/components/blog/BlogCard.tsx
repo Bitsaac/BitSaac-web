@@ -40,7 +40,7 @@ const BlogCard = ({
     >
       <div
         className={cn(
-          "w-full overflow-hidden  max-h-[150px] lg:max-h-[300px] 2xl:h-full",
+          "w-full overflow-hidden  max-h-[150px] lg:max-h-[300px] 2xl:h-full p-4",
           isFeatured ? "" : "md:max-h-[200px]",
         )}
       >
@@ -52,21 +52,21 @@ const BlogCard = ({
           className="hover:scale-125 transition-all hover:duration-1000 duration-300 rounded-xl"
         />
       </div>
-      <div className="flex flex-col gap-y-2 lg:gap-y-4 px-2">
+      <div className="flex flex-col gap-y-2 lg:gap-y-4 px-2 items-start">
         <p className="flex items-center  gap-x-5 text-gray-950 font-semibold w-full">
           <span className="bg-[#F4F4F4] px-2 py-1 capitalize">{label}</span>
           <span>{time}</span>
         </p>
         <h3
           className={cn(
-            " font-Inter font-semibold",
-            title.length > 20 ? "text-[18px]  lg:text-4xl " : " lg:text-5xl",
-            isFeatured ? "" : "md:text-2xl text-3xl",
+            " font-Inter font-semibold ",
+            title.length > 20 ? "text-[18px]  lg:text-2xl " : " lg:text-5xl",
+            isFeatured ? "" : "md:text-2xl ",
           )}
         >
           {title}
         </h3>
-        <p className="text-gray-700 text-sm lg:text-lg font-Inter">
+        <p className="text-gray-700 text-sm sm:text-[16px] lg:text-lg font-Inter">
           {desc.length > 100 ? `${desc.slice(0, 100)}...` : desc}
         </p>
       </div>
@@ -74,7 +74,7 @@ const BlogCard = ({
         href={`/blog/${id}`}
         className="text-[#4D61F4] font-medium text-lg 2xl:text-2xl lg:my-4 font-Roboto flex items-center gap-x-2 pl-2 pb-1"
       >
-        <span>Read more</span> <PiCubeFill />
+        <span>Read more</span>
       </Link>
     </div>
   );

@@ -17,6 +17,7 @@ const BlogPage = () => {
       return blog.tag === activeTab
     }
   })
+  console.log(filteredBlogs)
   return (
     <section className="flex w-full max-w-[1440px] mx-auto    justify-center items-start px-4 lg:px-6  xl:px-8 2xl:px-12 pb-12 lg:pb-16 relative">
       <div className="w-full flex flex-1 flex-col items-center gap-4 sm:gap-y-7 2xl:gap-y-10 ">
@@ -32,7 +33,7 @@ const BlogPage = () => {
 
         <div
           className={cn(
-            " grid grid-cols-1 sm:grid-cols-2  gap-4 sm:gap-8 lg:gap-12 w-full max-sm:place-items-center slideUp ",
+            " grid grid-cols-1 sm:grid-cols-2  gap-4 sm:gap-8 w-full max-sm:place-items-center slideUp ",
             filteredBlogs.length > 2 ? "md:grid-cols-3" : "md:grid-cols-2"
           )}
         >
