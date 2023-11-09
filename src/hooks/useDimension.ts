@@ -15,7 +15,7 @@ const useWindowHeight = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(scrollY);
+  // console.log(scrollY);
 
   return scrollY;
 };
