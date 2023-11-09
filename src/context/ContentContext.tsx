@@ -8,6 +8,8 @@ type BlogCtxProps = ActionTypes;
 
 interface BlogContextProps {
   activeTab: BlogCtxProps;
+  portfolioTab: BlogCtxProps;
+  setPortfolioTab: React.Dispatch<ActionTypes>;
   setActiveTab: React.Dispatch<ActionTypes>;
 }
 
@@ -15,32 +17,46 @@ export const BlogContext = createContext<BlogContextProps>(
   {} as BlogContextProps,
 );
 
-const BlogCtxProvider = ({ children }: { children: React.ReactNode }) => {
+const ContentCtxProvider = ({ children }: { children: React.ReactNode }) => {
   const [activeTab, setActiveTab] = useState<ActionTypes>("" as ActionTypes);
+
+  const [portfolioTab, setPortfolioTab] = useState<ActionTypes>(
+    "" as ActionTypes,
+  );
   const router = useRouter();
 
   useEffect(() => {
     if ("activeTab" in localStorage) {
       setActiveTab(localStorage.getItem("activeTab") as ActionTypes);
     }
+
+    if ("portfolioTab" in localStorage) {
+      setActiveTab(localStorage.getItem("activeTab") as ActionTypes);
+    }
   }, []);
 
   useEffect(() => {
     if (!activeTab) return;
+    if (!portfolioTab) return;
     localStorage.setItem("activeTab", activeTab);
-  }, [activeTab]);
+    localStorage.setItem("portfolioTab", activeTab);
+  }, [activeTab, portfolioTab]);
 
-  const value = useMemo(() => ({ activeTab, setActiveTab }), [activeTab]);
+  const value = useMemo(
+    () => ({ activeTab, setActiveTab, portfolioTab, setPortfolioTab }),
+    [activeTab, portfolioTab],
+  );
 
   return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
 };
 
-export const useBlogCtx = () => {
+export const useContentCtx = () => {
   const ctx = React.useContext(BlogContext);
 
-  if (!ctx) throw new Error("useBlogCtx must be used within a BlogCtxProvider");
+  if (!ctx)
+    throw new Error("useContentCtx must be used within a ContentCtxProvider");
 
   return ctx;
 };
 
-export default BlogCtxProvider;
+export default ContentCtxProvider;
