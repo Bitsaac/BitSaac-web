@@ -34,7 +34,7 @@ const PostPage = ({ params }: { params: { id: string } }) => {
           >
             {title}
           </h1>
-          <div className="flex flex-col gap-y-5">
+          <div className="flex md:flex-col md:gap-y-5 max-md:w-full max-md:justify-between gap-y-2 mt-5 md:mt-0">
             <div>
               <p>
                 By <b>Avi + Chat</b>
@@ -43,7 +43,7 @@ const PostPage = ({ params }: { params: { id: string } }) => {
                 Oct 10, 2023 • <span>{blog?.time}</span>
               </p>
             </div>
-            <div className="flex flex-col gap-y-5">
+            <div className="flex flex-col md:gap-y-5 gap-y-2">
               <strong>Share this post</strong>
               <div className="flex items-center gap-x-5">
                 <BiLinkAlt />
@@ -54,7 +54,7 @@ const PostPage = ({ params }: { params: { id: string } }) => {
             </div>
           </div>
         </div>
-        <div className="flex w-1/2">
+        <div className="flex md:w-1/2 justify-center mt-10 md:mt-0">
           <Image
             src={blog?.image ?? ""}
             alt="blog image"
@@ -70,7 +70,7 @@ const PostPage = ({ params }: { params: { id: string } }) => {
       />
       <FeaturedBlogs
         id={blog?.id}
-        tag={blog?.tag}
+        tag={tag}
       />
 
       <GotoTop />

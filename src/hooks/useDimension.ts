@@ -2,12 +2,10 @@
 import { useState, useEffect } from "react";
 const useWindowHeight = () => {
   const [scrollY, setScrollY] = useState(0);
-
+  console.log(scrollY);
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window !== "undefined") {
-        setScrollY(window.scrollY);
-      }
+      setScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);

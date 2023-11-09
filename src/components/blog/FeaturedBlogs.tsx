@@ -13,12 +13,12 @@ const FeaturedBlogs = ({ id, tag }: { id?: number; tag?: string }) => {
       <div className="flex flex-col gap-y-5">
         <p className="font-bold">Latest</p>
         <div className="flex w-full justify-between">
-          <h3 className="font-bold text-2xl sm:text-3xl lg:text-4xl ">
+          <h3 className="font-bold text-xl min-[410px]:text-2xl sm:text-3xl lg:text-4xl ">
             Featured Resources List
           </h3>
           <Link
             href="/blog"
-            className="text-primary font-bold border border-primary px-2 py-1 rounded sm:hidden block"
+            className="max-[500px]:text-[12px] text-sm  text-primary font-bold border border-primary p-1 rounded sm:hidden block"
           >
             View All
           </Link>
@@ -36,12 +36,12 @@ const FeaturedBlogs = ({ id, tag }: { id?: number; tag?: string }) => {
       </div>
       <div
         className={cn(
-          "pt-10 grid grid-cols-1 sm:grid-cols-2  gap-4 sm:gap-8 lg:gap-12 w-full max-sm:place-items-center slideUp ",
+          "pt-10 grid grid-cols-1 sm:grid-cols-2  gap-4  lg:gap-12 w-full max-sm:place-items-center slideUp ",
           featuredBlogs.length > 2 ? "md:grid-cols-3" : "md:grid-cols-2",
         )}
       >
         {featuredBlogs.map((card) => (
-          <BlogCard icon key={card.id} {...card} />
+          <BlogCard isFeatured key={card.id} {...card} />
         ))}
       </div>
     </section>
