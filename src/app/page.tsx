@@ -8,7 +8,7 @@ import Banner from "./Home/banner/Banner"
 
 export default function Home() {
   return (
-    <div className="">
+    <main className="max-container">
       <Header />
       <Brand />
       <Carousel />
@@ -17,6 +17,6 @@ export default function Home() {
       <div className="">
         <Banner />
       </div>
-    </div>
+    </main>
   )
 }

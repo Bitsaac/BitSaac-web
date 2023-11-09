@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "npm run check-lint --fix && npx prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/react-slick": "^0.23.11",
@@ -28,7 +33,9 @@
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
+    "husky": "^8.0.3",
     "postcss": "^8",
+    "prettier": "3.0.3",
     "tailwindcss": "^3",
     "typescript": "^5"
   }
