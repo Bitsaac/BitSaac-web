@@ -33,43 +33,48 @@ const About = () => {
     // @gafaradetunji there's max width container class in global.css
     <div className="max-container">
       {/* ABOUT HERO SECTION */}
-      <div className="font-Roboto text-white px-[1.25rem] py-[4rem] xl:py-[7rem] bg-[rgba(0,0,0,.5)] sm:px-[64px] ">
-        <div className="md:w-[70%]">
-          <h2 className="text-[1rem] font-medium mb-[.75rem]">Innovative</h2>
-          <p className="text-[2.5rem] font-semibold mb-[1.25rem]">
-            Bringing Ideas to Life
-          </p>
-          <p className="font-Inter text-[1rem] font-normal mb-[.5rem] md:w-[85%] ">
-            BitSaac is an innovative tech agency and community of tech
-            creatives, dedicated to bringing ideas to life through product
-            design and development.
-          </p>
-          <div className="py-[1rem] sm:flex sm:gap-[1rem] sm:items-center">
-            <input
-              type="text"
-              className="p-[.75rem] bg-white sm:w-64 rounded-md sm:h-[40px] w-full placeholder:text-[#505050]"
-              placeholder="Enter Email here..."
-            />
-            <Button className="bg-primary rounded-md w-full sm:w-32 my-[1rem] ">
-              Get Started
-            </Button>
+      <div className="relative h-[600px]">
+        <video src={'/backvideo.mp4'} 
+          autoPlay 
+          loop 
+          muted 
+          className="inset-0 z-0 w-full h-full object-cover"
+        />
+        <div className="font-Roboto z-10 absolute inset-0 text-white py-[4rem] xl:py-[7rem] px-[1.25rem] sm:px-[64px] bg-[rgba(0,0,0,0.5)]">
+          <div className="md:w-[70%]">
+            <h2 className="text-[1rem] font-medium mb-[.75rem]">Innovative</h2>
+            <p className="text-[2.5rem] font-semibold mb-[1.25rem]">
+              Bringing Ideas to Life
+            </p>
+            <p className="font-Inter text-[1rem] font-normal mb-[.5rem] md:w-[85%] ">
+              BitSaac is an innovative tech agency and community of tech
+              creatives, dedicated to bringing ideas to life through product
+              design and development.
+            </p>
+            <div className="py-[1rem] sm:flex sm:gap-[1rem] sm:items-center">
+              <input
+                type="text"
+                className="p-[.75rem] bg-white sm:w-64 rounded-md sm:h-[40px] w-full placeholder:text-[#505050]"
+                placeholder="Enter Email here..."
+              />
+              <Button className="bg-primary rounded-md w-full sm:w-32 my-[1rem] ">
+                Get Started
+              </Button>
+            </div>
+            <span className="text-[.95rem] lg:text-[1.2rem] font-normal md:w-[85%]">
+              By clicking the button, you're confirming that you agree with our
+              <span className="font-semibold"> Terms and Conditions.</span>
+            </span>
           </div>
-          <span className="text-[.95rem] lg:text-[1.2rem] font-normal md:w-[85%]">
-            By clicking the button, you're confirming that you agree with our
-            <span className="font-semibold"> Terms and Conditions.</span>
-          </span>
         </div>
       </div>
 
       <div className="lg:relative">
         {/* ABOUT SECTION */}
         <div className="py-[4rem] lg:py-[7rem] lg:pb-[10rem] px-[1.25rem] font-Inter sm:px-[64px] ">
-          <h3 className="font-Inter text-[1rem] lg:text-[1.5rem] font-semibold mb-[1rem] text-center">
-            About Us
-          </h3>
           <div className="lg:flex lg:gap-[3rem]">
             <div className="md:w-[70%] lg:w-[50%]">
-              <p className="text-[1.75rem] lg:text-[2rem] font-Roboto font-bold leading-tight mb-[1.5rem]">
+              <p className="text-[1.75rem] lg:text-[2rem] xl:text-[3rem] leading-tight font-Raleway font-bold leading-tight mb-[1.5rem]">
                 Innovative Tech Agency Delivering Exceptional Results for
                 Clients
               </p>
@@ -80,7 +85,7 @@ const About = () => {
                 businesses achieve their goals.
               </p>
             </div>
-            <div className="py-[2rem] flex items-center justify-between gap-[1rem] overflow-x-auto lg:flex-wrap lg:w-[50%]">
+            <div className="py-[2rem] flex items-center justify-between gap-[1rem] overflow-x-auto lg:flex-wrap lg:w-[50%] xl:w-[40%]">
               <Image
                 src="/Vector.svg"
                 alt=""
@@ -101,7 +106,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <Button className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px] lg:absolute lg:top-[20%] xl:top-[15%]">
+        <Button className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px] lg:absolute lg:top-[22%] xl:top-[15%]">
           Talk to us
         </Button>
 
@@ -143,7 +148,7 @@ const About = () => {
         {/* EXPERIENCE SECTION */}
         <div className="py-[4rem] xl:py-[7rem] font-Inter px-[1.25rem] sm:px-[64px] md:flex md:justify-between md:gap-[1rem] xl:gap-[5rem]">
           <Image
-            src="/people.png"
+            src="/teamphoto.png"
             alt="The team"
             width={200}
             height={200}
@@ -208,7 +213,7 @@ const About = () => {
             className="w-full md:w-[50%] xl:hidden"
           />
           <Image
-            src="/rectangle.png"
+            src="/Rectangle2x.png"
             alt="BitCommerce"
             width={200}
             height={200}
