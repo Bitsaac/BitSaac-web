@@ -34,10 +34,11 @@ const About = () => {
     <div className="max-container">
       {/* ABOUT HERO SECTION */}
       <div className="relative h-[600px]">
-        <video src={'/backvideo.mp4'} 
-          autoPlay 
-          loop 
-          muted 
+        <video
+          src={"/backvideo.mp4"}
+          autoPlay
+          loop
+          muted
           className="inset-0 z-0 w-full h-full object-cover"
         />
         <div className="font-Roboto z-10 absolute inset-0 text-white py-[4rem] xl:py-[7rem] px-[1.25rem] sm:px-[64px] bg-[rgba(0,0,0,0.5)]">
@@ -148,7 +149,7 @@ const About = () => {
         {/* EXPERIENCE SECTION */}
         <div className="py-[4rem] xl:py-[7rem] font-Inter px-[1.25rem] sm:px-[64px] md:flex md:justify-between md:gap-[1rem] xl:gap-[5rem]">
           <Image
-            src="/teamphoto.png"
+            src="/group.png"
             alt="The team"
             width={200}
             height={200}
@@ -213,7 +214,7 @@ const About = () => {
             className="w-full md:w-[50%] xl:hidden"
           />
           <Image
-            src="/Rectangle2x.png"
+            src="/Rectangle3x.png"
             alt="BitCommerce"
             width={200}
             height={200}
