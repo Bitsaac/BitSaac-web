@@ -40,7 +40,7 @@ const PortfolioContent = () => {
           </div>
           <div className="flex flex-col w-1/2 gap-y-6">
             <p>
-              Once they fully launch, you can join Ridgle’s by downloading their
+              Once they fully launch, you can join Ridgles by downloading their
               app or view their live project with the button below
             </p>
             <Link href="#" className="flex gap-x-3 items-center">

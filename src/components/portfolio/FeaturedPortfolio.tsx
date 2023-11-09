@@ -40,9 +40,9 @@ const FeaturedPortfolio = ({ id, tag }: { id?: number; tag?: string }) => {
           featuredBlogs.length > 2 ? "md:grid-cols-3" : "md:grid-cols-2",
         )}
       >
-        {featuredBlogs.map((card) => (
-          <BlogCard isFeatured key={card.id} {...card} />
-        ))}
+        {/* {featuredBlogs.map((card) => (
+          <BlogCard  key={card.id} {...card} />
+        ))} */}
       </div>
     </section>
   );
