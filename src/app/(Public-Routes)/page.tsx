@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Header from "@/app/(Public-Routes)/Home/Header"
 import { Carousel } from "./Home/Carousel"
 import Brand from "./Home/Brand"
