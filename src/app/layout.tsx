@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
 import { Inter, Roboto_Condensed } from "next/font/google"
 import "./globals.scss"
-import Navbar from "@/components/navbar/Navbar"
+// import Navbar from "@/components/navbar/Navbar"
+import Navbar from "@/components/Navbar copy/Navbar"
 import Footer from "@/components/footer/Footer"
 import GotoTop from "@/components/GotoTop"
+import { NavContextProvider } from "@/context/NavContext"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,10 +34,13 @@ export default function RootLayout({
       className={`${inter.variable} ${roboto.variable}`}
     >
       <body>
-        <Navbar />
-        {children}
-        <Footer />
-        <GotoTop />
+        <NavContextProvider>
+          <Navbar />
+
+          {children}
+          <Footer />
+          <GotoTop />
+        </NavContextProvider>
       </body>
     </html>
   )
