@@ -1,48 +1,53 @@
-import { BLOG_CARDS } from "@/constants";
-import React from "react";
-import BlogCard from "./PortfolioCard";
+"use client";
+
+import React, { useRef } from "react";
+
 import Link from "next/link";
 import cn from "@/utils/tailwind";
+import { PORTFOLIO_CARDS } from "@/constants";
+import PortfolioCard from "./PortfolioCard";
+import PortfolioThumbnail from "./PortfolioThumbnail";
+import useInView from "@/hooks/useInView";
 
 const FeaturedPortfolio = ({ id, tag }: { id?: number; tag?: string }) => {
-  const featuredBlogs = BLOG_CARDS.filter((blog) => {
-    return blog.tag === tag && blog.id !== id;
+  const portRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(portRef);
+
+  const featuredPortfolios = PORTFOLIO_CARDS.filter((portfolio) => {
+    return portfolio.id !== id;
   });
   return (
-    <section className="mt-10 md:mt-40 flex w-full flex-1 flex-col gap-y-5">
-      <div className="flex flex-col gap-y-5">
-        <p className="font-bold">Latest</p>
-        <div className="flex w-full justify-between">
-          <h3 className="font-bold text-xl min-[410px]:text-2xl sm:text-3xl lg:text-4xl ">
-            Featured Resources List
-          </h3>
-          <Link
-            href="/blog"
-            className="max-[500px]:text-[12px] text-sm  text-primary font-bold border border-primary p-1 rounded sm:hidden block"
-          >
-            View All
-          </Link>
-        </div>
-
-        <div className="flex w-full justify-between">
-          <p>Explore our curated collection of valuable resources.</p>
-          <Link
-            href="/blog"
-            className="text-primary font-bold border border-primary px-2 py-1 rounded hidden sm:block"
-          >
-            View All
-          </Link>
-        </div>
+    <section
+      ref={portRef}
+      className={cn(
+        "mt-10 md:mt-40 flex w-full flex-1 flex-col gap-y-5 hide-scrollbar",
+        isInView
+          ? "opacity-100 translate-y-0 delay-300 duration-1000"
+          : " opacity-0 translate-y-20",
+      )}
+    >
+      <div className="flex w-full justify-between items-center">
+        <h3 className="font-bold text-xl min-[410px]:text-2xl sm:text-3xl lg:text-4xl ">
+          See Other Projects
+        </h3>
+        <Link
+          href="/portfolios"
+          className="max-[500px]:text-[12px] text-sm  text-primary font-bold border border-primary p-1 rounded "
+        >
+          View All
+        </Link>
       </div>
-      <div
-        className={cn(
-          "pt-10 grid grid-cols-1 sm:grid-cols-2  gap-4  lg:gap-12 w-full max-sm:place-items-center slideUp ",
-          featuredBlogs.length > 2 ? "md:grid-cols-3" : "md:grid-cols-2",
-        )}
-      >
-        {/* {featuredBlogs.map((card) => (
-          <BlogCard  key={card.id} {...card} />
-        ))} */}
+
+      <div className={cn("pt-10 flex overflow-x-auto")}>
+        <div
+          className={cn(
+            "flex flex-nowrap w-full gap-x-8 pb-8 lg:pb-16 slideUp",
+          )}
+        >
+          {featuredPortfolios.slice(0, 3).map((card) => (
+            <PortfolioThumbnail key={card.id} {...card} />
+          ))}
+        </div>
       </div>
     </section>
   );
