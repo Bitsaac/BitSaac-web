@@ -21,8 +21,8 @@ const PortfolioContentCard = ({
           ))}
         </div>
       </div>
-      <div className="w-full mt-10 md:mt-20">
-        <Image src={image} width={1000} height={500} alt="illustration" />
+      <div className="w-full my-10 md:my-20">
+        <Image src={image} width={1400} height={500} alt="illustration" />
       </div>
     </div>
   );

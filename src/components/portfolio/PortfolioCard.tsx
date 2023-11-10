@@ -21,13 +21,12 @@ const PortfolioCard = ({
   const isInView = useInView(cardRef);
 
   const actualTitle = title + "Not affiliated";
-  console.log(actualTitle.length);
 
   return (
     <div
       ref={cardRef}
       className={cn(
-        "flex items-start justify-between flex-col gap-y-4 w-full max-w-[350px] sm:max-w-[500px] min-[1160px]:max-w-[700px] border border-gray-200  rounded-xl hover:shadow-[0_0_40px_0_rgba(0,0,0,0.2)] xl:hover:shadow-[0_20px_60px_0_rgba(0,0,0,0.3)] transition-all hover:duration-700 duration-300",
+        "flex items-start justify-between flex-col gap-y-4 w-full max-w-[350px] sm:max-w-[500px] min-[1160px]:max-w-[700px] xl:max-w-[900px] border border-gray-200  rounded-xl hover:shadow-[0_0_40px_0_rgba(0,0,0,0.2)] xl:hover:shadow-[0_20px_60px_0_rgba(0,0,0,0.3)] transition-all hover:duration-700 duration-300",
         isInView
           ? "opacity-100 translate-y-0 delay-300 duration-1000"
           : " opacity-0 translate-y-20",
@@ -40,14 +39,14 @@ const PortfolioCard = ({
       >
         <Image
           src={image}
-          width={700}
+          width={900}
           height={400}
           alt="portfolio image"
           className="lg:h-[400px] h-[300px] hover:scale-125 transition-all hover:duration-1000 duration-300 rounded-xl object-cover"
         />
       </div>
       <div className="w-full p1 max-md:gap-y-2 flex flex-col justify-between max-md:h-full  ">
-        <div className="flex flex-col gap-y-2 lg:gap-y-4 px-2 items-start md:h-[200px] min-[855px]:h-[170px] min-[961px]:h-full min-[961px]:pb-2 ">
+        <div className="flex flex-col gap-y-2 lg:gap-y-4 px-2 items-start md:h-[200px] min-[855px]:h-[170px] min-[961px]:h-full 2xl:h-[160px] min-[961px]:pb-2 ">
           <h3
             className={cn(
               " font-Inter font-semibold ",
@@ -73,7 +72,7 @@ const PortfolioCard = ({
             {label.map((tag) => (
               <span
                 key={tag}
-                className="bg-[#F4F4F4] p-[2px] text-gray-700 font-bold text-sm 2xl:text-xl lg:my-4 font-Roboto"
+                className="bg-[#F4F4F4] p-[2px] text-gray-700 font-bold text-sm  lg:my-4 font-Roboto"
               >
                 {tag}
               </span>
@@ -82,7 +81,7 @@ const PortfolioCard = ({
         </div>
         <Link
           href={`/portfolios/${id}`}
-          className="text-[#4D61F4] font-medium text-lg 2xl:text-2xl  font-Roboto flex items-center gap-x-2 pl-2 pb-3"
+          className="text-[#4D61F4] font-medium text-lg   font-Roboto flex items-center gap-x-2 pl-2 pb-3"
         >
           <span>View project</span> <BsArrowRight />
         </Link>

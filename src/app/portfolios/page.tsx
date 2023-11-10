@@ -22,11 +22,13 @@ const PorfolioPage = () => {
     <section className="flex w-full max-w-[1440px] mx-auto    justify-center items-start px-4 lg:px-6  xl:px-8 2xl:px-12 pb-12 lg:pb-16 relative">
       <div className="w-full flex flex-1 flex-col items-center gap-4 sm:gap-y-7 2xl:gap-y-10 ">
         <div className="flex flex-col justify-center items-center px-2 gap-y-4  2xl:gap-y-8">
-          <h3 className="font-medium text-xl">Portfolio</h3>
+          <h3 className="font-medium text-xl lg:text-2xl">Portfolio</h3>
           <h1 className="max-[380px]:text-xl text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
             Discover the Latest Insights
           </h1>
-          <p>Stay informed with our curated resources.</p>
+          <p className="lg:text-xl">
+            Stay informed with our curated resources.
+          </p>
         </div>
 
         <PortfolioNav />
