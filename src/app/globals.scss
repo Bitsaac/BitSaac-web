@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +9,10 @@
   scroll-behavior: smooth;
   list-style: none;
   -webkit-tap-highlight-color: transparent;
-  font-family: "Inter", sans-serif;
+}
+:root {
+  --font-roboto: "Roboto Condensed", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 $primary: #4d61f4;
@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-  font-family: Roboto;
+  font-family: var(--font-roboto);
 
   font-style: normal;
   font-weight: 600;
@@ -57,7 +57,7 @@ h2 {
 }
 
 button {
-  font-family: Inter;
+  font-family: var(--font-roboto);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -68,7 +68,7 @@ button {
   border-radius: 8px;
   border: 1px solid $primary;
   color: $primary;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -86,6 +86,22 @@ button {
   height: 50px;
   background-image: url("/src/assets/banner.png");
   background-size: cover;
+}
+
+.my_container {
+  width: 91%;
+  margin: 0 auto;
+}
+@media (min-width: 780px) {
+  .my_container {
+    width: 92%;
+    margin: 0 auto;
+  }
+}
+
+.full__bleed {
+  box-shadow: 0 0 0 100vmax #e9ebf8;
+  clip-path: inset(0-100vmax);
 }
 
 ::-webkit-scrollbar {

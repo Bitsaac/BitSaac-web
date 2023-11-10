@@ -1,10 +1,20 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Roboto_Condensed } from "next/font/google"
 import "./globals.scss"
 import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
+import GotoTop from "@/components/GotoTop"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
+const roboto = Roboto_Condensed({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+})
 
 export const metadata: Metadata = {
   title: "BITSAAC",
@@ -17,11 +27,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${roboto.variable}`}
+    >
+      <body>
         <Navbar />
         {children}
         <Footer />
+        <GotoTop />
       </body>
     </html>
   )

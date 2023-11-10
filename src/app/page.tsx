@@ -9,7 +9,7 @@ import Services from "./Home/Services"
 
 export default function Home() {
   return (
-    <div className="">
+    <main className="max-container">
       <Header />
       <Carousel />
       <Brand />
@@ -19,6 +19,6 @@ export default function Home() {
       <div className="">
         <Banner />
       </div>
-    </div>
+    </main>
   )
 }
