@@ -6,7 +6,7 @@ import cn from "@/utils/tailwind";
 import { useRouter } from "next/navigation";
 import { useContentCtx } from "@/context/ContentContext";
 
-const BlogNav = () => {
+const PortfolioNav = () => {
   const { activeTab, setActiveTab } = useContentCtx();
   const router = useRouter();
   const activeTabRef = useRef<HTMLButtonElement | null>(null);
@@ -16,7 +16,7 @@ const BlogNav = () => {
   }, [setActiveTab]);
 
   useEffect(() => {
-    router.push(`/blog?action=${activeTab}`);
+    router.push(`/portfolios?action=${activeTab}`);
 
     // Scroll to the active tab if it's not in view
   }, [activeTab, router]);
@@ -45,4 +45,4 @@ const BlogNav = () => {
   );
 };
 
-export default BlogNav;
+export default PortfolioNav;

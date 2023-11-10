@@ -53,7 +53,7 @@ export function Carousel() {
   }
 
   return (
-    <div className="w-full bg-[#03236C]  py-[20px] flex flex-col gap-[24px] sm:gap-[28px]">
+    <div className="w-full bg-[#2A2738]  py-[20px] flex flex-col gap-[24px] sm:gap-[28px]">
       <h3 className="w-full text-center text-white font-Roboto">
         Brands that Trust Us
       </h3>

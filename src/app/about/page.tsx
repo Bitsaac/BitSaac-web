@@ -81,7 +81,7 @@ const About = () => {
         <div className="py-[4rem] lg:py-[7rem] lg:pb-[10rem] px-[1.25rem] font-Inter sm:px-[64px] ">
           <div className="lg:flex lg:gap-[3rem]">
             <div className="md:w-[70%] lg:w-[50%]">
-              <p className="text-[1.75rem] lg:text-[2rem] xl:text-[3rem] leading-tight font-Raleway font-bold leading-tight mb-[1.5rem]">
+              <p className="text-[1.75rem] lg:text-[2rem] xl:text-[3rem] font-Raleway font-bold leading-tight mb-[1.5rem]">
                 Innovative Tech Agency Delivering Exceptional Results for
                 Clients
               </p>
