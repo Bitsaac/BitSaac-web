@@ -1,7 +1,6 @@
-/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image"
 import React from "react"
-import BrandImg from "@/assets/brand.png"
+import BrandImg from "../../../assets/brand.png"
 
 const Brand: React.FC = () => {
   return (
@@ -17,11 +16,10 @@ const Brand: React.FC = () => {
           <div className="xl:w-[294px] w-full">
             <p className="font-[600] text-[20px]">Our Agency</p>
             <p className="my-2 w-72">
-              {" "}
-              Enhance your website's visibility on search engines and attract
-              organic traffic with our proven SEO strategies. We optimize your
-              site's structure, content, and meta tags to improve rankings and
-              drive qualified leads to your business.
+              Enhance your website&apos;s visibility on search engines and
+              attract organic traffic with our proven SEO strategies. We
+              optimize your site&apos;s structure, content, and meta tags to
+              improve rankings and drive qualified leads to your business.
             </p>
             <button className="py-3 text-[#4D61F4] text-[18px] font-[500] max-[415px]:hidden">
               Learn More

@@ -1,0 +1,151 @@
+.nav {
+  box-shadow: hsla(240, 5%, 57%, 0.329) 0px 0px 0px 1px;
+  background-color: var(--clr-background);
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.9rem;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.toggle__btn {
+  display: none;
+}
+
+.nav__btns {
+  display: flex;
+  gap: 1rem;
+}
+
+#light .links {
+  display: none;
+}
+
+.nav__btns button {
+  font-size: 1.8rem;
+  background-color: transparent;
+  box-shadow: hsla(240, 5%, 57%, 0.329) 0px 0px 0px 1px;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  color: var(--clr-text);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex: 2;
+}
+
+.links li a {
+  color: var(--clr-text);
+  font-weight: 500;
+}
+
+.nav__icon {
+  display: none;
+}
+
+@media (min-width: 770px) {
+  .links__container {
+    /* background-color: green; */
+    width: 60%;
+    display: grid;
+    place-content: center;
+  }
+}
+
+@media (max-width: 769px) {
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .nav__icon {
+    font-size: 1.7rem;
+    display: inline-block;
+  }
+
+  .nav__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+  }
+
+  .full__bleed {
+    box-shadow: 0 0 0 100vmax white;
+    clip-path: inset(0-100vmax);
+  }
+
+  .links__container {
+    align-self: start;
+    position: fixed;
+    top: 0;
+    left: 3%;
+    padding-bottom: 3rem;
+    right: 3%;
+    transform: translateY(-100%);
+    transition: all 350ms ease-in;
+    background-color: white;
+    z-index: 10;
+    border-bottom: 1px solid black;
+  }
+
+  .show__container {
+    top: 10%;
+    transform: translateY(0%);
+  }
+
+  .links {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1rem; */
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    align-items: start;
+  }
+
+  .links li {
+    background-color: var(--clr-card);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .links li a {
+    width: 100%;
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .toggle__btn {
+    display: block;
+  }
+
+  .toggle__btn button {
+    display: grid;
+    place-content: center;
+    font-size: 2rem;
+    font-weight: 100;
+    background-color: transparent;
+    box-shadow: hsla(240, 5%, 57%, 0.329) 0px 0px 0px 1px;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    border-radius: 5px;
+    color: var(--clr-text);
+  }
+}
