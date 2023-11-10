@@ -34,7 +34,7 @@ const UploadPgae = () => {
     <section className="mt-10 lg:mt-20 px-8 w-full flex flex-col">
       <div className="flex w-full justify-between items-center">
         <div className="felx">
-          <h1>Upload</h1>
+          <h1 className="text-3xl">Upload</h1>
         </div>
         <div className="flex justify-between pr-8 w-[80%]">
           {tabs.map((tab) => (
