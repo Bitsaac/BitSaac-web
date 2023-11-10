@@ -32,9 +32,8 @@ export default function RootLayout({
       className={`${inter.variable} ${roboto.variable}`}
     >
       <body>
-        <Navbar />
         {children}
-        <Footer />
+
         <GotoTop />
       </body>
     </html>

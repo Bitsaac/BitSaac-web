@@ -21,13 +21,13 @@ const PostPage = ({ params }: { params: { id: string } }) => {
         <h2 className="text-lg text-center sm:text-xl lg:text-2xl text-gray-700">
           Connects you with ride buddies
         </h2>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-y-4 mb-8">
           <p>Experience a whole new way of commuting with Ridgle. </p>
-          <div className="flex gap-x-4">
+          <div className="flex gap-x-4 max-sm:flex-wrap max-sm:justify-center gap-y-2">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-[#F4F4F4] p-[2px] text-gray-700 font-semibold text-sm 2xl:text-xl lg:my-4 font-Roboto"
+                className="bg-[#F4F4F4] p-[2px] text-gray-700 font-semibold text-[12px] sm:text-sm 2xl:text-xl lg:my-4 font-Roboto"
               >
                 {tag}
               </span>
