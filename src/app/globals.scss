@@ -101,7 +101,7 @@ button {
 
 .full__bleed {
   box-shadow: 0 0 0 100vmax #e9ebf8;
-  clip-path: inset(0-100vmax);
+  clippath: inset(0-100vmax);
 }
 
 ::-webkit-scrollbar {
@@ -116,4 +116,15 @@ button {
 ::-webkit-scrollbar-thumb {
   background: $primary;
   border-radius: 8px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

@@ -34,13 +34,9 @@ export default function RootLayout({
       className={`${inter.variable} ${roboto.variable}`}
     >
       <body>
-        <NavContextProvider>
-          <Navbar />
+        {children}
 
-          {children}
-          <Footer />
-          <GotoTop />
-        </NavContextProvider>
+        <GotoTop />
       </body>
     </html>
   )

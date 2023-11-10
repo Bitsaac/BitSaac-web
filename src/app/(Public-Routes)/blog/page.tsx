@@ -22,11 +22,11 @@ const BlogPage = () => {
     <section className="flex w-full max-w-[1440px] mx-auto    justify-center items-start px-4 lg:px-6  xl:px-8 2xl:px-12 pb-12 lg:pb-16 relative">
       <div className="w-full flex flex-1 flex-col items-center gap-4 sm:gap-y-7 2xl:gap-y-10 ">
         <div className="flex flex-col justify-center items-center px-2 gap-y-4  2xl:gap-y-8">
-          <h3 className="font-medium text-xl">Blog</h3>
+          <h3 className="font-medium text-xl lg:text-2xl">Blog</h3>
           <h1 className="max-[380px]:text-xl text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
             Our Selected Projects
           </h1>
-          <p>Take a look at our portfolio</p>
+          <p className="lg:text-xl">Take a look at our portfolio</p>
         </div>
 
         <BlogNav />

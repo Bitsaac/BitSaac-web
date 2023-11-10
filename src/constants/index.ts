@@ -46,8 +46,8 @@ export const PORTFOLIO_CONTENTS: PortfolioContentProps[] = [
     image: "/portfolio-illustration.png",
     descriptions: [
       "Our app seamlessly matches you with fellow travellers heading in the same direction, making your ride not only cost-effective but also a    chance to meet like-minded commuters. Say goodbye to high fares and hello to shared journeys!",
-      "Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.",
-      "Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.",
+      "Nunc sed fabiolacus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.",
+      "lorem is here sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.",
     ],
   },
   {
@@ -57,7 +57,7 @@ export const PORTFOLIO_CONTENTS: PortfolioContentProps[] = [
     descriptions: [
       "Our app seamlessly matches you with fellow travellers heading in the same direction, making your ride not only cost-effective but also a    chance to meet like-minded commuters. Say goodbye to high fares and hello to shared journeys!",
       "Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.",
-      "Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.",
+      "parar sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.",
     ],
   },
 ];

@@ -28,20 +28,26 @@ const BlogCard = ({
 }: BlogCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef);
+
   return (
     <div
       ref={cardRef}
       className={cn(
-        "flex items-start justify-between flex-col gap-y-4 w-full max-w-[350px] sm:max-w-[500px] lg:max-w-[500px] border border-gray-200 lg:p-1 rounded-xl hover:shadow-[0_0_40px_0_rgba(0,0,0,0.2)] xl:hover:shadow-[0_20px_60px_0_rgba(0,0,0,0.3)] transition-all hover:duration-700 duration-300",
-        isInView
+        "flex items-start justify-between flex-col gap-y-4 w-full border border-gray-200 lg:p-1 rounded-xl hover:shadow-[0_0_40px_0_rgba(0,0,0,0.2)] xl:hover:shadow-[0_20px_60px_0_rgba(0,0,0,0.3)] transition-all hover:duration-700 duration-300",
+        isFeatured
+          ? "min-w-[350px] sm:max-w-[500px] lg:max-w-[500px] "
+          : " max-w-[350px] sm:max-w-[500px] lg:max-w-[500px] ",
+        isInView && !isFeatured
+          ? "opacity-100 translate-y-0 delay-300 duration-1000"
+          : isFeatured
           ? "opacity-100 translate-y-0 delay-300 duration-1000"
           : " opacity-0 translate-y-20",
       )}
     >
       <div
         className={cn(
-          "w-full overflow-hidden  max-h-[150px] lg:max-h-[300px] 2xl:h-full p-4",
-          isFeatured ? "" : "md:max-h-[200px]",
+          "w-full overflow-hidden  max-h-[150px] lg:max-h-[300px] 2xl:h-full ",
+          isFeatured ? "" : "md:max-h-[200px] md:p-4",
         )}
       >
         <Image
@@ -66,13 +72,19 @@ const BlogCard = ({
         >
           {title}
         </h3>
-        <p className="text-gray-700 text-sm sm:text-[16px] lg:text-lg font-Inter">
-          {desc.length > 100 ? `${desc.slice(0, 100)}...` : desc}
-        </p>
+        {isFeatured ? (
+          <p className="text-gray-700 text-sm sm:text-[16px] lg:text-lg font-Inter">
+            {desc.length > 70 ? `${desc.slice(0, 70)}...` : desc}
+          </p>
+        ) : (
+          <p className="text-gray-700 text-sm sm:text-[16px] lg:text-lg font-Inter">
+            {desc.length > 100 ? `${desc.slice(0, 100)}...` : desc}
+          </p>
+        )}
       </div>
       <Link
         href={`/blog/${id}`}
-        className="text-[#4D61F4] font-medium text-lg 2xl:text-2xl lg:my-4 font-Roboto flex items-center gap-x-2 pl-2 pb-1"
+        className="text-[#4D61F4] font-medium text-base sm:text-lg 2xl:text-xl lg:my-4 font-Roboto flex items-center gap-x-2 pl-2 pb-1"
       >
         <span>Read more</span>
       </Link>
