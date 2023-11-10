@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
           <NavLinks text="About Us" href="/about" />
           <NavLinks text="Services" href="services" />
           <NavLinks text="Contact Us" href="/contact" />
-          <NavLinks text="Portfolio" href="portfolio" />
+          <NavLinks text="Portfolio" href="portfolios" />
           <button className=" outline-none focus:outline-none"> More </button>
         </div>
         <button className="  btn sm:hidden max-[650px]:hidden md:hidden">

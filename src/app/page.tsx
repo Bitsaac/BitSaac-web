@@ -9,7 +9,7 @@ import Services from "./Home/Services"
 
 export default function Home() {
   return (
-    <main className="max-container">
+    <main className="max-container overflow-x-hidden">
       <Header />
       <Carousel />
       <Brand />
