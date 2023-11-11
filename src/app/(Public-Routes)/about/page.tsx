@@ -12,7 +12,6 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-
 const settings = {
   dots: true,
   infinite: true,
@@ -47,7 +46,9 @@ const About = () => {
         />
         <div className="font-Roboto z-8 absolute inset-0 text-white py-[4rem] xl:py-[7rem] px-[1.25rem] sm:px-[64px] bg-[rgba(0,0,0,0.5)]">
           <div className={"md:w-[70%] transition-all duration-200 slideUp"}>
-            <h2 className="text-[1rem] font-medium mb-[.75rem] slideUp">Innovative</h2>
+            <h2 className="text-[1rem] font-medium mb-[.75rem] slideUp">
+              Innovative
+            </h2>
             <p className="text-[2.5rem] font-semibold mb-[1.25rem]">
               Bringing Ideas to Life
             </p>
