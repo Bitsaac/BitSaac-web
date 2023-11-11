@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsCamera } from "react-icons/bs";
+import Editor from "./Editor";
 
 type CategoriesProps = {
   category:
@@ -146,7 +147,9 @@ const CreateBlog = () => {
           </div>
         </form>
       </div>
-      <div className="flex"></div>
+      <div className="flex w-full mt-10 justify-center min-h-screen">
+        <Editor />
+      </div>
     </div>
   );
 };
