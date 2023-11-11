@@ -1,7 +1,11 @@
 "use client"
 
 import CreateBlog from "@/components/admin/CreateBlog"
+import CreateNewsletter from "@/components/admin/CreateNewsletter"
+import CreatePortfolio from "@/components/admin/CreatePortfolio"
 import cn from "@/utils/tailwind"
+import { handleMouse } from "@/utils/text-effect"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useState, useEffect } from "react"
 
 type Props = {
@@ -9,6 +13,7 @@ type Props = {
   tag: string
   title: string
 }
+
 const tabs: Props[] = [
   {
     id: 1,
@@ -28,13 +33,39 @@ const tabs: Props[] = [
 ]
 
 const UploadPgae = () => {
-  const [activeTab, setActiveTab] = useState(tabs[0].tag)
+  const [activeTag, setActiveTag] = useState("" as string)
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    if (searchParams.get("tab") !== undefined) {
+      setActiveTag(searchParams.get("tab") as string)
+      return
+    }
+    if ("activeTag" in localStorage) {
+      setActiveTag(localStorage.getItem("activeTag") as string)
+      return
+    }
+    setActiveTag("blog")
+  }, [searchParams])
+
+  useEffect(() => {
+    router.push(`/upload?tab=${activeTag}`)
+    if (!activeTag) return
+    localStorage.setItem("activeTag", activeTag)
+  }, [activeTag, router])
 
   return (
     <section className="mt-10 lg:mt-20 px-8 w-full flex flex-col">
       <div className="flex w-full justify-between items-center">
         <div className="felx">
-          <h1 className="text-3xl">Upload</h1>
+          <h1
+            className="text-3xl"
+            data-value="Upload"
+            onMouseEnter={handleMouse}
+          >
+            Upload
+          </h1>
         </div>
         <div className="flex justify-between pr-8 w-[80%]">
           {tabs.map((tab) => (
@@ -42,11 +73,11 @@ const UploadPgae = () => {
               key={tab.id}
               className={cn(
                 "py-2 w-full capitalize font-semibold text-sm sm:text-lg lg:text-xl",
-                tab.tag === activeTab
+                tab.tag === activeTag
                   ? "text-primary border-primary  border-b-4 "
                   : "text-gray-800/40"
               )}
-              onClick={() => setActiveTab(tab.tag)}
+              onClick={() => setActiveTag(tab.tag)}
             >
               {tab.title}
             </button>
@@ -54,7 +85,9 @@ const UploadPgae = () => {
         </div>
       </div>
 
-      {activeTab === "blog" && <CreateBlog />}
+      {activeTag === "blog" && <CreateBlog />}
+      {activeTag === "portfolio" && <CreatePortfolio />}
+      {activeTag === "newsletter" && <CreateNewsletter />}
     </section>
   )
 }
