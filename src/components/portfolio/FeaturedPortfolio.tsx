@@ -26,13 +26,13 @@ const FeaturedPortfolio = ({ id, tag }: { id?: number; tag?: string }) => {
           : " opacity-0 translate-y-20",
       )}
     >
-      <div className="flex w-full justify-between items-center">
-        <h3 className="font-bold text-xl min-[410px]:text-2xl sm:text-3xl lg:text-4xl ">
+      <div className="flex w-full max-sm:justify-center justify-between items-center">
+        <h3 className="font-bold text-xl min-[410px]:text-2xl sm:text-3xl lg:text-4xl max-sm:text-3xl">
           See Other Projects
         </h3>
         <Link
           href="/portfolios"
-          className="max-[500px]:text-[12px] text-sm  text-primary font-bold border border-primary p-1 rounded "
+          className="max-[500px]:text-[12px] text-sm  text-primary font-bold border border-primary p-1 rounded hidden sm:block"
         >
           View All
         </Link>
@@ -48,6 +48,15 @@ const FeaturedPortfolio = ({ id, tag }: { id?: number; tag?: string }) => {
             <PortfolioThumbnail key={card.id} {...card} />
           ))}
         </div>
+      </div>
+
+      <div className="flex w-full sm:hidden justify-center  items-center mt-4">
+        <Link
+          href="/portfolios"
+          className="w-full text-center py-2 text-sm  text-primary font-bold border border-primary p-1 rounded "
+        >
+          View All
+        </Link>
       </div>
     </section>
   );
