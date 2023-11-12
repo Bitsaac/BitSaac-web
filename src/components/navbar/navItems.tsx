@@ -15,7 +15,7 @@ export const NavLinks: React.FC<NavLinksProps> = ({
   iconBeforeText = true,
 }) => {
   return (
-    <div className="relative">
+    <div className="">
       {href ? (
         <Link href={href}>
           <div className="flex items-center">

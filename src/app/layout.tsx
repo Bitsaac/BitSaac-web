@@ -35,7 +35,6 @@ export default function RootLayout({
     >
       <body>
         {children}
-
         <GotoTop />
       </body>
     </html>

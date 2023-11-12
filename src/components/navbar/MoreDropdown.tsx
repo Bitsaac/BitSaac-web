@@ -9,9 +9,9 @@ const MoreDropdown = () => {
   return (
     <>
       {more && (
-        <div className=" text-center items-center gap-[4px] text-base w-full justify-center border border-y border-[#E9EBF8] hidden md:block">
+        <div className="text-center items-center gap-[4px] text-base w-full justify-center border border-y border-[#E9EBF8] hidden md:block">
           <div className=" items-center justify-between text-center ">
-            <div className=" flex justify-between gap-3 py-[16px] px-[64px] min-[750px]:hidden">
+            <div className=" flex justify-between gap-3 py-[16px] px-[64px]">
               <div className="lg:flex text-start gap-3 w-80 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +154,7 @@ const MoreDropdown = () => {
               </div>
             </div>
           </div>
-          <p className=" font-Inter text-sm text-[#2A2738]  bg-surface/200 py-2 ">
+          <p className="font-Inter text-sm text-[#2A2738]  bg-surface/200 py-2 ">
             Looking for new job opportunities?{" "}
             <span className=" underline">Get in Touch </span>
           </p>

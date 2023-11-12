@@ -31,3 +31,22 @@ export const moreLinks = [
     url: "/recruitment",
   },
 ];
+
+export const services = [
+  {
+    title: "Branding",
+    desc: "Craft a compelling brand identity that captivates your audience.",
+  },
+  {
+    title: "Product Design",
+    desc: "Craft a compelling brand identity that captivates your audience.",
+  },
+  {
+    title: "Product Managment",
+    desc: "Craft a compelling brand identity that captivates your audience.",
+  },
+  {
+    title: "Sales & Markering Strategies",
+    desc: "Craft a compelling brand identity that captivates your audience.",
+  },
+];

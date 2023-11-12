@@ -100,8 +100,13 @@ button {
 }
 
 .full__bleed {
-  box-shadow: 0 0 0 100vmax #e9ebf8;
-  clippath: inset(0-100vmax);
+  box-shadow: 0 0 0 100vmax #03236c;
+  clip-path: inset(0-100vmax);
+}
+
+.responsive_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
 }
 
 ::-webkit-scrollbar {
