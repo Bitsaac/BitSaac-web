@@ -2,6 +2,7 @@ import Button from "@/components/button/Button"
 import Image from "next/image"
 import Link from "next/link"
 import { whatWeDo } from "./serviceItem"
+import Talktousbutton from "@/components/Talktousbutton"
 
 const Services = () => {
   return (
@@ -16,9 +17,7 @@ const Services = () => {
           goals.
         </p>
         <div className="flex gap-[.5rem] font-medium text-[1rem] leading-tight mt-[1rem]">
-          <Button className="text-white bg-primary rounded-md">
-            Talk To Us
-          </Button>
+          <Talktousbutton className="text-white bg-primary rounded-md" />
           <Button className="text-primary border-[1px] border-primary rounded-md">
             Learn More
           </Button>

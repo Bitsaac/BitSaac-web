@@ -21,6 +21,11 @@ $surface-200: #fafafa;
 $progress-color: #004c00;
 $destructive-color: #4d0000;
 
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+
 .max-container {
   max-width: 1440px;
   margin: 0 auto;

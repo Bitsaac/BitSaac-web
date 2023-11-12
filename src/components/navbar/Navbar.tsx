@@ -5,6 +5,7 @@ import Logo from "@/assets/Logo.png";
 import Link from "next/link";
 // import Search from "../Search/Search";
 import MoreDropdown from "./MoreDropdown";
+import Talktousbutton from "../Talktousbutton";
 
 const Navbar = () => {
   const {
@@ -42,9 +43,7 @@ const Navbar = () => {
             links={links}
             nav__icon={nav__icon}
           />
-          <button className="rounded-lg border hidden md:flex border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4]">
-            Talk to us
-          </button>
+          <Talktousbutton className="rounded-lg border hidden md:flex border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4]" />
           <NavToggle toggle__btn={toggle__btn} />
         </div>
       </nav>

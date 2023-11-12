@@ -5,53 +5,11 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import PeopleHoldingHandsImg from "/public/people-holding-hands.png";
 
-const Talktousbutton = () => {
+const Talktousbutton = ({ className }: { className?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
-
-  // useEffect(() => {
-  //   // Check the screen width to determine if it's a small screen
-  //   const handleResize = () => {
-  //     setIsSmallScreen(window.innerWidth <= 950);
-  //   };
-
-  //   // Initial check on component mount
-  //   handleResize();
-
-  //   // Add event listener to check for screen size changes
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => {
-  //     // Clean up the event listener when the component unmounts
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setIsSmallScreen(window.innerWidth <= 950);
-  //   };
-
-  //   const handleCloseModal = (event: MouseEvent) => {
-  //     if (modalRef.current && modalRef.current.contains(event.target as Node)) {
-  //       setIsOpen(false);
-  //       console.log("ABEG CLOSE AM");
-  //     }
-  //     console.log("ABEG NA ");
-  //   };
-
-  //   handleResize();
-
-  //   window.addEventListener("resize", handleResize);
-  //   document.addEventListener("mousedown", handleCloseModal);
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //     document.removeEventListener("mousedown", handleCloseModal);
-  //   };
-  // }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -96,7 +54,10 @@ const Talktousbutton = () => {
     <div>
       <button
         onClick={handleClick}
-        className="rounded-lg border border-[#4D61F4] text-[#4D61F4] px-[24px] py-[12px] "
+        className={cn(
+          "rounded-lg border border-[#4D61F4] text-[#4D61F4] px-[24px] py-[12px]",
+          className !== "" ? className : "",
+        )}
       >
         Talk to us na
       </button>
