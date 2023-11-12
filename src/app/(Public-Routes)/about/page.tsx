@@ -11,6 +11,7 @@ import { BiBasketball } from "react-icons/bi"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import Talktousbutton from "@/components/Talktousbutton"
 
 const settings = {
   dots: true,
@@ -114,9 +115,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <Button className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px] lg:absolute lg:top-[22%] xl:top-[15%]">
-          Talk to us
-        </Button>
+        <Talktousbutton className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px] lg:absolute lg:top-[22%] xl:top-[15%]" />
 
         {/* PROCESS SECTION */}
         <div className="py-[4rem] lg:py-[7rem] font-Inter px-[1.25rem] bg-[url('/mobileBackImage.png')] md:bg-[url('/backImage.png')] bg-cover bg-center text-white sm:px-[64px]">

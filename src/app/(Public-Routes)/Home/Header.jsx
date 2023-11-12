@@ -1,6 +1,7 @@
 import Image from "next/image"
 import React from "react"
 import HeaderImg from "@/assets/header.png"
+import Talktousbutton from "@/components/Talktousbutton"
 
 const Header = () => {
   return (
@@ -14,9 +15,7 @@ const Header = () => {
           We offer web and mobile app development, UI/UX design, and more.
         </h3>
         <span className="mt-[16px] flex items-center md:flex lg:flex gap-6">
-          <button className="rounded-lg border border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4]">
-            Talk to us
-          </button>
+          <Talktousbutton className="rounded-lg border border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4]" />
           <button className="rounded-lg border border-[#4D61F4] text-[#4D61F4] px-[24px] py-[12px] ">
             Learn More
           </button>

@@ -9,26 +9,7 @@ export const routes = [
   },
   {
     title: "Portfolio",
-    url: "/portfolio",
-  },
-];
-
-export const moreLinks = [
-  {
-    title: "Agency",
-    url: "/agency",
-  },
-  {
-    title: "BitCommerce",
-    url: "/bit-commerce",
-  },
-  {
-    title: "Consultation",
-    url: "/consultation",
-  },
-  {
-    title: "Recruitment",
-    url: "/recruitment",
+    url: "/portfolios",
   },
 ];
 
@@ -48,5 +29,28 @@ export const services = [
   {
     title: "Sales & Markering Strategies",
     desc: "Craft a compelling brand identity that captivates your audience.",
+  },
+];
+
+export const moreDropDownItems = [
+  {
+    title: "BitCommerce",
+    desc: "Explore our portfolio and client testimonials",
+    path: "/bit-commerce",
+  },
+  {
+    title: "Consultation",
+    desc: "Find answers to frequently asked questions",
+    path: "/consultation",
+  },
+  {
+    title: "Recruitment",
+    desc: "Join our team and grow your career",
+    path: "/recruitment",
+  },
+  {
+    title: "Agency",
+    desc: "Learn more about our company and services",
+    path: "/agency",
   },
 ];
