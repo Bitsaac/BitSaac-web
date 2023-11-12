@@ -44,7 +44,7 @@ const Brand: React.FC = () => {
           alt="brand"
           priority
           quality={100}
-          objectFit="contain"
+          className="object-contain"
         />
       </div>
     </div>

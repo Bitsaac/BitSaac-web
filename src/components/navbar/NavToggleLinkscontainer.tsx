@@ -62,13 +62,11 @@ export const Linkscontainer = ({
       <ul className={links}>
         {routes.map((route, index) => {
           return (
-            <>
-              <li onClick={closeNav} key={index}>
-                <Link href={route.url}>
-                  <span>{route.title}</span>
-                </Link>
-              </li>
-            </>
+            <li onClick={closeNav} key={index}>
+              <Link href={route.url}>
+                <span>{route.title}</span>
+              </Link>
+            </li>
           );
         })}
         <div
@@ -82,12 +80,13 @@ export const Linkscontainer = ({
             <AiOutlineDown className="text-[1.4rem]" />
           )}
         </div>
-        <>
+        <ul>
           {more &&
             moreLinks.map((link, index) => (
               <li
                 key={index}
                 className="pl-5 flex gap-2 items-center md:hidden"
+                onClick={closeNav}
               >
                 <svg
                   width="24"
@@ -121,9 +120,9 @@ export const Linkscontainer = ({
                 </Link>
               </li>
             ))}
-        </>
+        </ul>
         <div>
-          <p className=" font-Inter text-sm text-[#2A2738]  bg-surface/200 py-2 ">
+          <p className=" font-Inter text-sm md:hidden text-[#2A2738]  bg-surface/200 py-2 ">
             Looking for new job opportunities?{" "}
             <span className=" underline">Get in Touch </span>
           </p>

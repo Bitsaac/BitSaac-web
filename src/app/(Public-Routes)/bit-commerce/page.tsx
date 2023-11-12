@@ -25,9 +25,10 @@ const BitCommerce = () => {
             <button className="rounded-lg border border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4]">
               Get started
             </button>
-            <button className="rounded-lg border border-[#4D61F4] text-[#4D61F4] px-[24px] py-[12px] ">
+            {/* <button className="rounded-lg border border-[#4D61F4] text-[#4D61F4] px-[24px] py-[12px] ">
               Talk to us
-            </button>
+            </button> */}
+            <Talktousbutton />
           </span>
         </div>
       </Container>
@@ -251,7 +252,8 @@ const BitCommerce = () => {
 export default BitCommerce
 
 import cn from "@/utils/tailwind"
-const Container = ({
+import Talktousbutton from "@/components/Talktousbutton"
+export const Container = ({
   className,
   children,
 }: {
@@ -261,7 +263,7 @@ const Container = ({
   return (
     <div
       className={cn(
-        "my_container grid max-w-[980px] grid-cols-1 md:grid-cols-2 gap-3 py-8",
+        "my_container grid grid-cols-1 md:grid-cols-2 gap-3 py-8",
         className !== "" ? className : ""
       )}
     >
