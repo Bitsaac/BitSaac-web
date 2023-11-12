@@ -11,8 +11,8 @@ const MoreDropdown = () => {
       {more && (
         <div className="text-center items-center gap-[4px] text-base w-full justify-center border border-y border-[#E9EBF8] hidden md:block">
           <div className=" items-center justify-between text-center ">
-            <div className=" flex justify-between gap-3 py-[16px] px-[64px]">
-              <div className="lg:flex text-start gap-3 w-80 ">
+            <div className=" flex justify-between gap-3 py-[1.5rem] px-[64px]">
+              <div className="lg:flex text-start gap-3 w-80 cursor-pointer p-2 hover:bg-slate-50 hover:rounded-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -41,13 +41,15 @@ const MoreDropdown = () => {
                   </defs>
                 </svg>
                 <div>
-                  <Link href="">Agency</Link>
+                  <Link href="/about" className="font-[700] text-[1rem]">
+                    Agency
+                  </Link>
                   <p className="font-Inter text-sm text-[#2A2738]">
                     Learn more about our company and services
                   </p>
                 </div>
               </div>
-              <div className="flex text-start gap-3 w-80">
+              <div className="flex text-start gap-3 w-80 cursor-pointer p-2 hover:bg-slate-50 hover:rounded-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -76,13 +78,15 @@ const MoreDropdown = () => {
                   </defs>
                 </svg>
                 <div>
-                  <Link href="">BitCommerce</Link>
+                  <Link href="" className="font-[700] text-[1rem]">
+                    BitCommerce
+                  </Link>
                   <p className="font-Inter text-sm text-[#2A2738]">
                     Explore our portfolio and client testimonials
                   </p>
                 </div>
               </div>
-              <div className="flex text-start gap-3 w-80">
+              <div className="flex text-start gap-3 w-80 cursor-pointer p-2 hover:bg-slate-50 hover:rounded-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -111,13 +115,15 @@ const MoreDropdown = () => {
                   </defs>
                 </svg>
                 <div>
-                  <Link href="">Consultation</Link>
+                  <Link href="" className="font-[700] text-[1rem]">
+                    Consultation
+                  </Link>
                   <p className="font-Inter text-sm text-[#2A2738]">
                     Find answers to frequently asked questions
                   </p>
                 </div>
               </div>
-              <div className="flex text-start gap-3 w-80">
+              <div className="flex text-start gap-3 w-80 cursor-pointer p-2 hover:bg-slate-50 hover:rounded-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -146,7 +152,9 @@ const MoreDropdown = () => {
                   </defs>
                 </svg>
                 <div>
-                  <Link href="">Recruitment</Link>
+                  <Link href="" className="font-[700] text-[1rem]">
+                    Recruitment
+                  </Link>
                   <p className="font-Inter text-sm text-[#2A2738]">
                     Join our team and grow your career
                   </p>
@@ -156,7 +164,9 @@ const MoreDropdown = () => {
           </div>
           <p className="font-Inter text-sm text-[#2A2738]  bg-surface/200 py-2 ">
             Looking for new job opportunities?{" "}
-            <span className=" underline">Get in Touch </span>
+            <span className=" underline">
+              <button className="font-bold underline">Get in Touch</button>
+            </span>
           </p>
         </div>
       )}
