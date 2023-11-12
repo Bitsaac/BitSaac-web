@@ -1,8 +1,9 @@
+"use client"
 /* eslint-disable react/no-unescaped-entities */
 import Button from "@/components/button/Button"
 import Image from "next/image"
 import Link from "next/link"
-import React from "react"
+import React, { useState } from "react"
 import { AllImages, Experience, Innovation, Team } from "./aboutItems"
 import { AiFillLinkedin } from "react-icons/ai"
 import { RiTwitterXFill } from "react-icons/ri"
@@ -29,11 +30,13 @@ const settings = {
 }
 
 const About = () => {
+  const [value, setValue] = useState("")
+  const handleChange = () => setValue(value)
   return (
     // @gafaradetunji there's max width container class in global.css
     <div className="max-container">
       {/* ABOUT HERO SECTION */}
-      <div className="relative h-[600px]">
+      <div className={"relative h-[600px]"}>
         <video
           src={"/backvideo.mp4"}
           autoPlay
@@ -41,9 +44,11 @@ const About = () => {
           muted
           className="inset-0 z-0 w-full h-full object-cover"
         />
-        <div className="font-Roboto z-10 absolute inset-0 text-white py-[4rem] xl:py-[7rem] px-[1.25rem] sm:px-[64px] bg-[rgba(0,0,0,0.5)]">
-          <div className="md:w-[70%]">
-            <h2 className="text-[1rem] font-medium mb-[.75rem]">Innovative</h2>
+        <div className="font-Roboto z-8 absolute inset-0 text-white py-[4rem] xl:py-[7rem] px-[1.25rem] sm:px-[64px] bg-[rgba(0,0,0,0.5)]">
+          <div className={"md:w-[70%] transition-all duration-200 slideUp"}>
+            <h2 className="text-[1rem] font-medium mb-[.75rem] slideUp">
+              Innovative
+            </h2>
             <p className="text-[2.5rem] font-semibold mb-[1.25rem]">
               Bringing Ideas to Life
             </p>
@@ -57,6 +62,8 @@ const About = () => {
                 type="text"
                 className="p-[.75rem] bg-white sm:w-64 rounded-md sm:h-[40px] w-full placeholder:text-[#505050]"
                 placeholder="Enter Email here..."
+                value={value}
+                onChange={handleChange}
               />
               <Button className="bg-primary rounded-md w-full sm:w-32 my-[1rem] ">
                 Get Started
