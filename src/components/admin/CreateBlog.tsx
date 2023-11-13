@@ -146,7 +146,7 @@ const CreateBlog = () => {
       </div>
       <div className="flex w-full md:mt-10 justify-center md:min-h-screen">
         <Editor />
-        <div className="flex md:hidden w-full justify-center items-center mt-20 border border-gray-900 py-2 sm:text-2xl">
+        <div className="flex md:hidden w-full justify-center items-center my-20 border border-gray-900 py-2 sm:text-2xl">
           <p>Please use a bigger screen to use the editor</p>
         </div>
       </div>
