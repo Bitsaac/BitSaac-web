@@ -17,8 +17,6 @@ export default function UploadLayout({
     <>
       <AdminNav />
       <main className="max-container relative">{children}</main>
-
-      {/* <GotoTop /> */}
     </>
   )
 }
