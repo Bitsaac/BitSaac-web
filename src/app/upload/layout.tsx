@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 
 import GotoTop from "@/components/GotoTop"
 import AdminNav from "@/components/admin/AdminNav"
+import { auth, redirectToSignIn } from "@clerk/nextjs"
 
 export const metadata: Metadata = {
   title: "Create",
@@ -13,12 +14,13 @@ export default function UploadLayout({
 }: {
   children: React.ReactNode
 }) {
+  const { userId } = auth()
+  if (!userId) return redirectToSignIn()
+  console.log(userId)
   return (
     <>
       <AdminNav />
       <main className="max-container relative">{children}</main>
-
-      {/* <GotoTop /> */}
     </>
   )
 }

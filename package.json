@@ -4,16 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "format": "npm run check-lint --fix && npx prettier --write .",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
-    "format": "npm run check-lint --fix && npx prettier --write .",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.27.1",
     "@types/react-slick": "^0.23.11",
     "antd": "^5.10.2",
     "clsx": "^2.0.0",

@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
+import LoadingSpinner from "../loaders/LoadingSpinner";
 
 const QuillEditor = dynamic(() => import("react-quill"), {
   ssr: false,
-  loading: () => <p>Loading...</p>,
+  loading: () => <LoadingSpinner />,
 });
 
 export default function Home() {
@@ -14,15 +15,19 @@ export default function Home() {
 
   const quillModules = {
     toolbar: [
-      [{ header: [1, 2, 3, false] }],
+      [{ header: "1" }, { header: [2, 3, false] }],
       ["bold", "italic", "underline", "strike", "blockquote"],
       [{ list: "ordered" }, { list: "bullet" }],
       ["link", "image"],
       [{ align: [] }],
       [{ color: [] }],
       ["code-block"],
+
       ["clean"],
     ],
+    clipboard: {
+      matchVisual: true,
+    },
   };
 
   const quillFormats = [
@@ -44,24 +49,30 @@ export default function Home() {
   const handleEditorChange = (newContent: React.SetStateAction<string>) => {
     setContent(newContent);
   };
+  const editorContent = useMemo(() => content, [content]);
+  useEffect(() => {
+    if (!editorContent) return;
 
+    localStorage.setItem("content", JSON.stringify(editorContent));
+  }, [editorContent]);
   console.log(content);
 
   return (
-    <div className="flex items-center flex-col w-full overflow-x-hidden ">
-      <div className="h-[500px] w-[90%]">
+    <div className="hidden md:flex items-center flex-col w-full overflow-x-hidden ">
+      <div className="min-h-[500px] w-[90%]">
         {" "}
         <QuillEditor
           value={content}
           onChange={handleEditorChange}
           modules={quillModules}
           formats={quillFormats}
-          className="w-full h-[50%] mt-10 bg-white"
+          placeholder="Start typing here..."
+          className="w-full h-full mt-10 bg-white"
         />
       </div>
-      <div className="flex w-full justify-center flex-wrap">
+      {/* <div className="flex w-full justify-center flex-wrap">
         <p>{content}</p>
-      </div>
+      </div> */}
     </div>
   );
 }

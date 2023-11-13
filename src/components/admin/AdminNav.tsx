@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import React from "react";
 import Logo from "@/assets/Logo.png";
@@ -25,6 +26,9 @@ const AdminNav = () => {
             {item.label}
           </Link>
         ))}
+      </div>
+      <div className="flex">
+        <UserButton afterSignOutUrl="/" />
       </div>
     </nav>
   );
