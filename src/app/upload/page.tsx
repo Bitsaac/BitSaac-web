@@ -5,6 +5,7 @@ import CreateNewsletter from "@/components/admin/CreateNewsletter"
 import CreatePortfolio from "@/components/admin/CreatePortfolio"
 import cn from "@/utils/tailwind"
 import { handleMouse } from "@/utils/text-effect"
+
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState, useEffect } from "react"
 
@@ -36,18 +37,20 @@ const UploadPgae = () => {
   const [activeTag, setActiveTag] = useState("" as string)
   const router = useRouter()
   const searchParams = useSearchParams()
+  const searchTab = searchParams.get("tab")
 
   useEffect(() => {
-    if (searchParams.get("tab") !== undefined) {
+    const tab = localStorage.getItem("activeTag")
+    if (searchTab) {
       setActiveTag(searchParams.get("tab") as string)
       return
     }
-    if ("activeTag" in localStorage) {
+    if (tab) {
       setActiveTag(localStorage.getItem("activeTag") as string)
       return
     }
     setActiveTag("blog")
-  }, [searchParams])
+  }, [searchTab, searchParams])
 
   useEffect(() => {
     router.push(`/upload?tab=${activeTag}`)

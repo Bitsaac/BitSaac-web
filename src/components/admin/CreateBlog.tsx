@@ -21,25 +21,22 @@ const categories: CategoriesProps[] = [
 ];
 
 type FormData = {
-  team: string;
-  phone: string;
   email: string;
   project: string;
   category: string;
   size: string;
-  privacy: boolean;
+  image: string | null;
 };
 
 const initialFormData: FormData = {
-  team: "",
-  phone: "",
   email: "",
   project: "",
   category: "select",
   size: "",
-  privacy: false,
+  image: null,
 };
 const CreateBlog = () => {
+  const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -47,8 +44,8 @@ const CreateBlog = () => {
   return (
     <div className="w-full flex flex-col gap-x-5 mt-10 lg:mt-20">
       <div className="flex w-full justify-between p-1">
-        <form className="  flex w-full gap-2 items-start  xl:gap-x-10">
-          <div className="flex w-full min-w-[70%] xl:min-w-[65%] flex-col gap-2 p-2 rounded-xl  transition-all duration-200 focus-within:duration-700  focus-within:shadow-[0_10px_40px_0_rgba(0,0,0,0.23)] shadow-[0_0_10px_0_rgba(0,0,0,0.2)]">
+        <form className="flex-col-reverse lg:flex-row max-lg:gap-y-7  flex w-full gap-2 items-start  xl:gap-x-10 ">
+          <div className="flex w-full min-w-[70%] xl:min-w-[65%] flex-col gap-2 p-2 rounded-xl  transition-all duration-200 focus-within:duration-700  focus-within:shadow-[0_10px_40px_0_rgba(0,0,0,0.23)] shadow-[0_0_10px_0_rgba(0,0,0,0.2)] ">
             <div className=" flex w-full gap-4 justify-between ">
               <div className="[&>label]:font-medium flex w-[80%] flex-col gap-2 gap-y-5">
                 <div className="flex gap-y-1 flex-col">
@@ -147,8 +144,11 @@ const CreateBlog = () => {
           </div>
         </form>
       </div>
-      <div className="flex w-full mt-10 justify-center min-h-screen">
+      <div className="flex w-full md:mt-10 justify-center md:min-h-screen">
         <Editor />
+        <div className="flex md:hidden w-full justify-center items-center mt-20 border border-gray-900 py-2 sm:text-2xl">
+          <p>Please use a bigger screen to use the editor</p>
+        </div>
       </div>
     </div>
   );
