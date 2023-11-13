@@ -41,7 +41,10 @@
 .links {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  justify-content: center;
+  gap: 3rem;
+  /* display: grid; */
+  /* place-items: center; */
   flex: 2;
 }
 
@@ -107,12 +110,9 @@
   }
 
   .links {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-    gap: 1rem; */
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
+    gap: 1rem;
     align-items: flex-start;
   }
 

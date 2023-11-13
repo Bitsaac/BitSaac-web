@@ -65,8 +65,8 @@ const Services = () => {
             </p>
           </div>
         </Container>
-        <Container className="px-3 max-w-none">
-          <div className="bg-[#FAFAFA] px-6 h-fit max-w-[500px] rounded-xl">
+        <Container className="max-w-[1050px] gap-5">
+          <div className="bg-[#FAFAFA] px-6 place-self-center h-fit max-w-[500px] rounded-xl">
             <div className="py-5">
               <p className=" font-Inter text-[15px]">Services</p>
               <h1 className="text-[18px] pb-2 md:text-[26px] md:pb-2 xl:text-[26px] xl:pb-2 lg:text-[26px] lg:pb-2">
@@ -79,16 +79,29 @@ const Services = () => {
               <p className=" font-Inter font-medium py-3 pt-5">
                 Read more &gt;
               </p>
+              {/* <span> */}
               <Image
-                className=" py-8"
+                className="py-8"
                 src={Flow}
                 alt="this is a flow chat "
-                width={350}
-                height={350}
+                width={370}
+                height={370}
               />
+              {/* </span> */}
+              {/* <div className="relative px-4 h-[350px] w-[100%]">
+                <Image
+                  src={Flow}
+                  alt="header"
+                  quality={100}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="h-[100%] w-[100%] object-cover"
+                />
+              </div> */}
             </div>
           </div>
-          <div className="w-full gap-3 responsive_grid">
+          <div className="w-full gap-[2rem] responsive_grid">
             {services.map((service, index) => (
               <Service
                 service={service}
@@ -112,7 +125,7 @@ type ServiceProps = {
 }
 const Service = ({ service }: ServiceProps) => {
   return (
-    <div className="py-4 hover:bg-[#FAFAFA] border px-4 rounded-xl mb-6 ">
+    <div className="py-4 hover:bg-[#FAFAFA] border px-4 rounded-xl">
       <Image
         className=" py-4"
         src={Tablike}

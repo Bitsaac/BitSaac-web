@@ -7,6 +7,7 @@ export type NavContextType = {
   setMore: (value: boolean) => void;
   handleToggleNav: () => void;
   setIsNavShowing: (value: boolean) => void;
+  closeNav: () => void;
 };
 
 type NavContextProviderProps = {
@@ -24,6 +25,16 @@ export const NavContextProvider = ({ children }: NavContextProviderProps) => {
     setMore(false);
   };
 
+  const closeNav = () => {
+    if (window.innerHeight > 721) {
+      setIsNavShowing(false);
+      setMore(false);
+      return;
+    } else {
+      setIsNavShowing(!isNavShowing);
+    }
+  };
+
   return (
     <NavContext.Provider
       value={{
@@ -32,6 +43,7 @@ export const NavContextProvider = ({ children }: NavContextProviderProps) => {
         setMore,
         setIsNavShowing,
         handleToggleNav,
+        closeNav,
       }}
     >
       {children}
