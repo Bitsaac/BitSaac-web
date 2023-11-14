@@ -17,14 +17,16 @@ type TestimonialProps = {
 
 const TestimonialsCarousel = ({ className }: { className?: string }) => {
   return (
-    <div className={cn("my_container", className !== "" ? className : "")}>
-      <HomeCarousel
-        data={CUSTOMER_TESTIMONIALS}
-        component={TestimonialCardWrapper as React.ComponentType<{}>}
-        title="Customer testimonials"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        showMoreLink=""
-      />
+    <div className="bg-[#e9ebf8] py-9">
+      <div className={cn("my_container", className !== "" ? className : "")}>
+        <HomeCarousel
+          data={CUSTOMER_TESTIMONIALS}
+          component={TestimonialCardWrapper as React.ComponentType<{}>}
+          title="Customer testimonials"
+          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          showMoreLink=""
+        />
+      </div>
     </div>
   )
 }
@@ -40,7 +42,7 @@ const TestimonialCard = ({
   userName,
   position,
 }: TestimonialProps) => (
-  <article className="flex gap-5 md:mr-4 flex-col px-4 py-5 border-[#F8F8F8] rounded-lg bg-white hover:bg-[#E9EBF8] border">
+  <article className="flex gap-5 md:mr-4 flex-col px-4 py-5 bg-[#e9ebf4] border-[#FAFAFA] rounded-lg hover:bg-[#fafafa] border">
     <Stars count={rating} />
     <p>{info}</p>
     <div className="flex gap-3">

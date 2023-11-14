@@ -5,6 +5,7 @@ import "../globals.scss"
 import Footer from "@/components/footer/Footer"
 import Navbar from "@/components/navbar/Navbar"
 import { NavContextProvider } from "@/context/NavContext"
+import { Toaster } from "react-hot-toast"
 
 export default function RootLayout({
   children,
@@ -14,6 +15,10 @@ export default function RootLayout({
   return (
     <NavContextProvider>
       <Navbar />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       {children}
       <Footer />
     </NavContextProvider>
