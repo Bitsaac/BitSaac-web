@@ -65,8 +65,8 @@ const Talktousbutton = ({ className }: { className?: string }) => {
         {isOpen && (
           <div
             className={cn(
-              "fixed top-0 left-0 overflow-hidden w-full h-full bg-[rgba(0,0,0,0.8)] flex flex-col items-center justify-center transition-[var(--transition)] invisible z-[-10] backdrop-blur-[1rem]",
-              isOpen ? "visible z-19" : "",
+              "fixed top-0 left-0  overflow-hidden w-full h-screen bg-[rgba(0,0,0,0.8)] flex flex-col items-center justify-center transition-[var(--transition)] invisible z-[-10] backdrop-blur-[1rem]",
+              isOpen ? "visible z-[99999]" : "",
             )}
           >
             <div
