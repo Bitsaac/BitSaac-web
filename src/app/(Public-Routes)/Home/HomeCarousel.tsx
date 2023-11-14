@@ -152,7 +152,7 @@ const HomeCarousel = ({
           )}
         </div>
       </div>
-      <div className="mt-16 flex justify-center items-center w-full sm:gap-4">
+      <div className="mt-14 flex justify-center items-center w-full sm:gap-4">
         <AliceCarousel
           mouseTracking
           controlsStrategy="alternate"
