@@ -42,7 +42,7 @@ const HomeBlogCard = ({
 
   return (
     // bg-[#F8F8F8]
-    <div className="p-4 flex flex-col gap-2 w-[430px] rounded-xl h-fit min-w-[390px] bg-[#F8F8F8] min-h-[472px]">
+    <div className="p-4 flex flex-col gap-2 mr-3 bg-[#F8F8F8] rounded-xl h-fit min-h-[472px]">
       <span className="max-w-[371.62] overflow-hidden max-h-[280]">
         <Image
           src={image}

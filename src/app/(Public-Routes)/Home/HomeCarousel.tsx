@@ -118,9 +118,19 @@ const HomeCarousel = ({
 }: HomeCarouselProps) => {
   const responsive = {
     0: { items: 1 },
-    568: { items: 2 },
+    768: { items: 2 },
     1024: { items: 3 },
   }
+
+  const items: any = []
+
+  data.map((item, index) =>
+    items.push(
+      <div key={index}>
+        <Component {...item} />
+      </div>
+    )
+  )
 
   return (
     <section className="flex gap-6 flex-col">
@@ -142,47 +152,27 @@ const HomeCarousel = ({
           )}
         </div>
       </div>
-      {/* <div className="flex gap-4 overflow-x-scroll">
-        {data.map((data, index) => (
-          <Component
-            key={index}
-            {...data}
-          />
-        ))}
-      </div> */}
-      <AliceCarousel
-        mouseTracking
-        controlsStrategy="alternate"
-        items={data.map((item, index) => (
-          <div
-            className="ml-3 mr-3"
-            key={index}
-          >
-            <Component {...item} />
-          </div>
-        ))}
-        responsive={responsive}
-        renderPrevButton={() => (
-          <button className="alice-prev-btn border-[#4d61f4] border h-[35px] w-[35px] rounded-[50%] relative mr-1">
-            <AiOutlineArrowLeft className="text-[#4d61f4] text-[1.2rem] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
-          </button>
-        )}
-        renderNextButton={() => (
-          <button className="alice-next-btn border-[#4d61f4] border h-[35px] w-[35px] rounded-[50%] relative ml-1">
-            <AiOutlineArrowRight className="text-[#4d61f4] text-[1.2rem] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
-          </button>
-        )}
-      />
-      <div className="flex mt-2 justify-between">
-        <p></p>
-        {/* <div className="flex gap-3">
-          <button className="border-[#4d61f4] border h-[35px] w-[35px] grid place-content-center rounded-[50%] swiper-button-prev">
-            <AiOutlineArrowLeft className="text-[#4d61f4] text-[1.2rem]" />
-          </button>
-          <button className="border-[#4d61f4] border h-[35px] w-[35px] grid place-content-center rounded-[50%] swiper-button-next">
-            <AiOutlineArrowRight className="text-[#4d61f4] text-[1.2rem]" />
-          </button>
-        </div> */}
+      <div className="mt-16 flex justify-center items-center w-full sm:gap-4">
+        <AliceCarousel
+          mouseTracking
+          controlsStrategy="alternate"
+          items={items}
+          responsive={responsive}
+          autoPlay
+          autoPlayStrategy="default"
+          infinite
+          autoPlayInterval={2000}
+          renderPrevButton={() => (
+            <button className="alice-prev-btn border-[#4d61f4] border h-[35px] w-[35px] rounded-[50%] relative mr-1">
+              <AiOutlineArrowLeft className="text-[#4d61f4] text-[1.2rem] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
+            </button>
+          )}
+          renderNextButton={() => (
+            <button className="alice-next-btn border-[#4d61f4] border h-[35px] w-[35px] rounded-[50%] relative ml-1">
+              <AiOutlineArrowRight className="text-[#4d61f4] text-[1.2rem] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
+            </button>
+          )}
+        />
       </div>
     </section>
   )

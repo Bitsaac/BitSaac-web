@@ -40,7 +40,7 @@ const TestimonialCard = ({
   userName,
   position,
 }: TestimonialProps) => (
-  <article className="flex gap-5 flex-col px-4 py-5 border-[#F8F8F8] rounded-lg bg-white hover:bg-[#E9EBF8] border">
+  <article className="flex gap-5 md:mr-4 flex-col px-4 py-5 border-[#F8F8F8] rounded-lg bg-white hover:bg-[#E9EBF8] border">
     <Stars count={rating} />
     <p>{info}</p>
     <div className="flex gap-3">
