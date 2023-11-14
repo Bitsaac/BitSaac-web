@@ -18,7 +18,9 @@ const Faqs: React.FC = () => {
   return (
     <div className="py-[64px] sm:py-[112px] px-[16px] sm:px-[64px] flex flex-col gap-[80px]">
       <span className="flex flex-col items-start font-Roboto gap-[24px]">
-        <h2 className="">Frequently Asked Questions</h2>
+        <h2 className="font-Raleway font-semibold md:font-bold text-[1.5rem] md:text-[2.2rem] md:leading-[40px] text-[#2A2738]">
+          Frequently Asked Questions
+        </h2>
         <h3>Find answers to common questions about BitSaac and BitCommerce.</h3>
       </span>
       <div className="w-full flex flex-col ">

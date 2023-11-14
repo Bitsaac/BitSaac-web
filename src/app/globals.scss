@@ -97,6 +97,49 @@ button {
   width: 91%;
   margin: 0 auto;
 }
+
+// Carousels
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  padding: 0 !important;
+}
+
+/* Custom styling for Alice Carousel */
+.alice-carousel {
+  width: 100%; /* Set the width to 100% to ensure full width */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+}
+
+.alice-carousel .alice-carousel__stage-item {
+  margin: 0 10px !important;
+}
+
+// .alice-carousel__stage-item:nth-child(1){
+//   background-color: red !important;
+//   margin-left: 0 !important;
+// }
+
+// /* Style the individual items within the carousel */
+// .alice-carousel .alice-carousel__wrapper .alice-carousel__stage-item {
+//   padding: 0 5px; /* Adjust the padding to control item spacing */
+// }
+
+// /* Style the prev and next buttons if needed */
+// .alice-carousel .alice-carousel__prev-btn, .alice-carousel .alice-carousel__next-btn {
+//   background: transparent;
+//   border: none;
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+// }
+
+// /* Adjust the button container size if needed */
+// .alice-carousel .alice-carousel__prev-btn-wrapper, .alice-carousel .alice-carousel__next-btn-wrapper {
+//   width: auto;
+//   height: auto;
+// }
+
 @media (min-width: 780px) {
   .my_container {
     width: 92%;

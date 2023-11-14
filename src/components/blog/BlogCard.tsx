@@ -7,7 +7,7 @@ import Link from "next/link";
 import React, { useRef } from "react";
 import { PiCubeFill } from "react-icons/pi";
 
-type BlogCardProps = {
+export type BlogCardProps = {
   label: string;
   title: string;
   time: string;

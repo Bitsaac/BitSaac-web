@@ -7,6 +7,7 @@ import { FaTimes } from "react-icons/fa";
 import { LiaBarsSolid } from "react-icons/lia";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import Talktousbutton from "../Talktousbutton";
+import GetInTouchText from "../GetInTouch";
 
 type NavToggleProps = {
   toggle__btn: string;
@@ -82,7 +83,7 @@ export const Linkscontainer = ({
         isNavShowing && show__container
       }`}
     >
-      <ul className={links}>
+      <ul className={`${links}`}>
         {routes.map((route, index) => {
           return (
             <li onClick={closeNav} key={index}>
@@ -145,11 +146,8 @@ export const Linkscontainer = ({
             ))}
         </ul>
         <div>
-          <p className=" font-Inter text-sm md:hidden text-[#2A2738]  bg-surface/200 py-2 ">
-            Looking for new job opportunities?{" "}
-            <span className=" underline">Get in Touch </span>
-          </p>
-          <Talktousbutton className="rounded-lg border flex md:hidden border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4]" />
+          <GetInTouchText className="md:hidden" />
+          <Talktousbutton className="rounded-lg border flex md:hidden border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4] mt-2" />
         </div>
       </ul>
     </div>

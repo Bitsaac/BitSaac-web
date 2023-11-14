@@ -245,6 +245,8 @@ const BitCommerce = () => {
           />
         </span>
       </Container>
+      <TestimonialsCarousel />
+      <CTA />
     </section>
   )
 }
@@ -253,6 +255,8 @@ export default BitCommerce
 
 import cn from "@/utils/tailwind"
 import Talktousbutton from "@/components/Talktousbutton"
+import TestimonialsCarousel from "../Home/TestimonialsCarousel"
+import CTA from "../Home/CTA"
 export const Container = ({
   className,
   children,
@@ -263,7 +267,7 @@ export const Container = ({
   return (
     <div
       className={cn(
-        "my_container grid grid-cols-1 md:grid-cols-2 gap-3 py-8",
+        "my_container grid grid-cols-1 max-w-[1020px] md:grid-cols-2 gap-3 py-8",
         className !== "" ? className : ""
       )}
     >
