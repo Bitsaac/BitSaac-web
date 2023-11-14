@@ -11,6 +11,8 @@ import { BiBasketball } from "react-icons/bi"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import Talktousbutton from "@/components/Talktousbutton"
+import CTA from "../Home/CTA"
 import Howwework from "@/components/about/howwework"
 import Faqs from "../faqs/Faqs"
 import Contact from "../contact/page"
@@ -122,9 +124,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <Button className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px] lg:absolute lg:top-[18%] xl:top-[15%]">
-          Talk to us
-        </Button>
+        <Talktousbutton className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px] lg:absolute lg:top-[22%] xl:top-[15%]" />
 
         {/* PROCESS SECTION */}
         <Howwework />

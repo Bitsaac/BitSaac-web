@@ -1,11 +1,8 @@
 import type { Metadata } from "next"
 import { Inter, Roboto_Condensed } from "next/font/google"
-import "./globals.scss"
-// import Navbar from "@/components/navbar/Navbar"
-import Navbar from "@/components/navbar/Navbar"
-import Footer from "@/components/footer/Footer"
+import { ClerkProvider } from "@clerk/nextjs"
 import GotoTop from "@/components/GotoTop"
-import { NavContextProvider } from "@/context/NavContext"
+import "./globals.scss"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,15 +26,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${roboto.variable}`}
-    >
-      <body>
-        {children}
-
-        <GotoTop />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html
+        lang="en"
+        className={`${inter.variable} ${roboto.variable}`}
+      >
+        <body>
+          {children}
+          <GotoTop />
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

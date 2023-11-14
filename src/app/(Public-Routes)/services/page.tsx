@@ -5,6 +5,9 @@ import { services } from "./serviceItem"
 import Howwework from "@/components/about/howwework"
 import Contact from "../contact/page"
 import Banner from "../Home/banner/Banner"
+import Talktousbutton from "@/components/Talktousbutton"
+import CTA from "../Home/CTA"
+import TestimonialsCarousel from "../Home/TestimonialsCarousel"
 
 const Services = () => {
   return (
@@ -18,11 +21,9 @@ const Services = () => {
           Discover our wide range of services and let us help you achieve your
           goals.
         </p>
-        <div className="flex gap-[.5rem] font-medium text-[1rem] leading-tight mt-[1rem]">
-          <Button className="text-white bg-primary rounded-md">
-            Talk To Us
-          </Button>
-          <Button className="text-primary border-[1px] border-primary rounded-md">
+        <div className="flex gap-[.5rem] md:gap-[1rem] items-center font-medium text-[1rem] leading-tight mt-[1rem]">
+          <Talktousbutton className="bg-primary rounded-md text-white my-[1rem]" />
+          <Button className="text-primary h-[45px] font-Inter border-[1px] border-primary rounded-md">
             Learn More
           </Button>
         </div>
@@ -119,9 +120,7 @@ const Services = () => {
             expertise and dedication, we deliver exceptional results that help
             our clients achieve their goals.
           </p>
-          <Button className="bg-primary mt-[1rem] font-medium rounded-md font-Inter text-white">
-            Talk To Us
-          </Button>
+          <Talktousbutton className="bg-primary rounded-md text-white my-[1rem]" />
         </div>
         <div className="md:flex-1">
           <Image

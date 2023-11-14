@@ -1,11 +1,13 @@
 "use client";
 import { NavContext } from "@/context/NavContext";
-import { moreLinks, routes } from "../../data";
+import { moreDropDownItems, routes } from "../../data";
 import Link from "next/link";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { LiaBarsSolid } from "react-icons/lia";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import Talktousbutton from "../Talktousbutton";
+import GetInTouchText from "../GetInTouch";
 
 type NavToggleProps = {
   toggle__btn: string;
@@ -34,6 +36,7 @@ export const Linkscontainer = ({
   show__container,
   links,
 }: LinkscontainerProps) => {
+  const [isResizing, setIsResizing] = useState(false);
   const { isNavShowing, setIsNavShowing, more, setMore } =
     useContext(NavContext)!;
   useEffect(() => {
@@ -47,11 +50,32 @@ export const Linkscontainer = ({
   const closeNav = () => {
     if (window.innerHeight > 721) {
       setIsNavShowing(false);
+      setMore(false);
       return;
     } else {
       setIsNavShowing(!isNavShowing);
     }
   };
+
+  useEffect(() => {
+    let resizeTimer: any;
+
+    const handleResize = () => {
+      document.body.classList.add("resize-animation-stopper");
+      setIsResizing(true);
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        document.body.classList.remove("resize-animation-stopper");
+        setIsResizing(false);
+      }, 400);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div
@@ -59,35 +83,34 @@ export const Linkscontainer = ({
         isNavShowing && show__container
       }`}
     >
-      <ul className={links}>
+      <ul className={`${links}`}>
         {routes.map((route, index) => {
           return (
-            <>
-              <li onClick={closeNav} key={index}>
-                <Link href={route.url}>
-                  <span>{route.title}</span>
-                </Link>
-              </li>
-            </>
+            <li onClick={closeNav} key={index}>
+              <Link href={route.url}>
+                <span>{route.title}</span>
+              </Link>
+            </li>
           );
         })}
         <div
           onClick={() => setMore(!more)}
           className="flex items-center cursor-pointer w-full md:w-auto justify-between"
         >
-          <p>More</p>{" "}
+          <p>More</p>
           {more ? (
             <AiOutlineUp className="text-[1.4rem]" />
           ) : (
             <AiOutlineDown className="text-[1.4rem]" />
           )}
         </div>
-        <>
+        <ul>
           {more &&
-            moreLinks.map((link, index) => (
+            moreDropDownItems.map((link, index) => (
               <li
                 key={index}
-                className="pl-5 flex gap-2 items-center md:hidden"
+                className="pl-5 flex bg-black gap-1 items-center md:hidden"
+                onClick={closeNav}
               >
                 <svg
                   width="24"
@@ -116,20 +139,15 @@ export const Linkscontainer = ({
                     </clipPath>
                   </defs>
                 </svg>
-                <Link href={link.url}>
+                <Link className="block w-full" href={link.path}>
                   <span>{link.title}</span>
                 </Link>
               </li>
             ))}
-        </>
+        </ul>
         <div>
-          <p className=" font-Inter text-sm text-[#2A2738]  bg-surface/200 py-2 ">
-            Looking for new job opportunities?{" "}
-            <span className=" underline">Get in Touch </span>
-          </p>
-          <button className="rounded-lg border flex md:hidden border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4]">
-            Talk to us
-          </button>
+          <GetInTouchText className="md:hidden" />
+          <Talktousbutton className="rounded-lg border flex md:hidden border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4] mt-2" />
         </div>
       </ul>
     </div>
