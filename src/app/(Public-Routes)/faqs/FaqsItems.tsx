@@ -7,27 +7,29 @@ export const faqData: FAQItem[] = [
   {
     question: "What is BitCommerce?",
     answer:
-      "Thumbs NFT Collection is a unique collection of 5,054 NFTs, each featuring 10 different types of thumbs, each with distinct personalities and behaviors, creating a fun and engaging experience.",
+      " BitSaac is an innovative tech agency and community of tech creatives. We offer web and mobile app development, UI/UX design, and more.",
   },
   {
-    question: "Can I sell services?",
+    question: "How can i get started with BitSaac for my project?",
     answer:
-      "Our mission is to provide a fun NFT experience while addressing Web3 challenges like scalability, interoperability, and sustainability.",
+      " Getting started is easy! Simply reach out to us through our contact form or email, and our team will promptly get in touch to discuss your requirements and guide you through the process.",
   },
   {
-    question: "What is BitSaac?",
+    question:
+      "What technologies and tools does BitSaac use for development and design?",
     answer:
-      "Our roadmap includes launching on Polygon, rewards and staking, play-to-earn games, and a vocational platform for holders.",
+      "We stay up-to-date with the latest technologies and tools to deliver cutting-edge solutions. Our team is proficient in industry-standard software and frameworks, ensuring top-notch results.",
   },
   {
-    question: "What are the benefits?",
+    question: "Do you offer ongoing support after the project is completed?",
     answer:
-      "You can stake them for rewards, play games, enter raffles, and participate in upcoming play-to-earn games.",
+      "  Yes, we provide post-launch support and maintenance to ensure your product operates smoothly and efficiently. We offer various support packages tailored to your specific needs.",
   },
   {
-    question: "How do I get started?",
+    question:
+      "Is BitSaac a global company, or do you operate in specific regions?",
     answer:
-      "Follow us on social media and subscribe to our channels for regular updates. Join us in shaping the NFT and Web3 future! 🚀💎.",
+      "BitSaac is a global company, providing services to clients worldwide. We operate remotely, allowing us to cater to diverse audiences across different regions.",
   },
 ]
 

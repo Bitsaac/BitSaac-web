@@ -11,7 +11,7 @@ import TestimonialsCarousel from "./Home/TestimonialsCarousel"
 
 export default function Home() {
   return (
-    <main className="max-container overflow-x-hidden">
+    <main className="max-w-[1920px] overflow-x-hidden">
       <Header />
       <Carousel />
       <Brand />
