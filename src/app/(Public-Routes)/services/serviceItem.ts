@@ -1,4 +1,4 @@
-export const whatWeDo = () => {
+export const services = () => {
   return [
     {
       id: 1,
