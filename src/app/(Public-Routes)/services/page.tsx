@@ -31,14 +31,18 @@ const Services = () => {
         <div className="mb-[3rem]">
           <div className="md:flex md:items-center md:justify-center md:gap-[1.5rem] lg:gap-[3rem] xl:gap-[5rem]">
             <h2 className="font-Inter text-[2rem] text-deepBlue xl:text-[3rem] font-bold capitalize leading-tight md:flex-1">
-            Streamlined Process for Client Satisfaction
+              Streamlined Process for Client Satisfaction
             </h2>
             <p className="mt-[1.5rem] text-[1rem] font-normal leading-tight md:flex-1">
-              At BitSaac, we believe in delivering exceptional results and ensuring client satisfaction. 
-              Our process begins with an initial consultation where we understand your requirements and goals. 
-              We then proceed to design and develop your project, keeping you involved at every step. 
-              We prioritize open communication and collaboration to ensure that the final product meets your expectations. 
-              Our team of tech experts is dedicated to providing you with a seamless experience and delivering a solution that exceeds your expectations.
+              At BitSaac, we believe in delivering exceptional results and
+              ensuring client satisfaction. Our process begins with an initial
+              consultation where we understand your requirements and goals. We
+              then proceed to design and develop your project, keeping you
+              involved at every step. We prioritize open communication and
+              collaboration to ensure that the final product meets your
+              expectations. Our team of tech experts is dedicated to providing
+              you with a seamless experience and delivering a solution that
+              exceeds your expectations.
             </p>
           </div>
         </div>
@@ -79,8 +83,11 @@ const Services = () => {
             BitCommerce: Empowering SMEs with Innovative E-commerce Solutions
           </h2>
           <p className="text-[1.1rem] md:text-[.9rem] lg:text-[1.2rem] font-normal font-Inter leading-tight mb-[3rem]">
-            BitCommerce is a specialized e-commerce platform designed and developed by BitSaac to cater specifically to SME businesses. 
-            With a user-friendly interface and powerful features, BitCommerce helps SMEs create, manage, and optimize their online stores, driving growth and success in the digital marketplace.
+            BitCommerce is a specialized e-commerce platform designed and
+            developed by BitSaac to cater specifically to SME businesses. With a
+            user-friendly interface and powerful features, BitCommerce helps
+            SMEs create, manage, and optimize their online stores, driving
+            growth and success in the digital marketplace.
           </p>
         </div>
         <Image

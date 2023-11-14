@@ -34,7 +34,6 @@ const settings = {
 }
 
 const About = () => {
-  
   return (
     // @gafaradetunji there's max width container class in global.css
     <div className="max-container">
@@ -48,7 +47,11 @@ const About = () => {
           className="inset-0 z-0 w-full h-full object-cover"
         />
         <div className="font-Raleway z-8 absolute inset-0 text-white py-[4rem] xl:py-[7rem] px-[1.25rem] md:px-[32px] xl:px-[64px] bg-[rgba(0,0,0,0.5)]">
-          <div className={"md:w-[70%] lg:w-[70%] xl:w-[60%] transition-all duration-200 slideUp"}>
+          <div
+            className={
+              "md:w-[70%] lg:w-[70%] xl:w-[60%] transition-all duration-200 slideUp"
+            }
+          >
             <h2 className="text-[1rem] font-bold mb-[.75rem] slideUp">
               Innovative
             </h2>
@@ -73,8 +76,8 @@ const About = () => {
               </div>
               <div className="lg:w-[70%] md:w-[70%]">
                 <span className="text-[.95rem] md:text-[.8rem] lg:text-[1rem] font-normal">
-                  By clicking the button, you're confirming that you agree with our
-                  Terms and Conditions.
+                  By clicking the button, you're confirming that you agree with
+                  our Terms and Conditions.
                 </span>
               </div>
             </div>

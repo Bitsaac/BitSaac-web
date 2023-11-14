@@ -51,7 +51,7 @@ const config: Config = {
         "btn-secondary": "#4D61F4",
         textGrey: "#777",
         portfolio: "#7632D6",
-        deepBlue: "#2A2738"
+        deepBlue: "#2A2738",
       },
       backgroundImage: {
         banner: "/banner.png",
