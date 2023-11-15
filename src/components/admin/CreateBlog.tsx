@@ -111,7 +111,7 @@ const CreateBlog = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
-    const formId = toast.loading("Uploading form...");
+    const formId = toast.loading("Publishing post...");
 
     try {
       const res = await fetch("/api/blog-post", {
@@ -133,35 +133,31 @@ const CreateBlog = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data.status);
           console.log(data);
-          if (data.ok || data.status === 201) {
+          if (data.status === 201) {
             toast.update(formId, {
-              render: "Form uploaded successfully!",
+              render: "Post published successfully!",
               type: "success",
               isLoading: false,
+              autoClose: 5000,
             });
             setIsLoading(false);
-          }
-          if (!data.ok) {
-            toast.update(formId, {
-              render: "Error uploading form",
-              type: "error",
-              isLoading: false,
-            });
           }
         });
     } catch (error: any) {
       toast.update(formId, {
-        render: "Error uploading form",
+        render: "Error publishing post",
         type: "error",
         isLoading: false,
+        progress: 1,
       });
       setIsLoading(false);
       console.log(error);
     } finally {
       window?.setTimeout(() => {
         toast.dismiss(formId);
-      }, 2000);
+      }, 5000);
       setIsLoading(false);
     }
   };
