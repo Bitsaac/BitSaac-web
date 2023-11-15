@@ -11,6 +11,7 @@ import { CategoriesProps, useFormCtx } from "@/context/FormContext";
 import cn from "@/utils/tailwind";
 import dynamic from "next/dynamic";
 import LoadingSpinner from "../loaders/LoadingSpinner";
+import PreviewBlog from "./PreviewBlog";
 
 const Editor = dynamic(() => import("./Editor"), {
   ssr: false,
@@ -35,9 +36,10 @@ const CreateBlog = () => {
     coverImg,
     setCoverImg,
     isDisabled,
-    BASE_URL,
+    openPreview,
     isLoading,
     setIsLoading,
+    setOpenPreview,
   } = useFormCtx();
   const subTitleLength = formData.subTitle.length;
 
@@ -164,6 +166,7 @@ const CreateBlog = () => {
 
   return (
     <div className="w-full flex flex-col gap-x-5 mt-10 lg:mt-20">
+      {openPreview && <PreviewBlog />}
       <ToastContainer />
       <div className="flex w-full justify-between p-1">
         <form
@@ -285,7 +288,7 @@ const CreateBlog = () => {
 
               <div className="flex flex-col w-full items-center justify-center bg-surface400 rounded py-5 px-4 lg:px-6 gap-y-4 h-full">
                 {coverImg.src ? (
-                  <div className="relative ">
+                  <div className="relative z-10">
                     <Image
                       src={coverImg.src}
                       height={500}
@@ -358,12 +361,16 @@ const CreateBlog = () => {
             </div>
           </div>
           <div className="hidden md:flex my-10 lg:my-20 w-full justify-center gap-x-8 [&>*]:text-2xl [&>*]:p-4 [&>*]:px-12 [&>*]:rounded-xl font-Inter">
-            <span
-              role="button"
+            <button
+              type="button"
+              onClick={() => setOpenPreview(true)}
+              role="dialog"
+              aria-modal="true"
+              disabled={formData.content.length === 0}
               className="border-[1.2px] px-16 border-[#181818]"
             >
               Preview
-            </span>
+            </button>
             <button
               type="submit"
               disabled={isDisabled}

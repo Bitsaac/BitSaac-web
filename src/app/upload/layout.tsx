@@ -21,7 +21,7 @@ export default function UploadLayout({
   return (
     <FormContextProvider>
       <AdminNav />
-      <main className="max-container relative">{children}</main>
+      <main className="max-container relative ">{children}</main>
     </FormContextProvider>
   )
 }
