@@ -59,7 +59,7 @@ const UploadPgae = () => {
   }, [activeTag, router])
 
   return (
-    <section className="mt-10 lg:mt-20 px-8 w-full flex flex-col">
+    <section className="mt-10 lg:mt-20 px-3 sm:px-8 w-full flex flex-col">
       <div className="flex w-full justify-between items-center">
         <div className="felx">
           <h1

@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import GotoTop from "@/components/GotoTop"
 import AdminNav from "@/components/admin/AdminNav"
 import { auth, redirectToSignIn } from "@clerk/nextjs"
+import FormContextProvider from "@/context/FormContext"
 
 export const metadata: Metadata = {
   title: "Create",
@@ -18,9 +19,9 @@ export default function UploadLayout({
   if (!userId) return redirectToSignIn()
   console.log(userId)
   return (
-    <>
+    <FormContextProvider>
       <AdminNav />
       <main className="max-container relative">{children}</main>
-    </>
+    </FormContextProvider>
   )
 }

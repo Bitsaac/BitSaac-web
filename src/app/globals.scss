@@ -181,3 +181,19 @@ button {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.ql-container.ql-snow,
+.ql-container {
+  padding-bottom: 4rem;
+  // border-radius: 20px;
+}
+.quill {
+  border-radius: 20px;
+}
+
+.ql-align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
