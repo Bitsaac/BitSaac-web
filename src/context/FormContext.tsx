@@ -25,6 +25,8 @@ type FormData = {
 };
 
 interface FormContextProps {
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   formData: FormData;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
   coverImg: { src: string; name: string };
@@ -49,6 +51,7 @@ export const FormContext = createContext<FormContextProps>(
 );
 
 const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [coverImg, setCoverImg] = useState<{ src: string; name: string }>({
     src: "",
@@ -91,6 +94,8 @@ const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const value = useMemo(
     () => ({
+      isLoading,
+      setIsLoading,
       formData,
       setFormData,
       coverImg,

@@ -28,11 +28,17 @@ const categories: CategoriesProps[] = [
 
 const MAX_SIZE = 2 * 1024 * 1024; // 2MB in bytes
 const CreateBlog = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
-  const { formData, setFormData, coverImg, setCoverImg, isDisabled } =
-    useFormCtx();
+  const {
+    formData,
+    setFormData,
+    coverImg,
+    setCoverImg,
+    isDisabled,
+    BASE_URL,
+    isLoading,
+    setIsLoading,
+  } = useFormCtx();
   const subTitleLength = formData.subTitle.length;
 
   const handleImage = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -103,6 +109,50 @@ const CreateBlog = () => {
   };
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsLoading(true);
+    const formId = toast.loading("Uploading form...");
+
+    try {
+      const res = await fetch(`${BASE_URL}/blog/create`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: formData.title,
+          subTitle: formData.subTitle,
+          author: formData.author,
+          coverImage: formData.image,
+          imageCredit: formData.credits,
+          contentType: formData.contentType,
+          category: formData.category,
+          content: formData.content,
+        }),
+      });
+      if (res.ok || res.status === 201) {
+        toast.update(formId, {
+          render: "Form uploaded successfully!",
+          type: "success",
+          isLoading: false,
+        });
+        setIsLoading(false);
+      }
+      const data = await res.json();
+      console.log(data);
+    } catch (error: any) {
+      toast.update(formId, {
+        render: "Error uploading form",
+        type: "error",
+        isLoading: false,
+      });
+      setIsLoading(false);
+      console.log(error);
+    } finally {
+      window?.setTimeout(() => {
+        toast.dismiss(formId);
+      }, 2000);
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -317,8 +367,13 @@ const CreateBlog = () => {
                   : "cursor-pointer",
               )}
             >
-              <span> Publish</span>
-              <BsArrowRight />
+              {isLoading && (
+                <div className="flex items-center justify-center">
+                  <LoadingSpinner color="border-white" />
+                </div>
+              )}
+              <span> {isLoading ? "Publishing..." : "Publish"}</span>
+              {!isLoading && <BsArrowRight />}
             </button>
           </div>
         </form>
