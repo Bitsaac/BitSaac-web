@@ -2,10 +2,12 @@
 import cn from "@/utils/tailwind";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import PeopleHoldingHandsImg from "/public/people-holding-hands.png";
+import { NavContext } from "@/context/NavContext";
 
-const Talktousbutton = ({ className }: { className?: string }) => {
+const GetInTouchText = ({ className }: { className?: string }) => {
+  const { closeNav } = useContext(NavContext)!;
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -52,21 +54,29 @@ const Talktousbutton = ({ className }: { className?: string }) => {
 
   return (
     <div>
-      <button
-        onClick={handleClick}
+      <p
         className={cn(
-          "rounded-lg border border-[#4D61F4] text-[#4D61F4] px-[24px] py-[12px]",
+          "font-Inter text-sm text-[#2A2738]  bg-surface/200",
           className !== "" ? className : "",
         )}
       >
-        Talk to us
-      </button>
+        Looking for new job opportunities?{" "}
+        <span
+          onClick={() => {
+            handleClick();
+            closeNav();
+          }}
+          className="cursor-pointer underline"
+        >
+          Get in Touch{" "}
+        </span>
+      </p>
       <>
         {isOpen && (
           <div
             className={cn(
-              "fixed top-0 left-0  overflow-hidden w-full h-screen bg-[rgba(0,0,0,0.8)] flex flex-col items-center justify-center transition-[var(--transition)] invisible z-[-10] backdrop-blur-[1rem]",
-              isOpen ? "visible z-[99999]" : "",
+              "fixed top-0 left-0 overflow-hidden w-full h-full bg-[rgba(0,0,0,0.8)] flex flex-col items-center justify-center transition-[var(--transition)] invisible z-[-10] backdrop-blur-[1rem]",
+              isOpen ? "visible z-19" : "",
             )}
           >
             <div
@@ -115,7 +125,7 @@ const Talktousbutton = ({ className }: { className?: string }) => {
               <div className="bg-[#E9EBF8] shadow-md hover:shadow-lg rounded-lg flex flex-col gap-3 py-5 px-5">
                 <div className="flex flex-col  gap-1 group">
                   <label
-                    className="font-medium text-[#777] group-focus-within:text-black font-Inter"
+                    className="font-medium self-start text-[#777] group-focus-within:text-black font-Inter"
                     htmlFor="name"
                   >
                     Name :
@@ -128,7 +138,7 @@ const Talktousbutton = ({ className }: { className?: string }) => {
                 </div>
                 <div className="flex flex-col gap-1 group">
                   <label
-                    className="font-medium text-[#777] group-focus-within:text-black font-Inter"
+                    className="font-medium self-start text-[#777] group-focus-within:text-black font-Inter"
                     htmlFor="company"
                   >
                     Company&rsquo;s Name :
@@ -142,7 +152,7 @@ const Talktousbutton = ({ className }: { className?: string }) => {
                 <div className="flex flex-col lg:flex-row gap-4">
                   <div className="flex w-full flex-col gap-1 group">
                     <label
-                      className="font-medium text-[#777] group-focus-within:text-black font-Inter"
+                      className="font-medium self-start text-[#777] group-focus-within:text-black font-Inter"
                       htmlFor="email"
                     >
                       Email :
@@ -155,7 +165,7 @@ const Talktousbutton = ({ className }: { className?: string }) => {
                   </div>
                   <div className="flex w-full flex-col gap-1 group">
                     <label
-                      className="font-medium text-[#777] group-focus-within:text-black font-Inter"
+                      className="font-medium self-start text-[#777] group-focus-within:text-black font-Inter"
                       htmlFor="number"
                     >
                       Contact Number :
@@ -169,7 +179,7 @@ const Talktousbutton = ({ className }: { className?: string }) => {
                 </div>
                 <div className="flex flex-col gap-1 group">
                   <label
-                    className="font-medium text-[#777] group-focus-within:text-black font-Inter"
+                    className="font-medium self-start text-[#777] group-focus-within:text-black font-Inter"
                     htmlFor="message"
                   >
                     Leave a message :
@@ -201,4 +211,4 @@ const Talktousbutton = ({ className }: { className?: string }) => {
   );
 };
 
-export default Talktousbutton;
+export default GetInTouchText;

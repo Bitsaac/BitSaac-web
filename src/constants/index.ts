@@ -225,3 +225,76 @@ export const PORTFOLIO_CARDS: PortfolioCardProps[] = [
     affiliated: true,
   },
 ];
+
+export const CUSTOMER_TESTIMONIALS = [
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 5,
+    id: 1,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 5,
+    id: 2,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 5,
+    id: 3,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 5,
+    id: 4,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 4,
+    id: 5,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 5,
+    id: 6,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 5,
+    id: 7,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 4,
+    id: 8,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 3,
+    id: 9,
+  },
+  {
+    info: "We are thrilled with the results BitSaac delivered. They are true experts in their field.",
+    userName: "Michael Wilson",
+    position: "CTO, Tech solutions",
+    rating: 5,
+    id: 10,
+  },
+];
