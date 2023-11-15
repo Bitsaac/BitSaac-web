@@ -27,6 +27,8 @@ type FormData = {
 interface FormContextProps {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  openPreview: boolean;
+  setOpenPreview: React.Dispatch<React.SetStateAction<boolean>>;
   formData: FormData;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
   coverImg: { src: string; name: string };
@@ -53,11 +55,12 @@ export const FormContext = createContext<FormContextProps>(
 const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [openPreview, setOpenPreview] = useState(false);
   const [coverImg, setCoverImg] = useState<{ src: string; name: string }>({
     src: "",
     name: "",
   });
-  const BASE_URL = "https://bitsaac-api.onrender.com/api/v1/";
+  const BASE_URL = "https://bitsaac-api.onrender.com/api/v1";
 
   const isDisabled =
     formData.title === "" ||
@@ -90,8 +93,6 @@ const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, []);
 
-  console.log(formData);
-
   const value = useMemo(
     () => ({
       isLoading,
@@ -102,8 +103,10 @@ const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
       setCoverImg,
       isDisabled,
       BASE_URL,
+      openPreview,
+      setOpenPreview,
     }),
-    [formData, coverImg],
+    [formData, coverImg, isLoading, isDisabled, openPreview, setOpenPreview],
   );
 
   return <FormContext.Provider value={value}>{children}</FormContext.Provider>;
