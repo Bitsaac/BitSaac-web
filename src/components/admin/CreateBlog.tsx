@@ -107,17 +107,19 @@ const CreateBlog = () => {
       }, 2000);
     }
   };
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
     const formId = toast.loading("Uploading form...");
 
     try {
-      const res = await fetch(`${BASE_URL}/blog/create`, {
+      const res = await fetch("/api/blog-post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+
         body: JSON.stringify({
           title: formData.title,
           subTitle: formData.subTitle,
@@ -128,17 +130,26 @@ const CreateBlog = () => {
           category: formData.category,
           content: formData.content,
         }),
-      });
-      if (res.ok || res.status === 201) {
-        toast.update(formId, {
-          render: "Form uploaded successfully!",
-          type: "success",
-          isLoading: false,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.ok || data.status === 201) {
+            toast.update(formId, {
+              render: "Form uploaded successfully!",
+              type: "success",
+              isLoading: false,
+            });
+            setIsLoading(false);
+          }
+          if (!data.ok) {
+            toast.update(formId, {
+              render: "Error uploading form",
+              type: "error",
+              isLoading: false,
+            });
+          }
         });
-        setIsLoading(false);
-      }
-      const data = await res.json();
-      console.log(data);
     } catch (error: any) {
       toast.update(formId, {
         render: "Error uploading form",
@@ -244,7 +255,7 @@ const CreateBlog = () => {
                     className={cn(
                       "w-full p-2 outline-none rounded-md  border border-gray-200 py-3     resize-none h-[120px] sm:h-[181px] transition-all duration-300",
                       subTitleLength > 50 ||
-                        (subTitleLength < 11 && subTitleLength > 0)
+                        (subTitleLength < 10 && subTitleLength > 0)
                         ? "border-red-500"
                         : subTitleLength > 10 && subTitleLength <= 50
                         ? "border-green-500"
@@ -350,13 +361,13 @@ const CreateBlog = () => {
               <p>Please use a bigger screen to use the editor</p>
             </div>
           </div>
-          <div className="hidden md:flex my-10 lg:my-20 w-full justify-center gap-x-8 [&>button]:text-2xl [&>button]:p-4 [&>button]:px-12 [&>button]:rounded-xl font-Inter">
-            <button
-              type="button"
+          <div className="hidden md:flex my-10 lg:my-20 w-full justify-center gap-x-8 [&>*]:text-2xl [&>*]:p-4 [&>*]:px-12 [&>*]:rounded-xl font-Inter">
+            <span
+              role="button"
               className="border-[1.2px] px-16 border-[#181818]"
             >
               Preview
-            </button>
+            </span>
             <button
               type="submit"
               disabled={isDisabled}

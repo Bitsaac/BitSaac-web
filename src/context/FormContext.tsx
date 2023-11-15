@@ -57,7 +57,7 @@ const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
     src: "",
     name: "",
   });
-  const BASE_URL = "https://bitsaac-api.onrender.com/api/v1/";
+  const BASE_URL = "https://bitsaac-api.onrender.com/api/v1";
 
   const isDisabled =
     formData.title === "" ||
@@ -90,8 +90,6 @@ const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, []);
 
-  console.log(formData);
-
   const value = useMemo(
     () => ({
       isLoading,
@@ -103,7 +101,7 @@ const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
       isDisabled,
       BASE_URL,
     }),
-    [formData, coverImg],
+    [formData, coverImg, isLoading, isDisabled],
   );
 
   return <FormContext.Provider value={value}>{children}</FormContext.Provider>;
