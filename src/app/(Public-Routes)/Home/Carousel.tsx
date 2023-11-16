@@ -4,16 +4,42 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import webflow from "@/assets/webflow.png"
-import black from "@/assets/Black.png"
 
-export function Carousel() {
-  const [slidesToShow, setSlidesToShow] = useState(6)
+import {
+  bitHQ,
+  EVUSA,
+  plsce,
+  Thumbss,
+  Projexa,
+  Ridgle,
+} from "../../../../public"
+
+type BrandImageProps = {
+  id: number
+  src: string
+}
+export const brandImages: BrandImageProps[] = [
+  { id: 1, src: bitHQ },
+  { id: 2, src: EVUSA },
+  { id: 3, src: plsce },
+  { id: 4, src: Thumbss },
+  { id: 5, src: Projexa },
+  { id: 6, src: Ridgle },
+  { id: 7, src: bitHQ },
+  { id: 8, src: EVUSA },
+  { id: 9, src: plsce },
+  { id: 10, src: Thumbss },
+  { id: 11, src: Projexa },
+  { id: 12, src: Ridgle },
+]
+
+const Carousel = () => {
+  const [slidesToShow, setSlidesToShow] = useState(4)
 
   useEffect(() => {
     const calculateSlidesToShow = () => {
       if (window.innerWidth >= 768) {
-        setSlidesToShow(6)
+        setSlidesToShow(4)
       } else {
         setSlidesToShow(2)
       }
@@ -27,18 +53,6 @@ export function Carousel() {
       window.removeEventListener("resize", calculateSlidesToShow)
     }
   }, [])
-
-  const images = [webflow, black]
-
-  // Duplicate each image 4 times
-  const repeatedImages = [
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-  ]
 
   const settings = {
     dots: false,
@@ -58,14 +72,17 @@ export function Carousel() {
         Brands that Trust Us
       </h3>
       <Slider {...settings}>
-        {repeatedImages.map((image, index) => (
+        {brandImages.map((image: BrandImageProps) => (
           <div
-            key={index}
-            className="w-full"
+            key={image.id}
+            className="w-full h-[90px] "
           >
             <Image
-              src={image}
-              alt={`Image ${index}`}
+              src={image.src}
+              alt={`Image ${image.id}`}
+              height={90}
+              className="  h-[90px]  w-full"
+              loading="eager"
             />
           </div>
         ))}
@@ -73,3 +90,5 @@ export function Carousel() {
     </div>
   )
 }
+
+export default Carousel

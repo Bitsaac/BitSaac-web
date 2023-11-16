@@ -17,6 +17,7 @@ import Howwework from "@/components/about/howwework"
 import Faqs from "../faqs/Faqs"
 import Contact from "../contact/page"
 import Banner from "../Home/banner/Banner"
+import { brandImages } from "../Home/Carousel"
 
 const settings = {
   dots: true,
@@ -104,18 +105,11 @@ const About = () => {
               </p>
             </div>
             <div className="py-[2rem] flex items-center justify-between gap-[1rem] overflow-x-auto lg:flex-wrap lg:w-[50%] xl:w-[40%]">
-              <Image
-                src="/Vector.svg"
-                alt=""
-                width={200}
-                height={200}
-                className="w-[9.7rem] bg-black rounded-md"
-              />
-              {AllImages().map((item) => (
+              {brandImages.slice(0, 6).map((image) => (
                 <Image
-                  key={item.id}
-                  src={item.img}
-                  alt={item.name}
+                  key={image.id}
+                  src={image.src}
+                  alt={"brand"}
                   width={200}
                   height={200}
                   className="w-[9.7rem]"
