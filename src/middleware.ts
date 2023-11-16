@@ -1,5 +1,5 @@
-import { authMiddleware } from "@clerk/nextjs";
+export { default } from "next-auth/middleware";
 
-export default authMiddleware({});
-
-export const config = { matcher: ["/upload"] };
+export const config = {
+  matcher: ["/upload"],
+};

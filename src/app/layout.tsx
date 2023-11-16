@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
 import { Inter, Roboto_Condensed } from "next/font/google"
-import { ClerkProvider } from "@clerk/nextjs"
+
 import GotoTop from "@/components/GotoTop"
 import "./globals.scss"
+import { NextAuthProvider } from "./providers"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,16 +27,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
-      <html
-        lang="en"
-        className={`${inter.variable} ${roboto.variable}`}
-      >
+    <html
+      lang="en"
+      className={`${inter.variable} ${roboto.variable}`}
+    >
+      <NextAuthProvider>
         <body>
           {children}
           <GotoTop />
         </body>
-      </html>
-    </ClerkProvider>
+      </NextAuthProvider>
+    </html>
   )
 }
