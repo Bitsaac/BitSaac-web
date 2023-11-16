@@ -111,9 +111,11 @@ const PreviewBlog = () => {
                     className="rounded-xl"
                     onLoad={() => setImgLoading(false)}
                   />
-                  <strong className="border-l-2 border-gray-800 pl-2 mt-2 text-sm text-gray-700">
-                    {formData.credits}
-                  </strong>
+                  {!imgLoading && (
+                    <strong className="border-l-2 border-gray-800 pl-2 mt-2 text-sm text-gray-700">
+                      {formData.credits}
+                    </strong>
+                  )}
                   <div className="flex sm:hidden w-full justify-between gap-y-2 mt-5 ">
                     <div className="flex flex-col gap-y-2">
                       <p className="text-base">
