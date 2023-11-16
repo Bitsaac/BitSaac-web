@@ -369,7 +369,7 @@ const CreateBlog = () => {
               }}
               role="dialog"
               aria-modal="true"
-              disabled={formData.content.length === 0}
+              disabled={isDisabled}
               className="border-[1.2px] px-16 border-[#181818]"
             >
               Preview
