@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { BsArrowRight, BsCamera } from "react-icons/bs";
 
 import { MdClose } from "react-icons/md";
@@ -12,6 +12,7 @@ import cn from "@/utils/tailwind";
 import dynamic from "next/dynamic";
 import LoadingSpinner from "../loaders/LoadingSpinner";
 import PreviewBlog from "./PreviewBlog";
+import PreviewSkeleton from "../skeleton/PreviewSkeleton";
 
 const Editor = dynamic(() => import("./Editor"), {
   ssr: false,
@@ -29,17 +30,20 @@ const categories: CategoriesProps[] = [
 
 const MAX_SIZE = 2 * 1024 * 1024; // 2MB in bytes
 const CreateBlog = () => {
-  const [isError, setIsError] = useState(false);
+  const [isImageLoad, setIsImageLoad] = useState(true);
   const {
     formData,
     setFormData,
     coverImg,
     setCoverImg,
-    isDisabled,
+
     openPreview,
     isLoading,
     setIsLoading,
     setOpenPreview,
+    isForPreview,
+    shouldSubmit,
+    setShouldSubmit,
   } = useFormCtx();
   const subTitleLength = formData.subTitle.length;
 
@@ -145,6 +149,7 @@ const CreateBlog = () => {
               autoClose: 5000,
             });
             setIsLoading(false);
+            setShouldSubmit(false);
           }
         });
     } catch (error: any) {
@@ -152,7 +157,6 @@ const CreateBlog = () => {
         render: "Error publishing post",
         type: "error",
         isLoading: false,
-        progress: 1,
       });
       setIsLoading(false);
       console.log(error);
@@ -163,10 +167,14 @@ const CreateBlog = () => {
       setIsLoading(false);
     }
   };
-
+  console.log("SHOULD-SUBMIT:", shouldSubmit);
   return (
     <div className="w-full flex flex-col gap-x-5 mt-10 lg:mt-20">
-      {openPreview && <PreviewBlog />}
+      {openPreview && (
+        <Suspense fallback={<PreviewSkeleton />}>
+          <PreviewBlog />
+        </Suspense>
+      )}
       <ToastContainer />
       <div className="flex w-full justify-between p-1">
         <form
@@ -189,6 +197,7 @@ const CreateBlog = () => {
                       name="title"
                       type="text"
                       required
+                      value={formData.title}
                       onChange={(e) =>
                         setFormData({
                           ...formData,
@@ -211,6 +220,7 @@ const CreateBlog = () => {
                       id="category"
                       required
                       name="category"
+                      value={formData.category}
                       onChange={(e) =>
                         setFormData({
                           ...formData,
@@ -218,7 +228,6 @@ const CreateBlog = () => {
                         })
                       }
                       className="w-full  p-2 outline-none rounded-md  border border-gray-200 py-3 focus:border-primary focus:valid:border-primary  transition-all duration-300 capitalize text-gray-700"
-                      defaultValue={"select"}
                     >
                       {categories.map((category) => (
                         <option
@@ -242,6 +251,7 @@ const CreateBlog = () => {
                   <textarea
                     id="subTitle"
                     name="subTitle"
+                    value={formData.subTitle}
                     required
                     onChange={(e) =>
                       setFormData({
@@ -288,13 +298,23 @@ const CreateBlog = () => {
 
               <div className="flex flex-col w-full items-center justify-center bg-surface400 rounded py-5 px-4 lg:px-6 gap-y-4 h-full">
                 {coverImg.src ? (
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex w-full justify-center items-center">
                     <Image
                       src={coverImg.src}
                       height={500}
                       width={500}
                       alt="cover"
+                      onLoad={() => setIsImageLoad(false)}
                     />
+                    {isImageLoad && (
+                      <div
+                        className="w-full max-h-[500px] h-full max-w-[500px] rounded-xl bg-gradient-to-r from-transparent via-black/before:via-black/20 to-transparent   before:absolute before:inset-0
+    before:-translate-x-full
+    before:animate-shimmer
+    before:bg-gradient-to-r
+    before:from-transparent before:via-black/20 before:to-transparent isolate overflow-hidden shadow shadow-black/10 before:border-t-2 before:border-b-2 before:border-primary absolute "
+                      />
+                    )}
                     <span
                       onClick={() => {
                         setCoverImg({
@@ -341,6 +361,7 @@ const CreateBlog = () => {
                 <input
                   id="credits"
                   name="credits"
+                  value={formData.credits}
                   onChange={(e) =>
                     setFormData({
                       ...formData,
@@ -364,22 +385,40 @@ const CreateBlog = () => {
             <button
               type="button"
               onClick={() => {
+                setShouldSubmit(true);
                 localStorage?.setItem("formData", JSON.stringify(formData));
                 setOpenPreview(true);
+                toast.dismiss("preview");
               }}
               role="dialog"
               aria-modal="true"
-              disabled={isDisabled}
-              className="border-[1.2px] px-16 border-[#181818]"
+              disabled={isForPreview}
+              className={cn(
+                "border-[1.2px] px-16 border-[#181818]",
+                isForPreview
+                  ? "!cursor-not-allowed opacity-80"
+                  : "cursor-pointer",
+              )}
             >
               Preview
             </button>
             <button
-              type="submit"
-              disabled={isDisabled}
+              type={shouldSubmit ? "submit" : "button"}
+              disabled={isForPreview}
+              onClick={() => {
+                if (!shouldSubmit) {
+                  toast.warn("Preview Post first!!", {
+                    autoClose: 10000,
+                    className: "!text-black",
+                    draggable: true,
+
+                    toastId: "preview",
+                  });
+                }
+              }}
               className={cn(
                 "bg-[#6248ff] text-white flex items-center justify-center gap-x-2 ",
-                isDisabled
+                !shouldSubmit
                   ? "!cursor-not-allowed opacity-80"
                   : "cursor-pointer",
               )}

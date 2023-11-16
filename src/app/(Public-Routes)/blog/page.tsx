@@ -24,9 +24,11 @@ const BlogPage = () => {
         <div className="flex flex-col justify-center items-center px-2 gap-y-4  2xl:gap-y-8">
           <h3 className="font-medium text-xl lg:text-2xl">Blog</h3>
           <h1 className="max-[380px]:text-xl text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">
-            Our Selected Projects
+            Discover the Latest Insights
           </h1>
-          <p className="lg:text-xl">Take a look at our portfolio</p>
+          <p className="lg:text-xl">
+            Stay informed with our curated resources.
+          </p>
         </div>
 
         <BlogNav />
