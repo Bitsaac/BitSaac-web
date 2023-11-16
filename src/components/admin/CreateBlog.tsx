@@ -114,7 +114,7 @@ const CreateBlog = () => {
     event.preventDefault();
     setIsLoading(true);
     const formId = toast.loading("Publishing post...");
-
+    localStorage?.setItem("formData", JSON.stringify(formData));
     try {
       const res = await fetch("/api/blog-post", {
         method: "POST",
@@ -363,10 +363,13 @@ const CreateBlog = () => {
           <div className="hidden md:flex my-10 lg:my-20 w-full justify-center gap-x-8 [&>*]:text-2xl [&>*]:p-4 [&>*]:px-12 [&>*]:rounded-xl font-Inter">
             <button
               type="button"
-              onClick={() => setOpenPreview(true)}
+              onClick={() => {
+                localStorage?.setItem("formData", JSON.stringify(formData));
+                setOpenPreview(true);
+              }}
               role="dialog"
               aria-modal="true"
-              disabled={formData.content.length === 0}
+              disabled={isDisabled}
               className="border-[1.2px] px-16 border-[#181818]"
             >
               Preview

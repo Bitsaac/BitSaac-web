@@ -13,7 +13,7 @@ export type CategoriesProps = {
     | "social"
     | "technology";
 };
-type FormData = {
+export type FormData = {
   title: string;
   subTitle: string;
   author: string;
@@ -38,7 +38,7 @@ interface FormContextProps {
   isDisabled: boolean;
   BASE_URL: string;
 }
-const initialFormData: FormData = {
+export const initialFormData: FormData = {
   title: "",
   subTitle: "",
   category: "select",
@@ -92,6 +92,26 @@ const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
       });
     }
   }, []);
+
+  useEffect(() => {
+    console.log(openPreview);
+    if (openPreview) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpenPreview(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [openPreview]);
 
   const value = useMemo(
     () => ({
