@@ -22,7 +22,7 @@ const Carousel = dynamic(() => import("./Home/Carousel"), {
 
 export default function Home() {
   return (
-    <main className="max-w-[1920px] overflow-x-hidden">
+    <main className="max-w-[1440px] mx-auto overflow-x-hidden">
       <Header />
 
       <Carousel />

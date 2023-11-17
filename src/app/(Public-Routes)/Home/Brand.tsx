@@ -4,7 +4,7 @@ import BrandImg from "../../../assets/brand.png"
 
 const Brand: React.FC = () => {
   return (
-    <div className="w-full flex xl:flex-row flex-col items-center justify-between xl:pl-[80px] px-4 pt-8 xl:gap-0 gap-[48px]">
+    <div className="w-full flex xl:flex-row flex-col items-center justify-between xl:pl-[80px] px-4 pt-8 xl:gap-0 gap-[48px] m">
       <div className="flex flex-col w-full xl:w-[628px]">
         <p>Our Services</p>
         <h1 className="mt-4 mb-6 text-5xl text-[#2A2738]">Our Expertise</h1>
