@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className="">
       <div className="px-16 h-[72px]  flex justify-between items-center border-b-[1px] border-b-[#77777] ">
-      <div className="">
+        <div className="">
           <Link href="/">
             <Image src={logo} alt="logo" width={156} height={30} />
           </Link>
@@ -24,7 +24,6 @@ const Navbar = () => {
         <button className="px-6 py-3 bg-[#4D61F4] rounded-[8px] font-medium text-[#fff] font-inter">
           Talk To Us
         </button>
-   
       </div>
     </div>
   );
