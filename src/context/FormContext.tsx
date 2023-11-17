@@ -13,7 +13,7 @@ export type CategoriesProps = {
     | "social"
     | "technology";
 };
-type FormData = {
+export type FormData = {
   title: string;
   subTitle: string;
   author: string;
@@ -27,16 +27,21 @@ type FormData = {
 interface FormContextProps {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  openPreview: boolean;
+  setOpenPreview: React.Dispatch<React.SetStateAction<boolean>>;
+  shouldSubmit: boolean;
+  setShouldSubmit: React.Dispatch<React.SetStateAction<boolean>>;
   formData: FormData;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
   coverImg: { src: string; name: string };
   setCoverImg: React.Dispatch<
     React.SetStateAction<{ src: string; name: string }>
   >;
-  isDisabled: boolean;
+  isForPreview: boolean;
+
   BASE_URL: string;
 }
-const initialFormData: FormData = {
+export const initialFormData: FormData = {
   title: "",
   subTitle: "",
   category: "select",
@@ -52,45 +57,79 @@ export const FormContext = createContext<FormContextProps>(
 
 const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [shouldSubmit, setShouldSubmit] = useState(false);
   const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [openPreview, setOpenPreview] = useState(false);
   const [coverImg, setCoverImg] = useState<{ src: string; name: string }>({
     src: "",
     name: "",
   });
-  const BASE_URL = "https://bitsaac-api.onrender.com/api/v1/";
+  const BASE_URL = "https://bitsaac-api.onrender.com/api/v1";
 
-  const isDisabled =
+  const isForPreview =
     formData.title === "" ||
     formData.subTitle === "" ||
     formData.content === "" ||
     formData.category === "select" ||
     formData.content === "" ||
-    formData.subTitle.length > 50;
+    formData.subTitle.length > 50 ||
+    formData.image === null ||
+    !formData.image;
   const router = useRouter();
 
   useEffect(() => {
     const imgFromLocal = localStorage.getItem("cover-image");
     const contentFromLocal = localStorage.getItem("content");
+    const savedForm = localStorage.getItem("formData");
+
     if (contentFromLocal) {
-      setFormData({
-        ...formData,
+      setFormData((prev) => ({
+        ...prev,
         content: JSON.parse(contentFromLocal),
-      });
+      }));
     }
     if (imgFromLocal) {
-      const parsed = JSON.parse(imgFromLocal);
+      const parsed: { src: string; name: string } = JSON.parse(imgFromLocal);
       setCoverImg({
         src: parsed.src,
         name: parsed.name,
       });
-      setFormData({
-        ...formData,
+      setFormData((prev) => ({
+        ...prev,
         image: parsed.src,
-      });
+      }));
+    }
+
+    if (savedForm) {
+      const newForm: FormData = JSON.parse(savedForm);
+      setFormData((prev) => ({
+        ...prev,
+        title: newForm.title,
+        category: newForm.category,
+        subTitle: newForm.subTitle,
+        credits: newForm.credits,
+      }));
     }
   }, []);
 
-  console.log(formData);
+  useEffect(() => {
+    if (openPreview) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpenPreview(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [openPreview]);
 
   const value = useMemo(
     () => ({
@@ -100,10 +139,22 @@ const FormContextProvider = ({ children }: { children: React.ReactNode }) => {
       setFormData,
       coverImg,
       setCoverImg,
-      isDisabled,
+      isForPreview,
       BASE_URL,
+      openPreview,
+      setOpenPreview,
+      shouldSubmit,
+      setShouldSubmit,
     }),
-    [formData, coverImg],
+    [
+      formData,
+      coverImg,
+      isLoading,
+      isForPreview,
+      openPreview,
+      setOpenPreview,
+      shouldSubmit,
+    ],
   );
 
   return <FormContext.Provider value={value}>{children}</FormContext.Provider>;

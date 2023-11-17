@@ -12,8 +12,14 @@ const config: Config = {
         shimmer: "shimmer 1.5s infinite",
         slideUp: "slideUp 1s 0.2s ease forwards",
         loadspin: "loadspin 1.5s linear infinite",
+        pulsing: "pulsing 1.5s ease infinite",
       },
       keyframes: {
+        pulsing: {
+          "50%": {
+            opacity: "0.2",
+          },
+        },
         loadspin: {
           "100%": {
             transform: "rotate(360deg)",

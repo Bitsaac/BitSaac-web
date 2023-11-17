@@ -59,23 +59,23 @@ const UploadPgae = () => {
   }, [activeTag, router])
 
   return (
-    <section className="mt-10 lg:mt-20 px-3 sm:px-8 w-full flex flex-col">
-      <div className="flex w-full justify-between items-center">
+    <section className="mt-10 lg:mt-20 px-3 sm:px-8 w-full flex flex-col ">
+      <div className="flex-col flex md:flex-row w-full justify-between items-center">
         <div className="felx">
           <h1
-            className="text-3xl"
+            className="text-3xl max-md:uppercase"
             data-value="Upload"
             onMouseEnter={handleMouse}
           >
             Upload
           </h1>
         </div>
-        <div className="flex justify-between pr-8 w-[80%]">
+        <div className="flex justify-between md:pr-8 w-full md:w-[80%] max-md:mt-6">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               className={cn(
-                "py-2 w-full capitalize font-semibold text-sm sm:text-lg lg:text-xl",
+                "py-2 w-full capitalize font-medium sm:font-semibold text-lg sm:text-xl max-[400px]:text-base",
                 tab.tag === activeTag
                   ? "text-primary border-primary  border-b-4 "
                   : "text-gray-800/40"
