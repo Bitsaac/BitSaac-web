@@ -50,7 +50,7 @@ const Navbar = () => {
             <ul className="list-none flex flex-col  justify-end items-center flex-1">
               {navLinks.map((navLink, index) => {
                 return (
-                  <li key={index} className="cursor-pointer">
+                  <li key={index} className="cursor-pointer mb-4">
                     <Link href={navLink.href}>{navLink.title}</Link>
                   </li>
                 );
