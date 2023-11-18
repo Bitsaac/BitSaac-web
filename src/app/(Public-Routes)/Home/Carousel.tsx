@@ -67,8 +67,8 @@ const Carousel = () => {
   }
 
   return (
-    <div className="w-full bg-[#2A2738]  py-[20px] flex flex-col gap-[24px] sm:gap-[28px]">
-      <h3 className="w-full text-center text-white font-Roboto">
+    <div className="w-full bg-[#2A2738]  py-[64px] flex flex-col gap-[24px] sm:gap-[28px]">
+      <h3 className="w-full text-center text-white font-Roboto text-[48px]">
         Brands that Trust Us
       </h3>
       <Slider {...settings}>

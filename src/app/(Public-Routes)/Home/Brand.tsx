@@ -7,7 +7,9 @@ const Brand: React.FC = () => {
     <div className="w-full flex xl:flex-row flex-col items-center justify-between xl:pl-[80px] px-4 pt-8 xl:gap-0 gap-[48px]">
       <div className="flex flex-col w-full xl:w-[628px]">
         <p>Our Services</p>
-        <h1 className="mt-4 mb-6 text-5xl text-[#2A2738]">Our Expertise</h1>
+        <h1 className=" mb-6 text-5xl font-Raleway text-[#2A2738]">
+          Our Expertise
+        </h1>
         <p>
           At BitSaac, we offer comprehensive product design and <br />{" "}
           development solutions to bring your ideas to life
