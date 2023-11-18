@@ -4,7 +4,7 @@ import ourwork from "../../../../public/ourwork.png"
 import brand from "../../../../public/branding.png"
 function Services() {
   return (
-    <div className="sm:px-16 sm:py-28 px-4 pt-8">
+    <div className="sm:px-16 2xl:px-0 sm:py-28 px-4 pt-8">
       <h4 className="sm:text-[18px] text-base font-medium ">Collectively</h4>
       <h3 className="font-bold sm:text-[48px] text-[36px] leading-[43px]">
         Services we provide for you
@@ -14,7 +14,7 @@ function Services() {
         solutions to bring your ideas to life
       </p>
       <div className="grid gap-8 sm:grid-cols-2 grid-cols-1 mt-10 sm:mt-20">
-        <div className="w-full bg-white shadow-[0_7px_15px_0px_rgba(154,154,154,0.10)] sm:px-6 sm:pt-12">
+        <div className="w-full bg-white shadow-[0_7px_15px_0px_rgba(154,154,154,0.10)] sm:px-6 2xl:px-0 sm:pt-12">
           <div className="flex flex-1 flex-col ">
             <h4 className="text-[18px] sm:font-medium font-semibold ">
               Services

@@ -68,25 +68,26 @@ const Carousel = () => {
 
   return (
     <div className="w-full bg-[#2A2738]  py-[20px] flex flex-col gap-[24px] sm:gap-[28px] ">
-      <h3 className="w-full text-center text-white font-Roboto">
-        Brands that Trust Us
-      </h3>
-      <Slider {...settings}>
-        {brandImages.map((image: BrandImageProps) => (
-          <div
-            key={image.id}
-            className="w-full h-[90px] "
-          >
-            <Image
-              src={image.src}
-              alt={`Image ${image.id}`}
-              height={90}
-              className="  h-[90px]  w-full"
-              loading="eager"
-            />
-          </div>
-        ))}
-      </Slider>
+      <h2 className="w-full text-center text-[48px] text-white font-Raleway font-extrabold py-10">
+        Clients we have worked with
+      </h2>
+      <div className="slider pb-10">
+        <div className="slide-track">
+          {brandImages.map((image: BrandImageProps) => (
+            <div
+              key={image.id}
+              className="w-full h-[90px] "
+            >
+              <Image
+                src={image.src}
+                alt={`Image ${image.id}`}
+                height={90}
+                className="  h-[90px]  w-full"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

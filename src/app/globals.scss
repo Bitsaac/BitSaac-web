@@ -204,3 +204,31 @@ button {
 .slick-slider.slick-track {
   background: green !important;
 }
+.slider {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.slide-track {
+  display: flex;
+
+  width: calc(390px * 12);
+
+  animation: scroll 40s linear infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-390px * 6));
+  }
+}
+.slide {
+  width: 390px;
+  height: 100%;
+
+  padding: 15px;
+  perspective: 200px;
+}

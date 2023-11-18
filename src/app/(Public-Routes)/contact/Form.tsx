@@ -41,7 +41,7 @@ const Form = () => {
       </span>
       <span className="flex items-center gap-[12px]">
         <input type="checkbox" />
-        <label htmlFor="checkbox">Radio</label>
+        <label htmlFor="checkbox">Subscribe to our newsletter</label>
       </span>
       <button className="px-[24px] py-[12px] rounded-lg border border-[#4D61F4] bg-[#4D61F4] text-white">
         Submit
