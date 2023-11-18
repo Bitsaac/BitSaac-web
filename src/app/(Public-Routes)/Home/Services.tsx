@@ -54,8 +54,7 @@ const Services = () => {
       <section>
         <Container className="max-w-[100%]">
           <div>
-            <h6 className="font-Inter font-bold text-sm">What we offer</h6>
-            <h1 className="font-Inter text-4xl py-2">
+            <h1 className="mb-6 text-5xl font-Raleway text-[#2A2738]">
               Services We Provide For You
             </h1>
             <p>

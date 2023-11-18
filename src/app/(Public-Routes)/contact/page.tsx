@@ -6,14 +6,16 @@ import { HiOutlineLocationMarker } from "react-icons/hi"
 
 const Page = () => {
   return (
-    <div className="flex xl:flex-row flex-col items-left xl:items-center justify-between px-[16px] sm:px-[64px] py-[64px] sm:py-[112px] xl:gap-0 gap-[32px]">
+    <div className="flex xl:flex-row flex-col items-left xl:items-start justify-between px-[16px] sm:px-[64px] py-[48px] sm:py-[64px] xl:gap-0 gap-[32px]">
       <div className="">
-        <h3>Get in Touch</h3>
-        <h1 className="mt-[16px] mb-[24px]">Contact Us</h1>
+        <h3>Get in Touch?</h3>
+        <h1 className="mb-2 text-5xl font-Raleway text-[#2A2738]">
+          Contact Us Here
+        </h1>
         <p>{`Have any questions or inquiries? We're here to help!`}</p>
-        <div className="mt-[16px] flex flex-col gap-[40px] items-start py-[6px]">
+        <div className="mt-[24px] flex flex-col gap-[16px] items-start py-[8px]">
           <TextIcon
-            text="Support@bitsaac.com"
+            text="admin@bitsaac.com"
             icon={<AiOutlineMail />}
           />
           <TextIcon
