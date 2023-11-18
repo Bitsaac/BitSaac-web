@@ -1,14 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5";
 import logo from "../../../public/Logo.png";
-import { IconContext } from "react-icons/lib";
+
 import { navLinks } from "./navbaritems";
 import Talktousbutton from "../Talktousbutton";
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
   return (
     <div className="max-w-[1440px] mx-auto">
       <div className="">
@@ -34,10 +35,27 @@ const Navbar = () => {
             </ul>
           </nav>
           <Talktousbutton className="hidden sm:flex px-6 py-3 bg-[#4D61F4] rounded-[8px] font-medium text-[#fff] font-inter" />
-          <div className="sm:hidden flex">
-            <IconContext.Provider value={{ size: "25px" }}>
-              <IoMenu />
-            </IconContext.Provider>
+          <div className="sm:hidden flex" onClick={() => setToggle(!toggle)}>
+            {toggle ? (
+              <IoClose className="text-black text-[25px]" />
+            ) : (
+              <IoMenu className="text-black text-[25px]" />
+            )}
+          </div>
+          <div
+            className={`${
+              toggle ? "flex" : "hidden"
+            } p-6 bg-white absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-10`}
+          >
+            <ul className="list-none flex flex-col  justify-end items-center flex-1">
+              {navLinks.map((navLink, index) => {
+                return (
+                  <li key={index} className="cursor-pointer">
+                    <Link href={navLink.href}>{navLink.title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
