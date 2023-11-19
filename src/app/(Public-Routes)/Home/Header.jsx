@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="flex sm:flex-row flex-col items-center  xl:px-16 px-4  2xl:px-0 sm:py-0 py-16 sm:h-[85vh] sm:mb-0 mb-10 h-screen ">
       <div className=" flex-1 flex flex-col ">
-        <h1 className="xl:text-[56px] md:text-[48px] text-[40px] font-black md:leading-[56px] leading-[48px] xl:leading-[67px] font-Raleway ">
+        <h1 className="xl:text-[56px] md:text-[48px] text-[40px] font-black md:leading-[56px] leading-[48px] font-Raleway xl:leading-[67px]  ">
           Bringing Ideas to Life
           <br className="xl:flex hidden" /> Through Tech{" "}
           <br className="xl:flex hidden" /> Innovation
@@ -17,8 +17,8 @@ const Header = () => {
           We offer web and mobile app development, UI/UX design, and more.
         </p>
         <div className="flex gap-4 mt-6">
-          <Talktousbutton className=" px-6 py-3 bg-[#4D61F4] rounded-[8px] font-medium text-[#fff] font-inter" />
-          <button className=" px-6 py-3 border-[1px] border-[#4D61F4] rounded-[8px] font-medium text-[#4D61F4] font-inter">
+          <Talktousbutton className=" px-6 py-3 bg-[#4D61F4] rounded-[8px] font-medium text-[#fff] font-inter capitalize" />
+          <button className=" px-6 py-3 border-[1px] border-[#4D61F4] rounded-[8px] font-medium text-[#4D61F4] font-inter capitalize">
             Learn More
           </button>
         </div>
