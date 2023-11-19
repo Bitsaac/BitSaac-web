@@ -57,7 +57,7 @@ const Navbar = () => {
           <div
             className={`${
               toggle ? "flex" : "hidden"
-            } w-full bg-white shadow-2xl  absolute top-[72px] left-0 px-2   min-w-[140px] rounded-xl sidebar `}
+            } w-full bg-white shadow-2xl  absolute top-[72px] left-0 px-2 z-[999]  min-w-[140px] rounded-xl sidebar `}
           >
             <div
               className="bg-[#1b1b1b2f] absolute top-0 left-0 w-full h-screen"
