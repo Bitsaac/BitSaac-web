@@ -43,7 +43,7 @@ const HomeBlogCard = ({
   return (
     // bg-[#F8F8F8]
     <div className="p-4 flex flex-col gap-2 mr-3 bg-[#F8F8F8] rounded-xl h-fit min-h-[472px]">
-      <span className="max-w-[371.62] overflow-hidden max-h-[280]">
+      <div className="max-w-[371.62] overflow-hidden max-h-[280]">
         <Image
           src={image}
           alt="header"
@@ -53,14 +53,14 @@ const HomeBlogCard = ({
           height={640}
           className="flex max-w-[371.62] max-h-[280] shrink-0 hover:scale-125 transition-all object-cover hover:duration-1000 duration-300"
         />
-      </span>
+      </div>
       <div className="flex flex-col gap-y-2 items-start">
-        <p className="flex items-center gap-x-5 text-gray-950 font-semibold w-full">
-          <span className="bg-[#F4F4F4] px-2 py-1 rounded-lg capitalize">
+        <div className="flex items-center gap-x-5 text-gray-950 font-semibold w-full">
+          <div className="bg-[#F4F4F4] px-2 py-1 rounded-lg capitalize">
             {label}
-          </span>
-          <span className="text-[#777] text-[0.875rem]">{time}</span>
-        </p>
+          </div>
+          <div className="text-[#777] text-[0.875rem]">{time}</div>
+        </div>
         <h3 className="font-Inter font-semibold text-[1.4rem]">{title}</h3>
         {isFeatured ? (
           <p className="text-[#0A0A0A] font-Inter">
