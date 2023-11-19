@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from "react"
+
 import { Container } from "../bit-commerce/page"
+
 import toast from "react-hot-toast"
 
 const CTA = () => {
@@ -55,20 +57,20 @@ const CTA = () => {
 
   return (
     <div>
-      <div className="sm:px-16 px-4 sm:py-28 py-8 bg-[#03236C] flex sm:flex-row flex-col justify-between items-center">
+      <div className="xl:px-16 px-4 xl:py-28 md:py-10 bg-[#FAFAFA] py-8 md:gap-10 xl:gap-0  flex sm:flex-row flex-col justify-between items-center">
         <div>
-          <h3 className="font-bold sm:text-[40px] text-[32px] text-white leading-[48px]">
-            Transforming Ideas into Tech <br className="sm:flex hidden" />{" "}
+          <h3 className="font-bold sm:text-[48px] font-Ralewa text-[32px] text-[#2A2738] leading-[48px]">
+            Transforming Ideas into Tech <br className="xl:flex hidden" />{" "}
             Solutions
           </h3>
-          <p className="text-[18px] leading-[24px] sm:mt-8 my-6 text-white">
+          <p className="text-[18px] leading-[24px] sm:mt-8 my-6 text-[#0A0A0A]">
             Contact us today to discuss your tech needs or start selling online
           </p>
         </div>
         <div>
           <form onSubmit={handleSubscribe}>
             <div className="flex gap-4 items-center">
-              <div className="sm:w-[396px] w-[80%] h-[48px] bg-white rounded-[8px]">
+              <div className="sm:w-[396px] w-[80%] h-[48px] border-[1px] border-[E9EBF8] rounded-[8px]">
                 <input
                   type="email"
                   className="h-full w-full bg-transparent px-2 outline-none"
@@ -79,14 +81,14 @@ const CTA = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-[#FFC80B] hover:bg-black text-black shadow shadow-black-600/25 hover:shadow-black-600/75 px-6 py-3 rounded-[8px] sm:rounded-[8px]"
+                  className="bg-[#4D61F4]  text-[#FAFAFA]  px-6 py-3 rounded-[8px] sm:rounded-[8px]"
                 >
                   Submit
                 </button>
               </div>
             </div>
           </form>
-          <h5 className="text-xs text-white mt-4">
+          <h5 className="text-xs text-[#2A2738] mt-4">
             By clicking submit youre confirming that you agree with our Terms
             and Conditions.
           </h5>
