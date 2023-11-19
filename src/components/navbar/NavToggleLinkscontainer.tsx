@@ -7,7 +7,6 @@ import { FaTimes } from "react-icons/fa";
 import { LiaBarsSolid } from "react-icons/lia";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import Talktousbutton from "../Talktousbutton";
-import GetInTouchText from "../GetInTouch";
 
 type NavToggleProps = {
   toggle__btn: string;
@@ -97,11 +96,11 @@ export const Linkscontainer = ({
           onClick={() => setMore(!more)}
           className="flex items-center cursor-pointer w-full md:w-auto justify-between"
         >
-          <p>More</p>
+          <span className="me-2">More</span>
           {more ? (
-            <AiOutlineUp className="text-[1.4rem]" />
+            <AiOutlineUp className="text-[1.1rem] me-2" size="1rem" />
           ) : (
-            <AiOutlineDown className="text-[1.4rem]" />
+            <AiOutlineDown className="text-[1.1rem] me-2" size="1rem" />
           )}
         </div>
         <ul>
@@ -146,7 +145,6 @@ export const Linkscontainer = ({
             ))}
         </ul>
         <div>
-          <GetInTouchText className="md:hidden" />
           <Talktousbutton className="rounded-lg border flex md:hidden border-[#4D61F4] text-white px-[24px] py-[12px] bg-[#4D61F4] mt-2" />
         </div>
       </ul>

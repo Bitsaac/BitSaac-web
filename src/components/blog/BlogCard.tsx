@@ -59,10 +59,10 @@ const BlogCard = ({
         />
       </div>
       <div className="flex flex-col gap-y-2 lg:gap-y-4 px-2 items-start">
-        <p className="flex items-center  gap-x-5 text-gray-950 font-semibold w-full">
+        <div className="flex items-center  gap-x-5 text-gray-950 font-semibold w-full">
           <span className="bg-[#F4F4F4] px-2 py-1 capitalize">{label}</span>
           <span>{time}</span>
-        </p>
+        </div>
         <h3
           className={cn(
             " font-Inter font-semibold ",
@@ -86,7 +86,7 @@ const BlogCard = ({
         href={`/blog/${id}`}
         className="text-[#4D61F4] font-medium text-base sm:text-lg 2xl:text-xl lg:my-4 font-Roboto flex items-center gap-x-2 pl-2 pb-1"
       >
-        <span>Read more</span>
+        Read more
       </Link>
     </div>
   );

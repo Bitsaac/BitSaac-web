@@ -58,10 +58,10 @@ const About = () => {
             <h2 className="text-[1rem] font-bold mb-[.75rem] slideUp">
               Innovative
             </h2>
-            <p className="text-[2.5rem] lg:text-[3rem]  xl:text-[3.5rem] leading-tight tracking-tight font-bold mb-[1.25rem]">
+            <p className="text-[2.5rem] lg:text-[3rem]  xl:text-[3.5rem] leading-tight tracking-tight font-bold mb-[0.5rem]">
               Bringing Ideas to Life
             </p>
-            <p className="font-Inter text-[1rem] lg:text-[1.25rem] xl:text-[1.15rem] font-normal mb-[.5rem] md:w-[85%] ">
+            <p className="font-Inter text-[1rem] lg:text-[1rem] xl:text-[1rem] font-normal md:w-[75%] ">
               BitSaac is an innovative tech agency and community of tech
               creatives, dedicated to bringing ideas to life through product
               design and development.
@@ -70,15 +70,15 @@ const About = () => {
               <div className="sm:flex sm:gap-[1rem] sm:items-center">
                 <input
                   type="text"
-                  className="p-3 rounded-md outline-0 w-full sm:w-[50%] h-[40px]  text-black"
+                  className="p-3 rounded-md outline-0 w-full sm:w-[50%] h-[40px] my-[1rem] text-black"
                   placeholder="Enter Email here..."
                 />
-                <Button className="bg-primary rounded-md w-full sm:w-[20%] md:w-[25%] md:h-[40px] my-[1rem] ">
+                <Button className="bg-primary rounded-md w-full sm:w-[10%] md:w-[15%] md:h-[40px] my-[1rem] ">
                   Get Started
                 </Button>
               </div>
-              <div className="lg:w-[70%] md:w-[70%]">
-                <span className="text-[.95rem] md:text-[.8rem] lg:text-[1rem] font-normal">
+              <div className="w-[70%]">
+                <span className="text-[0.75rem] font-normal">
                   By clicking the button, you're confirming that you agree with
                   our Terms and Conditions.
                 </span>
