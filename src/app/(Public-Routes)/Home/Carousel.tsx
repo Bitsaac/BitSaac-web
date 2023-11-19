@@ -75,7 +75,7 @@ const Carousel = () => {
         {brandImages.map((image: BrandImageProps) => (
           <div
             key={image.id}
-            className="w-full h-[90px] "
+            className="w-full h-[90px] mx-4"
           >
             <Image
               src={image.src}

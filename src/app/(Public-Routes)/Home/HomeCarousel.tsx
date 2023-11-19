@@ -39,7 +39,7 @@
 //   }
 
 //   return (
-//     <section>
+//     <div>
 //       <div>
 //         <div>
 //           <h4>{title}</h4>
@@ -69,7 +69,7 @@
 //           </button>
 //         </div>
 //       </div> */}
-//     </section>
+//     </div>
 //   )
 // }
 
@@ -133,7 +133,7 @@ const HomeCarousel = ({
   )
 
   return (
-    <section className="flex gap-6 flex-col">
+    <div className="flex gap-6 flex-col">
       <div className="flex justify-between">
         <div>
           <h4 className="font-Raleway font-semibold md:font-bold text-[1.5rem] md:text-[2.2rem] md:leading-[40px] text-[#2A2738]">
@@ -174,7 +174,7 @@ const HomeCarousel = ({
           )}
         />
       </div>
-    </section>
+    </div>
   )
 }
 

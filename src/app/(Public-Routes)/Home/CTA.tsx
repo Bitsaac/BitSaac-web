@@ -6,6 +6,7 @@ import toast from "react-hot-toast"
 const CTA = () => {
   const BASE_URL = "https://bitsaac-api.onrender.com/api/v1/"
   const [email, setEmail] = useState("")
+  const [loadingStatus, setLoadingStatus] = useState<boolean>(false)
 
   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -25,7 +26,7 @@ const CTA = () => {
         toast.error("Email can't be blank")
         return
       }
-
+      setLoadingStatus(true)
       const response = await fetch(`${BASE_URL}newsletter/subscribe`, {
         method: "POST",
         headers: {
@@ -37,9 +38,8 @@ const CTA = () => {
       })
 
       if (response.ok) {
-        console.log("Subscription successful")
         console.log(response)
-        toast.success("Subscribed successfully")
+        toast.success("Subscrition successfull!")
         setEmail("")
       } else {
         console.error(
@@ -47,7 +47,9 @@ const CTA = () => {
         )
         toast.error("Failed to subscribe. Please try again.")
       }
+      setLoadingStatus(false)
     } catch (error) {
+      setLoadingStatus(false)
       toast.error("An error occurred during subscription")
       console.error("An error occurred during subscription:", error)
     }
@@ -68,20 +70,30 @@ const CTA = () => {
           onSubmit={handleSubscribe}
           className="flex gap-2 items-end flex-col w-full"
         >
-          <div className="w-full flex gap-2">
+          <div className="w-full flex gap-2 ">
             <input
               type="text"
+              name="email"
               placeholder="Enter email here..."
               className="w-[80%] placeholder-[#505050] outline-none pl-3 h-[45px] rounded-lg font-Inter"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-            <button
-              type="submit"
-              className="bg-[#FFC80B] font-Inter text-[15px] h-[45px] rounded-lg min-w-[90px] max-w-[120px]"
-            >
-              Submit
-            </button>
+            {loadingStatus ? (
+              <button
+                type="button"
+                className="bg-[#FFC80B] font-Inter text-[15px] h-[45px] rounded-lg min-w-[90px] max-w-[120px]"
+              >
+                Submitting...
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="bg-[#FFC80B] font-Inter text-[15px] h-[45px] rounded-lg min-w-[90px] max-w-[120px]"
+              >
+                Submit
+              </button>
+            )}
           </div>
           <p className="self-start text-[13px] text-white">
             By clicking submit you&lsquo;re confirming that you agree with our

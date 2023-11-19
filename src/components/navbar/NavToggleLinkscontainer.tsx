@@ -96,11 +96,11 @@ export const Linkscontainer = ({
           onClick={() => setMore(!more)}
           className="flex items-center cursor-pointer w-full md:w-auto justify-between"
         >
-          <p>More</p>
+          <span className="me-2">More</span>
           {more ? (
-            <AiOutlineUp className="text-[1.4rem]" />
+            <AiOutlineUp className="text-[1.1rem] me-2" size="1rem" />
           ) : (
-            <AiOutlineDown className="text-[1.4rem]" />
+            <AiOutlineDown className="text-[1.1rem] me-2" size="1rem" />
           )}
         </div>
         <ul>
