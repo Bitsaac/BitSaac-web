@@ -13,16 +13,16 @@ import LoadingSpinner from "@/components/loaders/LoadingSpinner"
 
 const Carousel = dynamic(() => import("./Home/Carousel"), {
   ssr: false,
-  loading: () => (
-    <div className="w-full justify-center flex h-[200px] items-center bg-black/20 animate-pulsing">
-      <LoadingSpinner />
-    </div>
-  ),
+  // loading: () => (
+  //   <div className="w-full justify-center flex h-[200px] items-center bg-black/20 animate-pulsing">
+  //     <LoadingSpinner />
+  //   </div>
+  // ),
 })
 
 export default function Home() {
   return (
-    <main className="max-w-[1920px] overflow-x-hidden">
+    <main className="max-w-[1440px] mx-auto overflow-x-hidden">
       <Header />
 
       <Carousel />

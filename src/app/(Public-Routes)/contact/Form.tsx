@@ -98,11 +98,10 @@ const Form = () => {
         ></textarea>
       </span>
       <span className="flex items-center gap-[12px]">
-        <input
-          type="checkbox"
-          name="subscribe"
-        />
-        <label htmlFor="checkbox">Also subscribe to our newletter</label>
+
+        <input type="checkbox"    name="subscribe" />
+        <label htmlFor="checkbox">Subscribe to our newsletter</label>
+
       </span>
       {loadingStatus ? (
         <button

@@ -18,16 +18,18 @@ const Faqs: React.FC = () => {
   return (
     <div className="py-[64px] sm:py-[112px] px-[16px] sm:px-[64px] flex flex-col gap-[80px]">
       <span className="flex flex-col items-start font-Roboto gap-[24px]">
-        <h2 className="font-Raleway font-semibold md:font-bold text-[1.5rem] md:text-[2.2rem] md:leading-[40px] text-[#2A2738]">
+        <h2 className="font-Raleway font-semibold md:font-bold text-[1.5rem] md:text-[48px] md:leading-[40px] text-[#2A2738]">
           Frequently Asked Questions
         </h2>
-        <h3>Find answers to common questions about BitSaac and BitCommerce.</h3>
+        <h3 className="font-Inter font-semibold">
+          Find answers to common questions about BitSaac and BitCommerce.
+        </h3>
       </span>
       <div className="w-full flex flex-col ">
         {faqData.map((item, index) => (
           <li
             key={index}
-            className={`flex flex-col border-t ${
+            className={`flex flex-col border-t font-Inter font-semibold ${
               index === faqData.length - 1 ? "" : "border-t"
             } border-black ${activeIndex === index ? " " : " "}`}
           >
@@ -49,8 +51,10 @@ const Faqs: React.FC = () => {
         ))}
       </div>
       <div>
-        <h2>Still have Questions?</h2>
-        <p className="mt-[16px] mb-[24px]">
+        <h2 className="font-Inter text-[40px] font-bold text-[#2A2738]">
+          Still have Questions?
+        </h2>
+        <p className="mt-[16px] mb-[24px] text-[20px] font-Inter">
           Contact our support team for assistance
         </p>
         <button className="rounded-lg px-[24px] py-[12px] border border-[#4D61F4] text-[#4D61F4]">

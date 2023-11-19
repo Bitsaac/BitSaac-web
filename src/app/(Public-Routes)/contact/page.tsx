@@ -8,12 +8,14 @@ const Page = () => {
   return (
     <div className="flex xl:flex-row flex-col items-left xl:items-start justify-between px-[16px] sm:px-[64px] py-[48px] sm:py-[64px] xl:gap-0 gap-[32px]">
       <div className="">
-        <h3>Get in Touch?</h3>
-        <h1 className="mb-2 text-5xl font-Raleway text-[#2A2738]">
-          Contact Us Here
+
+        <h3>Get in Touch</h3>
+        <h1 className="mt-[16px] mb-[24px] text-[48px] font-Raleway text-[#2A2738]">
+          Contact Us
         </h1>
-        <p>{`Have any questions or inquiries? We're here to help!`}</p>
-        <div className="mt-[24px] flex flex-col gap-[16px] items-start py-[8px]">
+        <h3 className="font-Inter">{`Have any questions or inquiries? We're here to help!`}</h3>
+        <div className="mt-[16px] flex flex-col gap-[40px] items-start py-[6px]">
+
           <TextIcon
             text="admin@bitsaac.com"
             icon={<AiOutlineMail />}

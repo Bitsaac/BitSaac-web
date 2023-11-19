@@ -1,140 +1,115 @@
 import React from "react"
 import Image from "next/image"
-import Flow from "@/assets/image 1.png"
-import Tablike from "@/assets/Vector1.png"
-import { services } from "@/data"
-import { Container } from "../bit-commerce/page"
-
-const Services = () => {
+import ourwork from "../../../../public/ourwork.png"
+import brand from "../../../../public/branding.svg"
+import design from "../../../../public/product design.svg"
+import product from "../../../../public/product management.svg"
+import sales from "../../../../public/saless.svg"
+function Services() {
   return (
-    <>
-      {/* <div className=" py-20 px-6 lg:px-20 xl:px-20 md:px-12 justify-center items-center">
-        <div className=" xl:w-[650px]">
-          <h6 className=" font-Inter font-bold text-sm">What we offer</h6>
-          <h1 className=" font-Inter text-4xl py-2">
-            Services We Provide For You{" "}
-          </h1>
-          <p>
-            We have created a system that allows us to easily monitor our user’s
-            issues while keeping efficiency with the analysis of the data usage.
-          </p>
-        </div>
-        <div className="  py-8 xl:flex block md:flex gap-12  lg:w-[1600px] xl:w-[1600px] w-80 mx-auto ">
-          <div className="bg-[#FAFAFA] rounded-xl w-[340px] lg:w-[480px] xl:w-[480px]">
-            <div className=" py-5 px-12 ">
-              <p className=" font-Inter text-[15px]">Services</p>
-              <h1 className="text-[18px] pb-2 md:text-[26px] md:pb-2 xl:text-[26px] xl:pb-2 lg:text-[26px] lg:pb-2">
+    <div className="xl:px-16 2xl:px-0 sm:py-28 px-4 pt-8">
+      {/* <h4 className="sm:text-[18px] text-base font-medium ">Collectively</h4> */}
+      <h3 className="font-bold sm:text-[48px] font-Raleway  text-[32px] leading-[43px]">
+        Services we provide for you
+      </h3>
+      <p className="sm:w-[586px] w-full leading-6 text-[#000] mt-6">
+        At BitSaac, we offer comprehensive product design and development
+        solutions to bring your ideas to life
+      </p>
+      <div className="grid gap-8 sm:grid-cols-2 grid-cols-1 mt-10 ">
+        <div className="w-full bg-[#FAFAFA] shadow-[0_7px_15px_0px_rgba(154,154,154,0.10)] xl:px-6 2xl:px-0 md:p-4 xl:pt-12">
+          <div className="flex flex-1 justify-between flex-col ">
+            <div>
+              {/* <h4 className="text-[18px] sm:font-medium font-semibold ">
+              Services
+            </h4> */}
+              <h3 className="font-bold xl:text-[40px] md:text-[32px]  text-[24px]">
                 Web & Mobile Development
-              </h1>
-              <p className=" font-Inter text-[12px]">
+              </h3>
+              <p className="xl:w-[586px] w-full leading-6 text-[#000]">
                 Seamless frontend, backend, DevOps, and DBMS engineering for
                 impactful digital experiences.
               </p>
-              <p className=" font-Inter font-medium py-3 pt-5">
-                Read more &gt;
-              </p>
+              <p className="py-4">Read More</p>
+            </div>
+            <div className="flex justify-end items-end">
               <Image
-                className=" py-8"
-                src={Flow}
-                alt="this is a flow chat "
-                width={350}
-                height={350}
+                src={ourwork}
+                alt="ourwork"
+                className=""
               />
             </div>
-          </div>
-          <div className="block  pt-5 pl-5 items-center justify-center ml-3">
-          <div className="grid grid-cols-1 sm:grid-cols-auto-fit sm:grid-cols-minmax-15rem">
-            {services.map((service, index) => (
-              <Service />
-            ))}
-          </div>
           </div>
         </div>
-      </div> */}
-      <section>
-        <Container className="max-w-[100%]">
-          <div>
-            <h1 className="mb-6 text-5xl font-Raleway text-[#2A2738]">
-              Services We Provide For You
-            </h1>
-            <p>
-              We have created a system that allows us to easily monitor our
-              user’s issues while keeping efficiency with the analysis of the
-              data usage.
-            </p>
-          </div>
-        </Container>
-        <Container className="max-w-[1050px] gap-5">
-          <div className="bg-[#FAFAFA] px-6 place-self-center h-fit max-w-[500px] rounded-xl">
-            <div className="py-5">
-              <p className=" font-Inter text-[15px]">Services</p>
-              <h1 className="text-[18px] pb-2 md:text-[26px] md:pb-2 xl:text-[26px] xl:pb-2 lg:text-[26px] lg:pb-2">
-                Web & Mobile Development
-              </h1>
-              <p className=" font-Inter text-[12px]">
-                Seamless frontend, backend, DevOps, and DBMS engineering for
-                impactful digital experiences.
-              </p>
-              <p className=" font-Inter font-medium py-3 pt-5">
-                Read more &gt;
-              </p>
-              {/* <span> */}
+        <div className="w-full">
+          <div className="grid sm:grid-cols-2 grid-cols-1 gap-8">
+            <div className="w-full hover:bg-[#FAFAFA] border-[1px] border-[#F8F8F8] rounded-lg shadow-[0_7px_15px_0px_rgba(154,154,154,0.10)] xl:p-6 p-4">
               <Image
-                className="py-8"
-                src={Flow}
-                alt="this is a flow chat "
-                width={370}
-                height={370}
+                src={brand}
+                alt="brand"
               />
-              {/* </span> */}
-              {/* <div className="relative px-4 h-[350px] w-[100%]">
-                <Image
-                  src={Flow}
-                  alt="header"
-                  quality={100}
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="h-[100%] w-[100%] object-cover"
-                />
-              </div> */}
+              <div className="">
+                <h3 className="xl:text-[24px] md:text-[20px] text-[18px] font-bold xl:mt-5 mt-6">
+                  Branding
+                </h3>
+                <h5 className="mt-2 text-sm xl:w-[256px] leading-[21px]">
+                  Craft a compelling brand identity that captivates your
+                  audience.
+                </h5>
+                <h5 className="xl:mt-[92px] mt-4">Read More</h5>
+              </div>
+            </div>
+            <div className="w-full hover:bg-[#FAFAFA] border-[1px] border-[#F8F8F8] rounded-lg shadow-[0_7px_15px_0px_rgba(154,154,154,0.10)] xl:p-6 p-4">
+              <Image
+                src={design}
+                alt="brand"
+              />
+              <div className="">
+                <h3 className="xl:text-[24px] md:text-[20px] text-[18px] font-bold xl:mt-5 mt-6">
+                  Product Design
+                </h3>
+                <h5 className="mt-2 text-sm xl:w-[256px] leading-[21px]">
+                  From idea to reality, we create intuitive and visually
+                  stunning products.
+                </h5>
+                <h5 className="xl:mt-[92px] mt-4">Read More</h5>
+              </div>
+            </div>
+            <div className="w-full hover:bg-[#FAFAFA] border-[1px] border-[#F8F8F8] rounded-lg shadow-[0_7px_15px_0px_rgba(154,154,154,0.10)] xl:p-6 p-4">
+              <Image
+                src={sales}
+                alt="brand"
+              />
+              <div className="">
+                <h3 className="xl:text-[24px] md:text-[20px] text-[18px] font-bold xl:mt-5 mt-6">
+                  Sales & Marketing Strategies
+                </h3>
+                <h5 className="mt-2 text-sm xl:w-[256px] leading-[21px]">
+                  Maximize your reach and impact with winning strategies.
+                </h5>
+                <h5 className="xl:mt-[92px] mt-4">Read More</h5>
+              </div>
+            </div>
+            <div className="w-full hover:bg-[#FAFAFA] border-[1px] border-[#F8F8F8] rounded-lg shadow-[0_7px_15px_0px_rgba(154,154,154,0.10)] xl:p-6 p-4">
+              <Image
+                src={product}
+                alt="brand"
+              />
+              <div className="">
+                <h3 className="xl:text-[24px] md:text-[20px] text-[18px] font-bold xl:mt-5 mt-6">
+                  Product Management
+                </h3>
+                <h5 className="mt-2 text-sm xl:w-[256px] leading-[21px]">
+                  Gain a competitive edge with expert guidance and optimization.
+                </h5>
+                <h5 className="xl:mt-[92px] mt-4">Read More</h5>
+              </div>
             </div>
           </div>
-          <div className="w-full gap-[2rem] responsive_grid">
-            {services.map((service, index) => (
-              <Service
-                service={service}
-                key={index}
-              />
-            ))}
-          </div>
-        </Container>
-      </section>
-    </>
+        </div>
+      </div>
+    </div>
   )
 }
 
 export default Services
-
-type ServiceProps = {
-  service: {
-    title: string
-    desc: string
-  }
-}
-const Service = ({ service }: ServiceProps) => {
-  return (
-    <div className="py-4 hover:bg-[#FAFAFA] border px-4 rounded-xl">
-      <Image
-        className=" py-4"
-        src={Tablike}
-        alt="this is a flow chat "
-        width={30}
-        height={10}
-      />
-      <h3 className=" font-Inter font-semibolds py-2 ">{service.title}</h3>
-      <p className=" font-Inter text-[10px] pb-4">{service.desc}</p>
-      <p className=" font-Inter pb-4"> Read more </p>
-    </div>
-  )
-}
