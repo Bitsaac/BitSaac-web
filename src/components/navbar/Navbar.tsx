@@ -45,7 +45,7 @@ const Navbar = () => {
               })}
             </ul>
           </nav>
-          <Talktousbutton className="hidden sm:flex px-6 py-3 bg-[#4D61F4] rounded-[8px] font-medium text-[#fff] font-inter" />
+          <Talktousbutton className="hidden sm:flex px-6 py-3 bg-[#4D61F4] rounded-[8px] font-medium text-[#fff] font-inter capitalize" />
           <div className="sm:hidden flex" onClick={() => setToggle(!toggle)}>
             {toggle ? (
               <IoClose className="text-black text-[25px]" />
@@ -80,7 +80,7 @@ const Navbar = () => {
                   );
                 })}
                 <div className="mt-14 mx-5">
-                  <Talktousbutton className="px-6 py-3 w-full bg-[#4D61F4] rounded-[8px] font-medium text-[#fff] font-inter" />
+                  <Talktousbutton className="px-6 py-3 w-full bg-[#4D61F4] rounded-[8px] font-medium text-[#fff] font-inter capitalize" />
                 </div>
                 {/* {toggle ? <div>yes</div> : <div></div>} */}
               </ul>
