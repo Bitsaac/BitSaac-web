@@ -4,7 +4,6 @@ import services from "../../../../public/services.png"
 
 const Brand: React.FC = () => {
   return (
-
     <div className="">
       <div className="flex sm:flex-row flex-col items-center justify-end xl:pl-16 2xl:px-0 mt-[5%] ">
         <div className=" flex-1 flex flex-col px-4 2xl:px-0">

@@ -67,16 +67,16 @@ const Carousel = () => {
   }
 
   return (
-    <div className="w-full bg-[#2A2738]  xl:py-[20px] flex flex-col gap-[24px] sm:gap-[28px] ">
+    <div className="w-full bg-[#2A2738]  py-[20px] flex flex-col gap-[24px] sm:gap-[28px]">
       <h2 className="w-full text-center xl:text-[48px] md:text-[32px] text-[24px] text-white font-Raleway font-extrabold pt-6 xl:py-10">
         Clients we have worked with
       </h2>
-      <div className="slider pb-10">
-        <div className="slide-track">
+      <div className="pb-10">
+        <Slider {...settings}>
           {brandImages.map((image: BrandImageProps) => (
             <div
               key={image.id}
-              className="w-full h-[90px] "
+              className="w-full h-[90px]  "
             >
               <Image
                 src={image.src}
@@ -86,7 +86,7 @@ const Carousel = () => {
               />
             </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </div>
   )
