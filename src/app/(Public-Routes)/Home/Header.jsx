@@ -9,8 +9,8 @@ const Header = () => {
       <div className=" flex-1 flex flex-col ">
         <h1 className="xl:text-[56px] md:text-[48px] text-[40px] font-black md:leading-[56px] leading-[48px] font-Raleway xl:leading-[67px]  ">
           Bringing Ideas to Life
-          <br className="xl:flex hidden" /> Through Tech{" "}
-          <br className="xl:flex hidden" /> Innovation
+          <br className="2xl:flex hidden" /> Through Tech{" "}
+          <br className="2xl:flex hidden" /> Innovation
         </h1>
         <p className="sm:text-[18px] text-base font-normal xl:w-[600px] pt-6 leading-[24px] w-full sm:leading-[27px]">
           BitSaac is an innovative tech agency and community of tech creatives.
