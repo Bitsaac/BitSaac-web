@@ -6,7 +6,7 @@ import { BlogCardProps } from "@/components/blog/BlogCard"
 
 const BlogsCarousel = () => {
   return (
-    <div className="my_container py-[70px]">
+    <div className="my_container py-[80px]">
       <HomeCarousel
         data={BLOG_CARDS}
         component={BlogCardWrapper as React.ComponentType<{}>}

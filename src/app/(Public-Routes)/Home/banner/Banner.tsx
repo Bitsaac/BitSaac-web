@@ -18,10 +18,10 @@ const Banner: React.FC = () => {
         />
       </div>
       <div className=" px-4  py-16  lg:absolute z-[999] lg:w-[768px] w-full font-Inter sm:text-center text-left text-white lg:bg-transparent bg-[#03236C]">
-        <h2 className="font-Inter">Subscribe to Our Newsletter Today</h2>
-        <h3 className="mt-[24px]">
-          Stay updated with the latest tech and e-commerce insights
-        </h3>
+        <h2 className="xl:items-start px-[16px] sm:px-[64px] py-[48px] sm:py-[64px] font-Raleway text- ">
+          Subscribe to Our Newsletter Today
+        </h2>
+        <h3>Stay updated with the latest tech and e-commerce insights</h3>
         <span className="flex sm:flex-row flex-col items-center gap-[16px] mt-[24px] py-[16px]  w-full justify-center">
           <input
             type="text"

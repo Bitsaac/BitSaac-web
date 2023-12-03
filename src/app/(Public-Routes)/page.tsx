@@ -34,9 +34,7 @@ export default function Home() {
       <TestimonialsCarousel />
       <Faqs />
       <Contact />
-      <div className="">
-        <Banner />
-      </div>
+      <Banner />
     </main>
   )
 }

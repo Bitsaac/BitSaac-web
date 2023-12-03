@@ -1,4 +1,4 @@
-import Button from "@/components/button/Button"
+import Button from "@/app/button/Button"
 import Image from "next/image"
 import Link from "next/link"
 import { services } from "./serviceItem"
