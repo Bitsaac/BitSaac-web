@@ -1,6 +1,6 @@
 "use client"
 /* eslint-disable react/no-unescaped-entities */
-import Button from "@/components/button/Button"
+import Button from "@/app/button/Button"
 import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
@@ -88,23 +88,23 @@ const About = () => {
         </div>
       </div>
 
-      <div className="lg:relative">
+      <div>
         {/* ABOUT SECTION */}
-        <div className="py-[4rem] lg:py-[7rem] lg:pb-[10rem] px-[1.25rem] font-Inter md:px-[32px] xl:px-[64px] ">
+        <div className="py-[7rem] lg:py-[7rem] px-[7rem] font-Inter md:px-[32px] xl:px-[64px] ">
           <div className="lg:flex lg:gap-[3rem]">
             <div className="md:w-[70%] lg:w-[50%]">
-              <p className="text-[1.75rem] lg:text-[2rem] xl:text-[3rem] font-Raleway font-bold leading-tight mb-[1.5rem]">
+              <p className="text-[1.75rem] lg:text-[2rem] xl:text-[3rem] font-Raleway font-bold leading-tight mb-[1rem]">
                 Innovative Tech Agency Delivering Exceptional Results for
                 Clients
               </p>
-              <p className="font-normal text-[1rem] lg:text-[1.2rem]">
+              <p className="font-normal text-[1rem] lg:text-[20px]">
                 BitSaac is an innovative tech agency committed to delivering
                 exceptional results for our clients. With a strong focus on
                 product design and development, we bring ideas to life and help
                 businesses achieve their goals.
               </p>
             </div>
-            <div className="py-[2rem] flex items-center justify-between gap-[1rem] overflow-x-auto lg:flex-wrap lg:w-[50%] xl:w-[40%]">
+            <div className="border rounded-lg border-zinc-200 bg-white100 shad p-[2rem] flex items-center justify-between gap-[2rem] overflow-x-auto lg:flex-wrap lg:w-[50%]">
               {brandImages.slice(0, 6).map((image) => (
                 <Image
                   key={image.id}
@@ -112,13 +112,12 @@ const About = () => {
                   alt={"brand"}
                   width={200}
                   height={200}
-                  className="w-[9.7rem]"
+                  className="w-[10rem]"
                 />
               ))}
             </div>
           </div>
         </div>
-        <Talktousbutton className="bg-primary rounded-md text-white my-[1rem] mx-[1.25rem] md:mx-[64px] lg:absolute lg:top-[22%] xl:top-[15%]" />
 
         {/* PROCESS SECTION */}
         <Howwework />
@@ -175,12 +174,7 @@ const About = () => {
               growth and success in the digital marketplace.
             </p>
             <div className="py-[1rem]">
-              <Button className="text-btn-secondary border border-btn-secondary rounded-md font-Raleway text-[1rem] md:text-[.8rem] lg:text-[1rem]">
-                Get Started
-              </Button>
-              <Button className="text-btn-secondary font-Raleway text-[1rem] md:text-[.8rem] lg:text-[1rem]">
-                Learn More
-              </Button>
+              <Talktousbutton className="bg-primary rounded-md text-white" />
             </div>
           </div>
           <Image
@@ -203,10 +197,8 @@ const About = () => {
       {/* THE TEAM */}
 
       <div className="py-[4rem] xl:py-[7rem] font-Inter px-[1.25rem] md:px-[32px] xl:px-[64px]">
-        <h4 className="text-[1rem] font-bold mb-[1rem] leading-tight">
-          Innovators
-        </h4>
-        <h2 className="text-[2rem] font-bold mb-[1.5rem] text-[#2A2738]">
+        <h4 className="text-[1rem] font-bold  leading-tight">Innovators</h4>
+        <h2 className="text-[2rem] md:text-[1.2rem] lg:text-[2rem] xl:text-[2.5rem] font-bold leading-tight my-[0.5rem]">
           Meet Our Team
         </h2>
         <p className="text-[1rem] font-normal leading-tight">
@@ -249,11 +241,6 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div>
-        <Button>View All</Button>
-        <div></div>
-      </div>
-
       <Faqs />
       <Contact />
       <Banner />
