@@ -5,8 +5,8 @@ import React from "react";
 
 const BlogContent = ({ title, image }: { title?: string; image?: string }) => {
   return (
-    <div className="w-full flex flex-col md:flex-row items-start justify-between mt-10 lg:mt-20 gap-x-6 gap-y-7">
-      <div className=" md:flex flex-col gap-y-5 w-full md:w-[30%] md:sticky top-4">
+    <div className="w-full  flex flex-col md:flex-row items-start justify-between mt-10 lg:mt-20 gap-20">
+      <div className=" md:flex flex-col gap-y-5 w-full md:w-[40%] md:sticky top-4">
         <h3 className="font-bold text-2xl ">Contents</h3>
         <div className="flex flex-col gap-y-5 md:[&>*:nth-child(2)]:ml-4 md:[&>*:nth-child(3)]:ml-7 md:[&>*:nth-child(4)]:ml-10 md:[&>*:nth-child(5)]:ml-12 md:[&>*:nth-child(1)]:font-bold [&>*:nth-child(1)]:bg-[#F4F4F4] [&>*]:py-2 max-md:pb-10">
           <Link href="#rise-of-ai">The Rise of AI and Chatbots</Link>
