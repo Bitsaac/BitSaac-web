@@ -18,9 +18,9 @@ const PostPage = ({ params }: { params: { id: string } }) => {
   const tag = blog?.tag ?? ""
   console.log(blog)
   return (
-    <section className="max-container w-full min-h-screen flex flex-col px-4 lg:px-8 pt-6 sm:pt-10 relative">
-      <div className=" w-full flex flex-col md:flex-row justify-between h-full gap-x-4 gap-y-6">
-        <div className="flex flex-col h-full items-start justify-between w-full md:w-1/2  md:min-h-[400px] gap-y-5">
+    <section className="max-container w-full min-h-screen flex flex-col px-4 lg:px-20 pt-6 sm:pt-10 relative">
+      <div className=" w-full  flex flex-col md:flex-row justify-between h-[409px] gap-[48px]">
+        <div className="flex flex-col h-full items-start justify-between w-full   ">
           <p className="text-sm font-medium">
             Latest {">"} <span className="capitalize">{blog?.label}</span>
           </p>
@@ -45,21 +45,29 @@ const PostPage = ({ params }: { params: { id: string } }) => {
             </div>
             <div className="flex flex-col md:gap-y-5 gap-y-2">
               <strong>Share this post</strong>
-              <div className="flex items-center gap-x-5">
-                <BiLinkAlt />
-                <FaLinkedinIn />
-                <RiTwitterXLine />
-                <FaFacebookF />
+              <div className="flex items-center gap-x-5 cursor-pointer">
+                <span className="rounded-full p-2 bg-[#F4F4F4]">
+                  <BiLinkAlt />
+                </span>
+                <span className="rounded-full p-2 bg-[#F4F4F4]">
+                  <FaLinkedinIn />
+                </span>
+                <span className="rounded-full p-2 bg-[#F4F4F4]">
+                  <RiTwitterXLine />
+                </span>
+                <span className="rounded-full p-2 bg-[#F4F4F4]">
+                  <FaFacebookF />
+                </span>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex md:w-1/2 justify-center mt-10 md:mt-0">
+        <div className="flex   flex-shrink-0">
           <Image
             src={blog?.image ?? ""}
             alt="blog image"
-            width={600}
-            height={400}
+            width={768}
+            height={409}
           />
         </div>
       </div>

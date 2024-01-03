@@ -14,7 +14,7 @@ import { FaFacebookF } from "react-icons/fa";
 const Footer: React.FC = () => {
   return (
     <div className="max-w-[1440px] mx-auto flex flex-col xl:py-[80px] xl:px-[60px] py-[48px] px-[16px]  gap-[80px] ">
-      <div className="flex xl:flex-row flex-col xl:items-center items-start gap-[164px]">
+      <div className="flex xl:flex-row flex-col  items-start gap-[164px]">
         <div className="flex xl:flex-row flex-col items-start gap-[24px] flex-wrap xl:w-[500px] w-full">
           <Link href="/">
             <Image
