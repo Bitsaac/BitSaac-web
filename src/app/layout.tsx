@@ -19,7 +19,7 @@ const roboto = Roboto_Condensed({
 export const metadata: Metadata = {
   title: "Bitsaac Inc.",
   description:
-    "BitSaac is an innovative tech agency and community of tech creatives. We offer web and mobile app development, UI/UX design, and more.",
+    "BitSaac is an innovative tech agency and community of tech creatives. We offer web and mobile app development, UI/UX design, Product Management and more.",
 }
 
 export default function RootLayout({

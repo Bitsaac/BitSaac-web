@@ -6,8 +6,8 @@ import { HiOutlineLocationMarker } from "react-icons/hi"
 
 const Page = () => {
   return (
-    <div className="flex xl:flex-row flex-col items-left xl:items-start justify-between px-[16px] sm:px-[64px] py-[48px] sm:py-[64px] xl:gap-0 gap-[32px]">
-      <div className="">
+    <div className="max-w-[1240px] flex sm:flex-row flex-col items-left xl:items-start justify-between px-[16px] sm:px-[64px] py-[48px] sm:py-[64px] xl:gap-0 gap-[32px]">
+      <div className=" w-full sm:w-[45%]  flex  flex-col ">
         <h3>Get in Touch</h3>
         <h1 className="mt-[16px] mb-[24px] text-[48px] font-Raleway text-[#2A2738]">
           Contact Us
@@ -19,11 +19,11 @@ const Page = () => {
             icon={<AiOutlineMail />}
           />
           <TextIcon
-            text="+234 703 054 6907"
+            text="+234817048819"
             icon={<IoCallOutline />}
           />
           <TextIcon
-            text="123 Main Street, Anytown, USA"
+            text="Lagos, Nigeria."
             icon={<HiOutlineLocationMarker />}
           />
         </div>
