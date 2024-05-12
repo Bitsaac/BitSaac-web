@@ -59,9 +59,9 @@ const CTA = () => {
     <div>
       <div className="xl:px-16 px-4 xl:py-28 md:py-10 bg-[#FAFAFA] py-8 md:gap-10 xl:gap-0  flex sm:flex-row flex-col justify-between items-center">
         <div>
-          <h3 className="font-bold sm:text-[48px] font-Ralewa text-[32px] text-[#2A2738] leading-[48px]">
-            Transforming Ideas into Tech <br className="xl:flex hidden" />{" "}
-            Solutions
+          <h3 className="font-bold sm:text-[48px] font-Ralewa text-[32px] text-[#2A2738] leading-[56px]">
+            Transforming Ideas into  <br className="xl:flex hidden" />{" "}
+            Tech Solutions
           </h3>
           <p className="text-[18px] leading-[24px] sm:mt-8 my-6 text-[#0A0A0A]">
             Contact us today to discuss your tech needs or start selling online

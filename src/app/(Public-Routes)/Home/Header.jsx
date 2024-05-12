@@ -6,6 +6,13 @@ import Talktousbutton from "@/components/Talktousbutton"
 const Header = () => {
   return (
     <div className="flex sm:flex-row flex-col items-center xl:p-16 p-4 sm:py-0 py-16 sm:h-[85vh] 2xl:h-[100%] sm:mb-0 mb-10 h-screen ">
+            <div className="flex flex-1  sm:mt-0 mt-5">
+        <Image
+          src={background}
+          alt="background"
+          className="sm:w-[80%] w-[100%] rounded-2xl"
+        />
+      </div>
       <div className=" flex-1 flex flex-col ">
         <h1 className="xl:text-[56px] md:text-[48px] text-[40px] font-black md:leading-[56px] leading-[48px] font-Raleway xl:leading-[67px]  ">
           Bringing Ideas to Life
@@ -23,13 +30,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-1 justify-end sm:mt-0 mt-5">
-        <Image
-          src={background}
-          alt="background"
-          className="sm:w-[80%] w-[100%] rounded-2xl"
-        />
-      </div>
+
     </div>
   )
 }

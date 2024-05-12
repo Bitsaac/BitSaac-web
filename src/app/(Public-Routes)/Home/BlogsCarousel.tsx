@@ -42,8 +42,8 @@ const HomeBlogCard = ({
 
   return (
     // bg-[#F8F8F8]
-    <div className="p-4 flex flex-col gap-2 mr-3 bg-[#F8F8F8] rounded-xl h-fit min-h-[472px]">
-      <div className="max-w-[371.62] overflow-hidden max-h-[280]">
+    <div className="p-4 flex flex-col gap-2 mr-3 bg-[#f4f9ff] hover:bg-[#f5f4ff] rounded-xl  min-h-[472px]">
+      <div className="max-w-[371.62] overflow-hidden h-full">
         <Image
           src={image}
           alt="header"
@@ -51,10 +51,10 @@ const HomeBlogCard = ({
           priority
           width={600}
           height={640}
-          className="flex max-w-[371.62] max-h-[280] shrink-0 hover:scale-125 transition-all object-cover hover:duration-1000 duration-300"
+          className="flex  hover:scale-125 transition-all object-cover hover:duration-1000 duration-300"
         />
       </div>
-      <div className="flex flex-col gap-y-2 items-start">
+      <div className="flex flex-col gap-y-2 items-start h-[30%]">
         <div className="flex items-center gap-x-5 text-gray-950 font-semibold w-full">
           <div className="bg-[#F4F4F4] px-2 py-1 rounded-lg capitalize">
             {label}

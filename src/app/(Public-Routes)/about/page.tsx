@@ -61,7 +61,7 @@ const About = () => {
             <p className="text-[2.5rem] lg:text-[3rem]  xl:text-[3.5rem] leading-tight tracking-tight font-bold mb-[0.5rem]">
               Bringing Ideas to Life
             </p>
-            <p className="font-Inter text-[1rem] lg:text-[1rem] xl:text-[1rem] font-normal md:w-[75%] ">
+            <p className="font-Inter text-[1.25rem] font-normal md:w-[75%] ">
               BitSaac is an innovative tech agency and community of tech
               creatives, dedicated to bringing ideas to life through product
               design and development.
@@ -70,15 +70,15 @@ const About = () => {
               <div className="sm:flex sm:gap-[1rem] sm:items-center">
                 <input
                   type="text"
-                  className="p-3 rounded-md outline-0 w-full sm:w-[50%] h-[40px] my-[1rem] text-black"
+                  className="p-3 rounded-md outline-0 w-full sm:w-[50%] h-[48px] my-[1rem] text-black"
                   placeholder="Enter Email here..."
                 />
-                <Button className="bg-primary rounded-md w-full sm:w-[10%] md:w-[15%] md:h-[40px] my-[1rem] ">
+                <Button className="bg-primary rounded-md md:h-[48px] my-[1rem] ">
                   Get Started
                 </Button>
               </div>
-              <div className="w-[70%]">
-                <span className="text-[0.75rem] font-normal">
+              <div className="w-[60%]">
+                <span className="text-[1rem] font-normal">
                   By clicking the button, you're confirming that you agree with
                   our Terms and Conditions.
                 </span>
@@ -204,19 +204,19 @@ const About = () => {
         <p className="text-[1rem] font-normal leading-tight">
           Get to know the talented individuals behind BitSaac
         </p>
-        <div className="flex gap-[1rem] overflow-x-auto py-4 scrollbar-w-1">
+        <div className="flex gap-[1rem] overflow-x-auto py-4 rounded-md ">
           {Team().map((item) => (
             <div
               key={item.id}
               className="p-[1rem] min-w-[17.5rem] shadow-md"
             >
-              <Image
+              {/* <Image
                 src={item.img}
                 alt={item.name}
                 width={80}
                 height={80}
                 className="rounded-[50%] mb-[1.5rem]"
-              />
+              /> */}
               <div className="">
                 <h3 className="text-[1.25rem] font-semibold">{item.name}</h3>
                 <span className="text-[1rem] font-normal text-textGrey leading-tight mb-[1rem]">
