@@ -17,7 +17,7 @@ type TestimonialProps = {
 
 const TestimonialsCarousel = ({ className }: { className?: string }) => {
   return (
-    <div className="bg-[#e9ebf8] py-9">
+    <div className="bg-[#fafafa] py-9">
       <div className={cn("my_container", className !== "" ? className : "")}>
         <HomeCarousel
           data={CUSTOMER_TESTIMONIALS}
@@ -34,7 +34,6 @@ const TestimonialsCarousel = ({ className }: { className?: string }) => {
 export default TestimonialsCarousel
 
 const TestimonialCardWrapper = (props: any) => <TestimonialCard {...props} />
-
 const TestimonialCard = ({
   info,
   id,
@@ -42,10 +41,10 @@ const TestimonialCard = ({
   userName,
   position,
 }: TestimonialProps) => (
-  <article className="flex gap-5 md:mr-4 flex-col px-4 py-5 bg-[#e9ebf4] border-[#FAFAFA] rounded-lg hover:bg-[#fafafa] border">
+  <article className="flex gap-5 md:mr-4 flex-col px-4 py-5 bg-[#FAFAFA] border-[#ffffff] border-[2px] rounded-[12px] hover:bg-[#e9ebf8] p-1 first-letter:shadow">
     <Stars count={rating} />
     <p>{info}</p>
-    <div className="flex gap-3">
+    <div className="flex items-center gap-3">
       <Image
         src={AvatarImage}
         alt="Avater Image"
